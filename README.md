@@ -30,16 +30,17 @@ Kenya Explorer Journeys aims to be a one-stop resource for travellers looking to
 
 ## 📸 Demo
 
-*(Add screenshots or animated GIFs here showing the UI, e.g., homepage and destination view — this improves readability and user understanding.)* :contentReference[oaicite:2]{index=2}
+<img width="1917" height="914" alt="image" src="https://github.com/user-attachments/assets/6fc7b790-9f28-407b-bc56-2a9bb41937c4" />
+
 
 ---
 
 ## 🧠 Technologies
 
-This project is built using a modern web stack (adjust based on your actual stack):
+This project is built using a modern web stack :
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: *(if applicable — e.g., Node.js, Express, Django)*
+- Frontend: Typescript, Tailwind CSS
+- Backend:Node.js
 - Data: JSON or API-backed content
 - Deployment: GitHub Pages / Render / Vercel
 
@@ -75,7 +76,6 @@ To run this project locally:
     http://localhost:3000
     ```
 
-*(Adjust commands based on your actual project setup.)* :contentReference[oaicite:3]{index=3}
 
 ---
 
@@ -112,7 +112,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 📬 Contact
 
-Your Name – *your.email@example.com*
+Your Name – *gitongagideon701@.com*
 
 Project Link: https://github.com/Githaiga701/kenya-explorer-journeys
 
