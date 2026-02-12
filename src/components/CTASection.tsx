@@ -8,6 +8,7 @@ const CTASection = () => {
         src={safariSunset}
         alt="Safari sunset in Kenya"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
       <div className="absolute inset-0 safari-hero-overlay" />
       <div className="relative z-10 safari-container text-center">

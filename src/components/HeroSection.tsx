@@ -9,6 +9,7 @@ const HeroSection = () => {
         src={heroImage}
         alt="Great Wildebeest Migration crossing the Mara River in Kenya"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
       <div className="absolute inset-0 safari-hero-overlay" />
 

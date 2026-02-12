@@ -37,7 +37,7 @@ const About = () => {
             viewport={{ once: true }}
             className="relative h-96 rounded-lg overflow-hidden"
           >
-            <img src={safariSunset} alt="Safari sunset" className="w-full h-full object-cover" />
+            <img src={safariSunset} alt="Safari sunset" className="w-full h-full object-cover" loading="lazy" />
           </motion.div>
         </div>
       </section>

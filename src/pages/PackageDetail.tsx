@@ -29,7 +29,7 @@ const PackageDetail = () => {
     <main className="pt-20">
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px]">
-        <img src={packageImages[pkg.image]} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={packageImages[pkg.image]} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 safari-hero-overlay" />
         <div className="relative z-10 h-full flex items-end">
           <div className="safari-container pb-12">
