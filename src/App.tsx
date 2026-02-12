@@ -24,8 +24,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Navbar />
-        <Routes>
+        <main id="main-content">
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/packages" element={<Packages />} />
@@ -35,7 +37,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </main>
         <Footer />
         <WhatsAppButton />
       </BrowserRouter>

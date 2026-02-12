@@ -21,6 +21,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useOnClickOutside(menuRef, () => setOpen(false));
 
@@ -34,14 +35,59 @@ export default function Navbar() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
+      if (e.key === "Tab" && open) {
+        const container = menuRef.current;
+        if (!container) return;
+        const focusable = Array.from(
+          container.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+          ),
+        ).filter((el) => !el.hasAttribute("disabled"));
+
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const [announce, setAnnounce] = useState("");
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      const container = menuRef.current;
+      if (container) {
+        const focusable = Array.from(
+          container.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])',
+          ),
+        ).filter((el) => !el.hasAttribute("disabled"));
+        if (focusable.length) focusable[0].focus();
+      }
+      setAnnounce("Mobile menu opened");
+    } else {
+      const btn = menuButtonRef.current;
+      if (btn) btn.focus();
+      setAnnounce("Mobile menu closed");
+    }
+    const t = setTimeout(() => setAnnounce(""), 700);
     return () => {
+      clearTimeout(t);
       document.body.style.overflow = "";
     };
   }, [open]);
@@ -52,13 +98,12 @@ export default function Navbar() {
         scrolled ? "backdrop-blur bg-white/60 shadow-sm" : "bg-transparent"
       }`}
     >
+      <div className="sr-only" aria-live="polite">{announce}</div>
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-10 h-10 flex-shrink-0">
-                <Image src="/assets/hero-masai-mara.jpg" alt="Kenya Explorer" fill className="object-cover rounded" />
-              </div>
+              <img src="/assets/logo.svg" alt="Kenya Explorer logo" className="w-10 h-10 object-cover rounded" />
               <span className="font-heading text-lg md:text-xl">Kenya Explorer</span>
             </Link>
           </div>
@@ -79,6 +124,7 @@ export default function Navbar() {
 
           <div className="md:hidden flex items-center">
             <button
+              ref={menuButtonRef}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="mobile-menu"
