@@ -28,7 +28,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground text-shadow-safari leading-tight"
         >
-          Experience Kenya
+          Experience Buffalo Plains Adventures
           <br />
           Like Never Before
         </motion.h1>

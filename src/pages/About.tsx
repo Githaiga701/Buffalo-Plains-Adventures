@@ -8,7 +8,7 @@ const About = () => {
       <section className="safari-section bg-primary text-center">
         <div className="safari-container">
           <p className="text-accent text-sm tracking-[0.2em] uppercase mb-2">Our Story</p>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">About Kenya Explorer</h1>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">About Buffalo Plains Adventures</h1>
         </div>
       </section>
 
@@ -22,7 +22,7 @@ const About = () => {
             <p className="text-secondary text-sm tracking-widest uppercase mb-2">Who We Are</p>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Crafting Unforgettable African Experiences</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Founded by passionate Kenyan locals with deep roots in the safari industry, Kenya Explorer was born from a desire to share the authentic beauty of East Africa with the world.
+              Founded by passionate Kenyan locals with deep roots in the safari industry, Buffalo Plains Adventures was born from a desire to share the authentic beauty of East Africa with the world.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               With over 15 years of experience, we've guided thousands of travelers through Kenya's most spectacular landscapes — from the thundering herds of the Great Migration to the serene beaches of the Indian Ocean coast.

@@ -86,8 +86,8 @@ export const packages = [
     accommodation: "5-star luxury safari lodges",
   },
   {
-    id: "7-day-kenya-explorer",
-    title: "7-Day Kenya Explorer",
+    id: "7-day-buffalo-plains",
+    title: "7-Day Buffalo Plains Explorer",
     duration: "7 Days / 6 Nights",
     price: 3500,
     image: "explorer",
@@ -112,7 +112,7 @@ export const testimonials = [
   {
     name: "Sarah & James Mitchell",
     location: "London, UK",
-    text: "Our 7-day Kenya Explorer trip was the most incredible experience of our lives. The wildlife was breathtaking, and our guide knew exactly where to find the Big Five. We'll be back!",
+    text: "Our 7-day Buffalo Plains trip was the most incredible experience of our lives. The wildlife was breathtaking, and our guide knew exactly where to find the Big Five. We'll be back!",
     rating: 5,
   },
   {
@@ -124,7 +124,7 @@ export const testimonials = [
   {
     name: "Emily Chen",
     location: "Sydney, Australia",
-    text: "Kenya Explorer made everything seamless — from the moment we landed to our last sunset on Diani Beach. The attention to detail and knowledge of the guides was remarkable.",
+    text: "Buffalo Plains Adventures made everything seamless — from the moment we landed to our last sunset on Diani Beach. The attention to detail and knowledge of the guides was remarkable.",
     rating: 5,
   },
   {

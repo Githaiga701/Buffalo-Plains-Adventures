@@ -1,8 +1,12 @@
-# Kenya Explorer Journeys
+# Buffalo Plains Adventures
 
-A web-based travel and tourism platform that showcases top destinations, routes, and experiences across Kenya — designed to help travellers explore iconic attractions, learn about unique places, and plan unforgettable journeys. 🇰🇪
+Buffalo Plains Adventures is a premium Kenya safari and adventure booking platform showcasing curated wildlife safaris, luxury lodges, and tailored adventure experiences across Kenya.
 
-Kenya Explorer Journeys aims to be a one-stop resource for travellers looking to discover the cultural heritage, wildlife, landscapes, and adventure opportunities in Kenya, from Nairobi and Maasai Mara to Lamu Island and beyond. :contentReference[oaicite:1]{index=1}
+---
+
+## Vision
+
+To deliver a premium, trustworthy booking experience for travellers seeking authentic and sustainable Kenya safari and adventure packages.
 
 ---
 
@@ -37,12 +41,11 @@ Kenya Explorer Journeys aims to be a one-stop resource for travellers looking to
 
 ## 🧠 Technologies
 
-This project is built using a modern web stack :
+This project is built using a modern web stack:
 
-- Frontend: Typescript, Tailwind CSS
-- Backend:Node.js
-- Data: JSON or API-backed content
-- Deployment: GitHub Pages / Render / Vercel
+- Frontend: TypeScript, React, Vite, Tailwind CSS
+- Client data: JSON / API-ready
+- Deployment: Vercel (recommended)
 
 ---
 
@@ -53,8 +56,8 @@ To run this project locally:
 1. **Clone the repo**
 
     ```bash
-    git clone https://github.com/Githaiga701/kenya-explorer-journeys.git
-    cd kenya-explorer-journeys
+    git clone <your-repo-url>
+    cd buffalo-plains-adventures
     ```
 
 2. **Install dependencies** (if applicable)
@@ -67,13 +70,14 @@ To run this project locally:
 3. **Run locally**
 
     ```bash
-    npm start
+    npm install
+    npm run dev
     ```
 
 4. **View in browser**
 
-    ``` 
-    http://localhost:3000
+    ```
+    http://localhost:5173
     ```
 
 
@@ -112,11 +116,11 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 📬 Contact
 
-Your Name – *gitongagideon701@.com*
+Maintainer – contact@example.com
 
-Project Link: https://github.com/Githaiga701/kenya-explorer-journeys
+Project: Buffalo Plains Adventures
 
 ---
 
-💡 *Thanks for checking out Kenya Explorer Journeys — happy coding and exploring!*
+💡 *Thanks for checking out Buffalo Plains Adventures — happy coding and exploring!* 
 ::contentReference[oaicite:5]{index=5}

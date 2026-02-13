@@ -5,8 +5,8 @@ import "../src/index.css";
 import Navbar from "@/next/Navbar";
 
 export const metadata = {
-  title: "Kenya Explorer",
-  description: "Premium Kenya tours and safaris — mobile friendly and responsive",
+  title: "Buffalo Plains Adventures",
+  description: "Buffalo Plains Adventures — premium Kenya tours and safaris, mobile friendly and responsive",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

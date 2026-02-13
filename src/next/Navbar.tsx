@@ -103,8 +103,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3">
-              <img src="/assets/logo.svg" alt="Kenya Explorer logo" className="w-10 h-10 object-cover rounded" />
-              <span className="font-heading text-lg md:text-xl">Kenya Explorer</span>
+              <img src="/assets/logo.svg" alt="Buffalo Plains Adventures logo" className="w-10 h-10 object-cover rounded" />
+              <span className="font-heading text-lg md:text-xl">Buffalo Plains Adventures</span>
             </Link>
           </div>
 
@@ -186,7 +186,7 @@ export default function Navbar() {
                 <div className="relative w-8 h-8 flex-shrink-0">
                   <Image src="/assets/hero-masai-mara.jpg" alt="Logo" fill className="object-cover rounded" />
                 </div>
-                <span className="font-heading text-sm">Kenya Explorer</span>
+                <span className="font-heading text-sm">Buffalo Plains Adventures</span>
               </div>
               <button
                 aria-label="Close menu"

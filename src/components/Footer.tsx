@@ -8,10 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-heading text-2xl font-bold mb-4">Kenya Explorer</h3>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Premium tours & safaris showcasing the best of Kenya's wildlife, beaches, and cultural heritage.
-            </p>
+            <h3 className="font-heading text-2xl font-bold mb-4">Buffalo Plains Adventures</h3>
+              <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                Premium tours & safaris showcasing the best of Kenya's wildlife, beaches, and cultural heritage.
+              </p>
           </div>
 
           {/* Quick Links */}
@@ -56,9 +56,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="mailto:info@kenyaexplorer.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="mailto:info@buffaloplainsadventures.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={16} />
-                info@kenyaexplorer.com
+                info@buffaloplainsadventures.com
               </a>
               <a href="tel:+254700000000" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
-          © {new Date().getFullYear()} Kenya Explorer. All rights reserved.
+          © {new Date().getFullYear()} Buffalo Plains Adventures. All rights reserved.
         </div>
       </div>
     </footer>

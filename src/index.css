@@ -6,33 +6,36 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 150 32% 12%;
+    /* Buffalo Plains Adventures - Jungle Green Palette */
+    /* Primary: #0B3D2E (Deep Jungle Green), Secondary: #1F6F50, Accent: #F4A261 (Safari Sand) */
+    
+    --background: 0 0% 97%;
+    --foreground: 160 40% 15%;
 
-    --card: 40 30% 97%;
-    --card-foreground: 150 32% 12%;
+    --card: 0 0% 98%;
+    --card-foreground: 160 40% 15%;
 
-    --popover: 40 30% 97%;
-    --popover-foreground: 150 32% 12%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 160 40% 15%;
 
-    --primary: 150 32% 18%;
-    --primary-foreground: 40 33% 96%;
+    --primary: 160 68% 18%;
+    --primary-foreground: 0 0% 97%;
 
-    --secondary: 14 68% 63%;
-    --secondary-foreground: 40 33% 96%;
+    --secondary: 160 55% 35%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 38 30% 90%;
-    --muted-foreground: 150 10% 40%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 160 20% 40%;
 
-    --accent: 38 82% 75%;
-    --accent-foreground: 150 32% 12%;
+    --accent: 33 89% 58%;
+    --accent-foreground: 160 40% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 38 25% 85%;
-    --input: 38 25% 85%;
-    --ring: 150 32% 18%;
+    --border: 0 0% 89%;
+    --input: 0 0% 90%;
+    --ring: 160 68% 25%;
 
     --radius: 0.5rem;
 

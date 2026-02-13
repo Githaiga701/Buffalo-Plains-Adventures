@@ -17,7 +17,7 @@ const Contact = () => {
           <p className="text-accent text-sm tracking-[0.2em] uppercase mb-2">Get In Touch</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">Contact Us</h1>
           <p className="text-primary-foreground/70 text-lg mt-4 max-w-2xl mx-auto">
-            Ready to start planning your Kenya adventure? We'd love to hear from you.
+            Ready to start planning your Kenya adventure with Buffalo Plains Adventures? We'd love to hear from you.
           </p>
         </div>
       </section>
@@ -113,9 +113,9 @@ const Contact = () => {
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us Directly</h3>
               <div className="space-y-5">
-                <a href="mailto:info@kenyaexplorer.com" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href="mailto:info@buffaloplainsadventures.com" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Mail size={20} /></div>
-                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">info@kenyaexplorer.com</p></div>
+                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">info@buffaloplainsadventures.com</p></div>
                 </a>
                 <a href="tel:+254700000000" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Phone size={20} /></div>
@@ -129,10 +129,10 @@ const Contact = () => {
             </div>
 
             <a
-              href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
+              href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-[hsl(142_70%_45%)] text-[hsl(0_0%_100%)] py-3.5 rounded-md font-semibold hover:opacity-90 transition-opacity"
+              className="flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground py-3.5 rounded-md font-semibold hover:opacity-90 transition-opacity"
             >
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
@@ -147,7 +147,7 @@ const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Kenya Explorer Office Location"
+                title="Buffalo Plains Adventures Office Location"
               />
             </div>
           </motion.div>

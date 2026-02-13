@@ -15,7 +15,7 @@ const packageImages: Record<string, string> = {
 const pkgs = [
   { id: "3-day-masai-mara", title: "3-Day Masai Mara Safari", duration: "3 Days / 2 Nights", price: 850, image: "masai-mara", highlights: ["Big Five Sightings", "Game Drives", "Maasai Village"] },
   { id: "5-day-luxury-safari", title: "5-Day Luxury Safari", duration: "5 Days / 4 Nights", price: 2200, image: "luxury", highlights: ["Hot Air Balloon", "Private Guide", "Bush Dinner"] },
-  { id: "7-day-kenya-explorer", title: "7-Day Kenya Explorer", duration: "7 Days / 6 Nights", price: 3500, image: "explorer", highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion"] },
+  { id: "7-day-buffalo-plains", title: "7-Day Buffalo Plains Explorer", duration: "7 Days / 6 Nights", price: 3500, image: "explorer", highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion"] },
 ];
 
 const FeaturedPackages = () => {
@@ -29,7 +29,7 @@ const FeaturedPackages = () => {
           <p className="text-secondary font-body text-sm tracking-[0.2em] uppercase mb-2">Our Tours</p>
           <h2 className="safari-heading">Featured Safari Packages</h2>
           <p className="safari-subheading mx-auto">
-            Handcrafted itineraries designed to give you the ultimate Kenya experience
+            Handcrafted itineraries designed to give you the ultimate Kenya safari experience with Buffalo Plains Adventures
           </p>
         </div>
 

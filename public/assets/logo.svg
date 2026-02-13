@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Kenya Explorer Logo">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="120" viewBox="0 0 160 120" role="img" aria-label="Buffalo Plains Adventures Logo">
   <defs>
     <linearGradient id="g" x1="0" x2="1">
       <stop offset="0" stop-color="#0b5a3a" />
       <stop offset="1" stop-color="#0b3d2e" />
     </linearGradient>
   </defs>
-  <rect width="120" height="120" rx="18" fill="url(#g)" />
-  <g transform="translate(20,28)" fill="#fff">
-    <path d="M10 50c8-18 34-30 50-22-10-14-38-14-50 0v22z" opacity="0.95" />
-    <text x="0" y="80" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700">Kenya</text>
-    <text x="0" y="98" font-family="Inter, system-ui, sans-serif" font-size="12">Explorer</text>
+  <rect width="160" height="120" rx="18" fill="url(#g)" />
+  <g transform="translate(14,20)" fill="#fff">
+    <path d="M8 50c10-22 44-36 66-26-12-18-46-18-66 0v26z" opacity="0.96" />
+    <text x="0" y="78" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700">Buffalo Plains</text>
+    <text x="0" y="98" font-family="Inter, system-ui, sans-serif" font-size="10">Adventures</text>
   </g>
 </svg>
