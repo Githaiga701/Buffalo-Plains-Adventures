@@ -113,7 +113,7 @@ const PackageDetail = () => {
                 <p className="text-sm text-muted-foreground">{pkg.accommodation}</p>
               </div>
               <a
-                href={`https://wa.me/254700000000?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`}
+                href={`https://wa.me/254720445869?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-secondary text-secondary-foreground py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"

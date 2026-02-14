@@ -59,13 +59,13 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="mailto:info@buffaloplainsadventures.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={16} />
-                info@buffaloplainsadventures.com
+                buffaloplainadventuresltd@gmail.com
               </a>
-              <a href="tel:+254700000000" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
-                +254 700 000 000
+                +254 720 445869
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} />

@@ -27,7 +27,7 @@ const CTASection = () => {
             Plan My Trip
           </Link>
           <a
-            href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
+            href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-primary-foreground/40 text-primary-foreground px-8 py-3.5 rounded-md font-semibold hover:bg-primary-foreground/10 transition-colors"

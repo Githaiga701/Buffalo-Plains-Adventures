@@ -114,7 +114,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
+            href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -156,7 +156,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
+                href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold text-center mt-2"
