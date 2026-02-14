@@ -30,11 +30,11 @@ const MPesaIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function PaymentOptions({ amount, packageName }: PaymentOptionsProps) {
   const formatted = formatAmount(amount);
 
-  // Optional environment-driven configuration (NEXT_PUBLIC_*). These will be inlined at build time.
-  const paypalMe = typeof process !== "undefined" ? (process.env.NEXT_PUBLIC_PAYPAL_ME ?? "") : "";
-  const whatsappNumber = typeof process !== "undefined" ? (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "") : "";
-  const mpesaInstructionsPath = typeof process !== "undefined" ? (process.env.NEXT_PUBLIC_MPESA_INSTRUCTIONS_PATH ?? "") : "";
-  const stripeCheckout = typeof process !== "undefined" ? (process.env.NEXT_PUBLIC_STRIPE_CHECKOUT ?? "") : "";
+  // Vite environment variables - use VITE_ prefix for client-side env vars
+  const paypalMe = import.meta.env.VITE_PAYPAL_ME ?? "";
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER ?? "";
+  const mpesaInstructionsPath = import.meta.env.VITE_MPESA_INSTRUCTIONS_PATH ?? "";
+  const stripeCheckout = import.meta.env.VITE_STRIPE_CHECKOUT ?? "";
 
   const paypalUrl = paypalMe
     ? paypalMe.endsWith("/")
