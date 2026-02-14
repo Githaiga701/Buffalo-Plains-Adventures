@@ -1,18 +1,15 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
+import { Link } from "react-router-dom";
+import safariSunset from "@/assets/hero-masai-mara.jpg";
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="relative h-[60vh] min-h-[420px] md:h-[72vh] rounded-lg overflow-hidden">
-        <Image
-          src="/assets/hero-masai-mara.jpg"
+        <img
+          src={safariSunset}
           alt="Great Wildebeest Migration"
-          fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 80vw, 1200px"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
         <div className="absolute inset-0 flex items-center">
@@ -26,18 +23,18 @@ export default function Hero() {
               Amboseli and the Kenyan coast.
             </p>
             <div className="mt-6 flex gap-3 justify-center">
-              <a
-                href="/packages"
+              <Link
+                to="/packages"
                 className="inline-flex items-center justify-center px-4 h-11 rounded-md bg-secondary text-secondary-foreground font-semibold"
               >
                 View Tours
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center px-4 h-11 rounded-md border border-white/20 text-white/90"
               >
                 Plan My Trip
-              </a>
+              </Link>
             </div>
           </div>
         </div>
