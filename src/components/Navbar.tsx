@@ -97,7 +97,7 @@ export default function Navbar() {
       <div className="sr-only" aria-live="polite">{announce}</div>
       <div className="safari-container flex items-center justify-between h-16 md:h-20 px-4 md:px-8 max-w-7xl mx-auto">
         <Link to="/" className="flex items-center gap-3 font-heading text-xl md:text-2xl font-bold text-primary-foreground tracking-wide">
-          <img src="/assets/logo.svg" alt="Buffalo Plains Adventures logo" className="w-10 h-10 object-cover rounded" />
+          <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-12 object-contain" />
           <span>Buffalo Plains Adventures</span>
         </Link>
 

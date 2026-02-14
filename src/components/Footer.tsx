@@ -8,7 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-heading text-2xl font-bold mb-4">Buffalo Plains Adventures</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-14 object-contain" />
+            </div>
+            <h3 className="font-heading text-xl font-bold mb-4">Buffalo Plains Adventures</h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
                 Premium tours & safaris showcasing the best of Kenya's wildlife, beaches, and cultural heritage.
               </p>
