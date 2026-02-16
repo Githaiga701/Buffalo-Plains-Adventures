@@ -181,8 +181,8 @@ const WhyChooseUs = () => {
           <div className="flex items-center gap-3 text-muted-foreground">
             <Globe size={20} />
             <div>
-              <p className="font-semibold text-foreground text-sm">Best Price Guarantee</p>
-              <p className="text-xs">Match any competitor price</p>
+              <p className="font-semibold text-foreground text-sm">Best Value Guarantee</p>
+              <p className="text-xs">Most detailed safari itineraries</p>
             </div>
           </div>
         </motion.div>

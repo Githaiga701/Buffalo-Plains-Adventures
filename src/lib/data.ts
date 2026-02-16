@@ -156,11 +156,15 @@ export const faqs = [
     answer: "Absolutely! All our packages can be customized to suit your preferences, budget, and time frame. Contact us to design your perfect Kenya adventure.",
   },
   {
-    question: "What is included in your tour prices?",
-    answer: "Our prices typically include accommodation, meals, transport, park fees, and professional guides. Each package page lists specific inclusions and exclusions.",
+    question: "What is included in our tour packages?",
+    answer: "Our packages typically include accommodation, meals, transport, park fees, and professional guides. Each package page lists specific inclusions and exclusions.",
   },
   {
     question: "How do I book a tour?",
     answer: "You can book through our contact form, WhatsApp, or email. We'll confirm availability, discuss any customizations, and send you a detailed itinerary and payment instructions.",
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "We accept PayPal for international payments and M-Pesa for payments within Kenya. Both methods are secure and convenient for booking your safari adventure.",
   },
 ];

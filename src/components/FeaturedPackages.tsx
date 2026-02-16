@@ -4,15 +4,11 @@ import { useRef } from "react";
 import { 
   Clock, 
   MapPin, 
-  Star, 
-  ArrowRight, 
-  Check,
-  Coffee,
-  Bird,
-  Palmtree,
-  Camera,
+  ArrowRight,
+  Car,
   Utensils,
-  Car
+  Camera,
+  Palmtree
 } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
 import luxurySafari from "@/assets/luxury-safari.jpg";
@@ -80,20 +76,19 @@ const FeaturedPackages = () => {
                     loading="lazy"
                   />
                 </div>
-              </div>
+              </Link>
 
               {/* Content */}
               <div className="p-6">
-                {/* Title & Rating */}
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-heading text-xl font-bold text-foreground leading-tight pr-4">
-                    {pkg.title}
-                  </h3>
-                  <div className="flex items-center gap-1 bg-[#F4A261]/10 px-2 py-1 rounded">
-                    <Star size={14} className="text-[#F4A261] fill-[#F4A261]" />
-                    <span className="text-sm font-bold">{pkg.rating}</span>
-                    <span className="text-xs text-muted-foreground">({pkg.reviews})</span>
-                  </div>
+                {/* Title */}
+                <h3 className="font-heading text-xl font-bold text-foreground leading-tight mb-3">
+                  {pkg.title}
+                </h3>
+
+                {/* Duration & Location */}
+                <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">
+                  <span className="flex items-center gap-1"><Clock size={14} /> {pkg.duration}</span>
+                  <span className="flex items-center gap-1"><MapPin size={14} /> Kenya</span>
                 </div>
 
                 {/* Highlights */}
@@ -103,19 +98,6 @@ const FeaturedPackages = () => {
                       {h}
                     </span>
                   ))}
-                </div>
-
-                {/* What's Included */}
-                <div className="border-t border-border pt-4 mb-4">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">What's Included</p>
-                  <div className="grid grid-cols-2 gap-2">
-                    {pkg.included.slice(0, 4).map((item) => (
-                      <div key={item} className="flex items-center gap-2">
-                        <Check size={14} className="text-green-600" />
-                        <span className="text-xs text-muted-foreground">{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 {/* CTA Button */}

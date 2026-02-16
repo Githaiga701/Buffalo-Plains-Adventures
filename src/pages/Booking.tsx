@@ -97,7 +97,16 @@ const Booking = () => {
           <h2 className="text-lg font-semibold mb-3">Booking Confirmed (Mock)</h2>
           <div className="p-4 border rounded">
             <p>Booking reference: <strong>{confirmation}</strong></p>
-            <p className="mt-2 text-sm text-muted-foreground">Payment step is disabled in this phase. Integrate Stripe / M-Pesa in the next phase.</p>
+            <p className="mt-4 text-sm font-semibold text-foreground mb-3">Payment Methods Accepted:</p>
+            <div className="flex gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded font-semibold text-xs">PayPal</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded font-semibold text-xs">M-Pesa</span>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-muted-foreground">Contact us on WhatsApp or email to complete your booking.</p>
           </div>
         </section>
       )}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CreditCard } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -75,7 +75,32 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-xs text-primary-foreground/50">
+        {/* Payment Methods */}
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 mb-8">
+          <div className="text-center mb-4">
+            <h4 className="font-heading text-sm font-semibold mb-3 flex items-center justify-center gap-2">
+              <CreditCard size={16} />
+              We Accept
+            </h4>
+            <div className="flex items-center justify-center gap-6">
+              <div className="flex flex-col items-center">
+                <div className="bg-primary-foreground/10 px-4 py-2 rounded-lg mb-1">
+                  <p className="text-sm font-bold text-[#003087]">PayPal</p>
+                </div>
+                <p className="text-xs text-primary-foreground/60">Secure Payment</p>
+              </div>
+              <div className="text-primary-foreground/30">|</div>
+              <div className="flex flex-col items-center">
+                <div className="bg-primary-foreground/10 px-4 py-2 rounded-lg mb-1">
+                  <p className="text-sm font-bold text-green-600">M-Pesa</p>
+                </div>
+                <p className="text-xs text-primary-foreground/60">Mobile Money</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/10 pt-8 text-center text-xs text-primary-foreground/50">
           © {new Date().getFullYear()} Buffalo Plains Adventures. All rights reserved.
         </div>
       </div>

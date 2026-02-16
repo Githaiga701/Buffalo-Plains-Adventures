@@ -77,14 +77,9 @@ export function PaymentExample() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <div>
-              <p className="text-sm text-gray-600">Price (USD)</p>
-              <p className="text-3xl font-bold">${EXAMPLE_PACKAGE.priceUSD}</p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600">Price (KES)</p>
-              <p className="text-2xl font-semibold">KES {priceKES.toLocaleString()}</p>
-            </div>
+            <p className="text-sm text-gray-600">
+              {EXAMPLE_PACKAGE.name} - Booking Confirmation
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -193,14 +188,6 @@ export function PaymentExample() {
                 <div className="flex justify-between">
                   <span className="text-sm text-gray-600">Order ID:</span>
                   <span className="font-mono text-sm font-medium">{orderId}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm text-gray-600">Amount:</span>
-                  <span className="font-semibold">
-                    {selectedMethod === "paypal"
-                      ? `$${EXAMPLE_PACKAGE.priceUSD}`
-                      : `KES ${priceKES.toLocaleString()}`}
-                  </span>
                 </div>
               </div>
 
