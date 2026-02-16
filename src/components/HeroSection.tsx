@@ -222,11 +222,11 @@ const HeroSection = () => {
               Plan My Trip
             </Link>
             <a
-              href="tel:+254700000000"
+              href="tel:+254720445869"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
             >
               <Phone size={18} />
-              <span className="text-sm">Call: +254 700 000 000</span>
+              <span className="text-sm">Call: +254 720 445869</span>
             </a>
           </motion.div>
 

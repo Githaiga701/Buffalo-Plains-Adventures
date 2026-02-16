@@ -81,7 +81,7 @@ const CTASection = () => {
                 <ArrowRight size={18} />
               </Link>
               <a
-                href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
+                href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all"
@@ -107,7 +107,7 @@ const CTASection = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="tel:+254700000000"
+                  href="tel:+254720445869"
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -115,7 +115,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Call Us</p>
-                    <p className="text-white font-semibold">+254 700 000 000</p>
+                    <p className="text-white font-semibold">+254 720 445869</p>
                   </div>
                 </a>
 
