@@ -46,9 +46,6 @@ const Packages = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-md text-sm font-semibold">
-                    From ${pkg.price}
-                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">

@@ -35,7 +35,7 @@ const PackageDetail = () => {
           <div className="safari-container pb-12">
             <p className="text-accent text-sm tracking-widest uppercase mb-2">{pkg.duration}</p>
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground text-shadow-safari">{pkg.title}</h1>
-            <p className="text-primary-foreground/80 text-lg mt-2">From <span className="text-accent font-bold text-2xl">${pkg.price}</span> per person</p>
+
           </div>
         </div>
       </section>
@@ -101,10 +101,7 @@ const PackageDetail = () => {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 bg-card rounded-lg p-6 shadow-[var(--shadow-card)] space-y-6">
-              <div>
-                <p className="text-muted-foreground text-sm">Starting from</p>
-                <p className="font-heading text-3xl font-bold text-foreground">${pkg.price} <span className="text-sm font-normal text-muted-foreground">/ person</span></p>
-              </div>
+
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock size={16} /> {pkg.duration}
               </div>
