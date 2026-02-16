@@ -13,9 +13,9 @@ const packageImages: Record<string, string> = {
 };
 
 const pkgs = [
-  { id: "3-day-masai-mara", title: "3-Day Masai Mara Safari", duration: "3 Days / 2 Nights", price: 850, image: "masai-mara", highlights: ["Big Five Sightings", "Game Drives", "Maasai Village"] },
-  { id: "5-day-luxury-safari", title: "5-Day Luxury Safari", duration: "5 Days / 4 Nights", price: 2200, image: "luxury", highlights: ["Hot Air Balloon", "Private Guide", "Bush Dinner"] },
-  { id: "7-day-buffalo-plains", title: "7-Day Buffalo Plains Explorer", duration: "7 Days / 6 Nights", price: 3500, image: "explorer", highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion"] },
+  { id: "3-day-masai-mara", title: "3-Day Masai Mara Safari", duration: "3 Days / 2 Nights", image: "masai-mara", highlights: ["Big Five Sightings", "Game Drives", "Maasai Village"] },
+  { id: "5-day-luxury-safari", title: "5-Day Luxury Safari", duration: "5 Days / 4 Nights", image: "luxury", highlights: ["Hot Air Balloon", "Private Guide", "Bush Dinner"] },
+  { id: "7-day-buffalo-plains", title: "7-Day Buffalo Plains Explorer", duration: "7 Days / 6 Nights", image: "explorer", highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion"] },
 ];
 
 const FeaturedPackages = () => {
@@ -52,9 +52,6 @@ const FeaturedPackages = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-md text-sm font-semibold">
-                    From ${pkg.price}
-                  </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">
