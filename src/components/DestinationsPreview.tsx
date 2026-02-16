@@ -7,13 +7,10 @@ import amboseli from "@/assets/amboseli.jpg";
 import dianiBeach from "@/assets/diani-beach.jpg";
 import tsavo from "@/assets/tsavo.jpg";
 import lamu from "@/assets/lamu.jpg";
-import safariSunset from "@/assets/safari-sunset.jpg";
-
-// Using placeholder images for new destinations - replace with actual images when available
-const nairobiImg = safariSunset;
-const nakuruImg = safariSunset;
-const samburuImg = safariSunset;
-const meruImg = safariSunset;
+import nairobi from "@/assets/nairobi.jpg";
+import nakuru from "@/assets/lake-nakuru.jpeg";
+import samburu from "@/assets/samburu.jpg";
+import meru from "@/assets/meru.jpg";
 
 const destinationImages: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -21,10 +18,10 @@ const destinationImages: Record<string, string> = {
   "diani-beach": dianiBeach,
   tsavo: tsavo,
   lamu: lamu,
-  nairobi: nairobiImg,
-  nakuru: nakuruImg,
-  samburu: samburuImg,
-  meru: meruImg,
+  nairobi,
+  nakuru,
+  samburu,
+  meru,
 };
 
 const destinationIcons: Record<string, React.ElementType> = {
