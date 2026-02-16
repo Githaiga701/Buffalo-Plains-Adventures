@@ -244,6 +244,208 @@ export const culturalExperiences = [
   }
 ];
 
+export const beaches = [
+  {
+    id: "diani-beach",
+    name: "Diani Beach",
+    tagline: "Kenya's Premier Beach Resort",
+    description: "Award-winning 25km stretch of white sandy beach with crystal clear waters, world-class resorts, and vibrant nightlife.",
+    bestTime: "December – March, July – October",
+    activities: ["Snorkeling", "Scuba Diving", "Kite Surfing", "Dolphin Watching", "Deep Sea Fishing"],
+    highlights: ["White Sand Beach", "Marine Reserve", "Water Sports", "Coral Reefs", "Nightlife"],
+    hotels: [
+      { name: "FourForty Beach Hotel", type: "Luxury", priceRange: "$$" },
+      { name: "Southern Palms Beach Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Diani Sea Resort", type: "Budget", priceRange: "$" },
+      { name: "The Sands at Nomad", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
+  },
+  {
+    id: "watamu",
+    name: "Watamu",
+    tagline: "Marine Paradise",
+    description: "A hidden gem on the Kenyan coast known for its coral reefs, marine turtles, and the famous Watamu Marine National Park.",
+    bestTime: "October – April",
+    activities: ["Snorkeling", "Scuba Diving", "Turtle Watching", "Kite Surfing", "Dhow Safaris"],
+    highlights: ["Marine Park", "Sea Turtles", "Coral Gardens", "Kite Surfing", "Boat Trips"],
+    hotels: [
+      { name: "Hemingways Watamu", type: "Luxury", priceRange: "$$" },
+      { name: "Watamu Beach Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Turtle Bay Beach Club", type: "All-Inclusive", priceRange: "$" },
+      { name: "Kite Paradise Beach", type: "Budget", priceRange: "$" }
+    ]
+  },
+  {
+    id: "malindi",
+    name: "Malindi",
+    tagline: "Historic Coastal Town",
+    description: "A historic trading port with beautiful beaches, Italian influence, and access to the famous Marafa Depression (Hell's Kitchen).",
+    bestTime: "November – April",
+    activities: ["Deep Sea Fishing", "Snorkeling", "Historical Tours", "Marafa Depression", "Island Trips"],
+    highlights: ["Deep Sea Fishing", "Italian Architecture", "Marafa Depression", "Gateway Islands", "Cultural Heritage"],
+    hotels: [
+      { name: "Leonardo Royal Hotel", type: "Luxury", priceRange: "$$" },
+      { name: "St. Thomasuites Beach Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Malindi Bay Resort", type: "Budget", priceRange: "$" },
+      { name: "Ocean Beach Resort", type: "Mid-Range", priceRange: "$" }
+    ]
+  },
+  {
+    id: "kilifi",
+    name: "Kilifi",
+    tagline: "The Tranquil Escape",
+    description: "A peaceful retreat where the Kilifi Creek meets the Indian Ocean, perfect for those seeking relaxation and natural beauty.",
+    bestTime: "October – May",
+    activities: ["Boat Tours", "Swimming", "Sunset Cruises", "Cultural Tours", "Kayaking"],
+    highlights: ["Kilifi Creek", "Mnarani Ruins", "Quiet Beaches", "Boat Tours", "Sunset Views"],
+    hotels: [
+      { name: "The Capital Club & Resort", type: "Luxury", priceRange: "$$" },
+      { name: "Kilifi Bay Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Coconut Beach Resort", type: "Budget", priceRange: "$" },
+      { name: "Rima Rimu Eco Camp", type: "Eco-Lodge", priceRange: "$" }
+    ]
+  },
+  {
+    id: "mombasa",
+    name: "Mombasa",
+    tagline: "Kenya's Coastal Crown Jewel",
+    description: "Kenya's second-largest city with a rich history, beautiful beaches, and a blend of cultures from around the world.",
+    bestTime: "November – April",
+    activities: ["Historical Tours", "Beach Activities", "Fort Jesus", "Elephant Orphanage", "Shopping"],
+    highlights: ["Fort Jesus", "Old Town", "Beaches", "Mombasa Marine", "Cultural Heritage"],
+    hotels: [
+      { name: "Serena Beach Resort & Spa", type: "Luxury", priceRange: "$$" },
+      { name: "PrideInn Azure Hotel", type: "Mid-Range", priceRange: "$" },
+      { name: "Mombasa Beach Hotel", type: "Budget", priceRange: "$" },
+      { name: "Travellers Beach Hotel", type: "All-Inclusive", priceRange: "$" }
+    ]
+  }
+];
+
+export const recommendedPlaces = [
+  {
+    id: "mount-kenya",
+    name: "Mount Kenya",
+    tagline: "The Great Summit",
+    description: "Africa's second-highest peak offers trekking, climbing, and breathtaking alpine scenery. A paradise for adventure seekers and nature lovers.",
+    category: "Adventure",
+    bestTime: "December – March, June – September",
+    highlights: ["Summit Climbing", "Alpine Flora", "Wildlife", "Trekking", "Scenic Views"],
+    hotels: [
+      { name: "Mount Kenya Safari Club", type: "Luxury", priceRange: "$$" },
+      { name: "Naro Moru River Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Kirurumu Tented Lodge", type: "Eco-Lodge", priceRange: "$" },
+      { name: "Bvumba Mount Kenya", type: "Budget", priceRange: "$" }
+    ]
+  },
+  {
+    id: "aberdare",
+    name: "Aberdare National Park",
+    tagline: "The Cloud Forest",
+    description: "A unique high-altitude park with misty forests, waterfalls, and rare wildlife including black rhinos and African elephants.",
+    category: "Wildlife",
+    bestTime: "Year Round",
+    highlights: ["Black Rhino", "Waterfall Walks", "Tree Hotels", "Bird Watching", "Night Drives"],
+    hotels: [
+      { name: "The Ark Lodge", type: "Luxury", priceRange: "$$" },
+      { name: "Aberdare Country Club", type: "Mid-Range", priceRange: "$" },
+      { name: "Treetops Hotel", type: "Historic", priceRange: "$" },
+      { name: "Kiburu Lodge", type: "Budget", priceRange: "$" }
+    ]
+  },
+  {
+    id: "naivasha",
+    name: "Lake Naivasha",
+    tagline: "The Freshwater Lake",
+    description: "A beautiful freshwater lake near Nairobi, perfect for day trips with hippos, boat rides, and Crescent Island for walking safaris.",
+    category: "Nature",
+    bestTime: "Year Round",
+    highlights: ["Hippo Watching", "Boat Rides", "Crescent Island", "Bird Watching", "Horse Riding"],
+    hotels: [
+      { name: "Enashipai Resort & Spa", type: "Luxury", priceRange: "$$" },
+      { name: "Lake Naivasha Sopa Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Camp Carnelley", type: "Budget", priceRange: "$" },
+      { name: "Lake Naivasha Crescent Island Camp", type: "Eco-Lodge", priceRange: "$" }
+    ]
+  },
+  {
+    id: "kakamega",
+    name: "Kakamega Rainforest",
+    tagline: "Tropical Paradise",
+    description: "Kenya's last remaining tropical rainforest is a biodiversity hotspot with unique birds, butterflies, and primate species.",
+    category: "Nature",
+    bestTime: "November – April",
+    highlights: ["Bird Watching", "Butterfly Gardens", "Primate Tracking", "Nature Walks", "Canoeing"],
+    hotels: [
+      { name: "Rondo Retreat", type: "Luxury", priceRange: "$$" },
+      { name: "Kakamega Golf Hotel", type: "Mid-Range", priceRange: "$" },
+      { name: "Litsakala Guest House", type: "Budget", priceRange: "$" },
+      { name: "Coconut Beach Resort", type: "Budget", priceRange: "$" }
+    ]
+  }
+];
+
+export const maasailand = [
+  {
+    id: "masai-mara-main",
+    name: "Masai Mara Main Reserve",
+    tagline: "The Ultimate Safari",
+    description: "World-famous for the Great Migration and exceptional Big Five sightings. The most iconic safari destination in Africa.",
+    bestTime: "July – October (Migration)",
+    activities: ["Game Drives", "Hot Air Balloon", "Bush Walks", "Maasai Visits"],
+    highlights: ["Great Migration", "Big Five", "Balloon Safari", "Mara River"],
+    hotels: [
+      { name: "Mara Serena Safari Lodge", type: "Luxury", priceRange: "$$" },
+      { name: "Keekorok Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Mara Adventure Camp", type: "Budget", priceRange: "$" },
+      { name: "Bateleur Camp", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
+  },
+  {
+    id: "mara-north",
+    name: "Mara North Conservancy",
+    tagline: "Exclusive Safari",
+    description: "A private conservancy offering exclusive game drives, walking safaris, and fewer crowds with premium lodges.",
+    bestTime: "Year Round",
+    activities: ["Private Game Drives", "Walking Safaris", "Night Drives"],
+    highlights: ["Exclusive Access", "Lion Sightings", "Luxury Camps"],
+    hotels: [
+      { name: "Mara Plains Camp", type: "Ultra-Luxury", priceRange: "$$" },
+      { name: "Kichwa Mara Camp", type: "Luxury", priceRange: "$$" },
+      { name: "Karen Lucas Camp", type: "Mid-Range", priceRange: "$" },
+      { name: "Mara Rest Camp", type: "Budget", priceRange: "$" }
+    ]
+  },
+  {
+    id: "mara-east",
+    name: "Mara East Conservancy",
+    tagline: "Wilderness Sanctuary",
+    description: "A pristine wilderness area with excellent wildlife viewing and authentic Maasai cultural experiences.",
+    bestTime: "June – October",
+    activities: ["Game Drives", "Cultural Visits", "Bush Breakfast"],
+    highlights: ["Wilderness", "Big Cats", "Maasai Culture"],
+    hotels: [
+      { name: "Governors' Il Moran", type: "Luxury", priceRange: "$$" },
+      { name: "Mara Expedition Camp", type: "Luxury", priceRange: "$$" },
+      { name: "Kuria Hills Lodge", type: "Mid-Range", priceRange: "$" }
+    ]
+  },
+  {
+    id: "ollenkuit",
+    name: "Ol Pejeta Conservancy",
+    tagline: "Rhino Sanctuary",
+    description: "Home to the largest black rhino sanctuary in East Africa and the last two northern white rhinos on Earth.",
+    bestTime: "Year Round",
+    activities: ["Game Drives", "Rhino Tracking", "Chimp Sanctuary"],
+    highlights: ["Black Rhinos", "Northern White Rhinos", "Chimpanzees"],
+    hotels: [
+      { name: "Sweetwaters Serena Camp", type: "Luxury", priceRange: "$$" },
+      { name: "Ol Pejeta Bush Camp", type: "Eco-Lodge", priceRange: "$" },
+      { name: "Eco-Bushtops Camp", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
+  }
+];
+
 export const testimonials = [
   {
     name: "Sarah & James Mitchell",
