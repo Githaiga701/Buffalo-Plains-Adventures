@@ -7,6 +7,12 @@ export const destinations = [
     bestTime: "July – October (Great Migration)",
     activities: ["Game Drives", "Hot Air Balloon Safari", "Maasai Village Visit", "Walking Safaris", "Photography"],
     highlights: ["Great Wildebeest Migration", "Big Five Sightings", "Maasai Culture", "Balloon Safaris"],
+    hotels: [
+      { name: "Mara Serena Safari Lodge", type: "Luxury", priceRange: "$$" },
+      { name: "Keekorok Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Mara Adventure Camp", type: "Budget", priceRange: "$" },
+      { name: "Bateleur Camp", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
   },
   {
     id: "amboseli",
@@ -16,6 +22,12 @@ export const destinations = [
     bestTime: "June – October (Dry Season)",
     activities: ["Elephant Watching", "Bird Watching", "Photography", "Cultural Visits", "Nature Walks"],
     highlights: ["Mt. Kilimanjaro Views", "Elephant Herds", "Observation Hill", "Swamp Wildlife"],
+    hotels: [
+      { name: "Ol Tukai Lodge", type: "Luxury", priceRange: "$$" },
+      { name: "Amboseli Serena Safari Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Kibo Safari Camp", type: "Budget", priceRange: "$" },
+      { name: "Tortilis Camp", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
   },
   {
     id: "diani-beach",
@@ -25,6 +37,12 @@ export const destinations = [
     bestTime: "December – March, July – October",
     activities: ["Snorkeling", "Scuba Diving", "Kite Surfing", "Dolphin Watching", "Deep Sea Fishing"],
     highlights: ["Crystal Clear Waters", "Marine Reserve", "Water Sports", "Coral Reefs"],
+    hotels: [
+      { name: "FourForty Beach Hotel", type: "Luxury", priceRange: "$$" },
+      { name: "Southern Palms Beach Resort", type: "Mid-Range", priceRange: "$" },
+      { name: "Diani Sea Resort", type: "Budget", priceRange: "$" },
+      { name: "The Sands at Nomad", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
   },
   {
     id: "tsavo",
@@ -34,6 +52,12 @@ export const destinations = [
     bestTime: "June – October, January – February",
     activities: ["Game Drives", "Bird Watching", "Rock Climbing", "Lava Flow Exploration", "Camping"],
     highlights: ["Red Elephants", "Mzima Springs", "Shetani Lava Flow", "Mudanda Rock"],
+    hotels: [
+      { name: "Voyager Ziwani Camp", type: "Luxury", priceRange: "$$" },
+      { name: "Tsavo West Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Largest Wildlife Camp", type: "Budget", priceRange: "$" },
+      { name: "Kigio Wildlife Camp", type: "Eco-Lodge", priceRange: "$" }
+    ]
   },
   {
     id: "lamu",
@@ -43,7 +67,73 @@ export const destinations = [
     bestTime: "July – October, December – March",
     activities: ["Dhow Sailing", "Historical Walking Tour", "Donkey Rides", "Snorkeling", "Swahili Cooking Classes"],
     highlights: ["UNESCO Old Town", "Dhow Festivals", "Swahili Culture", "Pristine Beaches"],
+    hotels: [
+      { name: "Peponi Hotel", type: "Luxury", priceRange: "$$" },
+      { name: "Kizingo Beach Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Lamu House", type: "Boutique", priceRange: "$" },
+      { name: "Manda Bay Island Resort", type: "Ultra-Luxury", priceRange: "$$" }
+    ]
   },
+  {
+    id: "nairobi",
+    name: "Nairobi",
+    tagline: "The Green City in the Sun",
+    description: "Kenya's vibrant capital offers a unique blend of urban attractions and wildlife experiences, from elephant sanctuaries to cultural museums.",
+    bestTime: "Year Round",
+    activities: ["Giraffe Centre", "Karen Blixen Museum", "Nairobi National Park", "Shopping", "Cultural Tours"],
+    highlights: ["Nairobi National Park", "Giraffe Manor", "Kazuri Beads", "Carnivore Restaurant", "Sheldrick Elephant Orphanage"],
+    hotels: [
+      { name: "Giraffe Manor", type: "Ultra-Luxury", priceRange: "$$" },
+      { name: "Nairobi Serena Hotel", type: "Luxury", priceRange: "$$" },
+      { name: "Fairmont The Norfolk", type: "Luxury", priceRange: "$$" },
+      { name: "Eka Hotel", type: "Mid-Range", priceRange: "$" }
+    ]
+  },
+  {
+    id: "nakuru",
+    name: "Lake Nakuru",
+    tagline: "The Pink Lake Phenomenon",
+    description: "Famous for millions of flamingos creating a pink blanket on the lake, Nakuru also offers excellent rhino viewing and diverse birdlife.",
+    bestTime: "June – October, January – February",
+    activities: ["Game Drives", "Bird Watching", "Nature Walks", "Photography", "Cycling"],
+    highlights: ["Flamingos", "Rhino Sanctuary", "Lake View", "Baboon Cliff", "Malkmari Falls"],
+    hotels: [
+      { name: "Lake Nakuru Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Flamingo Hill Camp", type: "Budget", priceRange: "$" },
+      { name: "Sarova Lion Hill Lodge", type: "Luxury", priceRange: "$$" },
+      { name: "Ziwa Bush Lodge", type: "Eco-Lodge", priceRange: "$" }
+    ]
+  },
+  {
+    id: "samburu",
+    name: "Samburu",
+    tagline: "Land of the Nomads",
+    description: "Located in Kenya's remote northern region, Samburu offers unique wildlife species not found elsewhere and authentic cultural encounters with the Samburu people.",
+    bestTime: "June – October, December – March",
+    activities: ["Game Drives", "Cultural Visits", "River Walks", "Star Gazing", "Camel Trekking"],
+    highlights: ["Grevy's Zebra", "Reticulated Giraffe", "Samburu Culture", "Ewaso Ng'iro River", "Unique Wildlife"],
+    hotels: [
+      { name: "Sasaab Camp", type: "Ultra-Luxury", priceRange: "$$" },
+      { name: "Sarova Shaba Game Lodge", type: "Luxury", priceRange: "$$" },
+      { name: " Samburu Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Camp Dudute", type: "Eco-Lodge", priceRange: "$" }
+    ]
+  },
+  {
+    id: "meru",
+    name: "Meru",
+    tagline: "Untouched Wilderness",
+    description: "One of Kenya's most pristine and least-visited parks, Meru offers classic savanna landscapes, rivers, and the legendary Elsa's Kopje.",
+    bestTime: "June – October, December – March",
+    activities: ["Game Drives", "Walking Safaris", "Fishing", "Bird Watching", "Camping"],
+    highlights: ["Elsa's Kopje", "Tana River", "Rhino Tracking", "Mogoggwato", "Wildlife Diversity"],
+    hotels: [
+      { name: "Elsa's Kopje", type: "Ultra-Luxury", priceRange: "$$" },
+      { name: "Meru Mulika Lodge", type: "Mid-Range", priceRange: "$" },
+      { name: "Rhino River Camp", type: "Eco-Lodge", priceRange: "$" },
+      { name: "Ikanga Camp", type: "Budget", priceRange: "$" }
+    ]
+  }
 ];
 
 export const packages = [
@@ -101,6 +191,57 @@ export const packages = [
     exclusions: ["International flights", "Travel insurance", "Alcoholic beverages", "Tips & gratuities"],
     accommodation: "Luxury lodges & beachfront resort",
   },
+];
+
+export const culturalExperiences = [
+  {
+    id: "maasai-village",
+    name: "Maasai Village Visit",
+    description: "Immerse yourself in the traditional Maasai culture. Visit a traditional Maasai village (manyatta), learn about their customs, dances, and way of life.",
+    location: "Masai Mara / Amboseli",
+    duration: "Half Day",
+    highlights: ["Traditional Dance Performance", "Beadwork Workshop", "Cattle Herding Experience", "Meet Local Warriors"]
+  },
+  {
+    id: "maasai-beading",
+    name: "Maasai Beadwork Experience",
+    description: "Learn the ancient art of Maasai beadwork from local women. Create your own traditional jewelry while supporting local artisan communities.",
+    location: "Masai Mara",
+    duration: "2-3 Hours",
+    highlights: ["Beadwork Tutorial", "Traditional Designs", "Take Home Your Creation", "Support Local Women"]
+  },
+  {
+    id: "swahili-cooking",
+    name: "Swahili Cooking Class",
+    description: "Discover the rich flavors of Swahili cuisine in Lamu. Visit the local market and learn to cook traditional dishes with fresh ingredients.",
+    location: "Lamu",
+    duration: "Half Day",
+    highlights: ["Market Tour", "Traditional Recipes", "Coconut Curry", "Swahili Tea Ceremony"]
+  },
+  {
+    id: "samburu-culture",
+    name: "Samburu Cultural Experience",
+    description: "Visit a traditional Samburu village and learn about their unique semi-nomadic lifestyle, warrior traditions, and colorful beadwork.",
+    location: "Samburu",
+    duration: "Half Day",
+    highlights: ["Warrior Dances", "Cattle Herding", "Traditional Songs", "Beadwork Demonstration"]
+  },
+  {
+    id: "karen-blixen",
+    name: "Karen Blixen Museum",
+    description: "Step back in time at the historic Karen Blixen Museum, the former home of the famous Danish author of 'Out of Africa'.",
+    location: "Nairobi",
+    duration: "2-3 Hours",
+    highlights: ["Colonial History", "Coffee Plantation", "Historic Architecture", "Scenic Gardens"]
+  },
+  {
+    id: "giraffe-centre",
+    name: "Giraffe Centre Experience",
+    description: "Get up close and personal with endangered Rothschild giraffes at the Nairobi Giraffe Centre. Feed and learn about conservation efforts.",
+    location: "Nairobi",
+    duration: "2 Hours",
+    highlights: ["Feed Giraffes", "Conservation Education", "Nature Walk", "Bird Watching"]
+  }
 ];
 
 export const testimonials = [

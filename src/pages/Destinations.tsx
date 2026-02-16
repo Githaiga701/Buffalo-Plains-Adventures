@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import { destinations } from "@/lib/data";
-import { MapPin, Calendar, Activity } from "lucide-react";
+import { MapPin, Calendar, Activity, Building2, Star } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
 import amboseli from "@/assets/amboseli.jpg";
 import dianiBeach from "@/assets/diani-beach.jpg";
 import tsavo from "@/assets/tsavo.jpg";
 import lamu from "@/assets/lamu.jpg";
+import safariSunset from "@/assets/safari-sunset.jpg";
+
+// Using placeholder images for new destinations - replace with actual images when available
+const nairobiImg = safariSunset;
+const nakuruImg = safariSunset;
+const samburuImg = safariSunset;
+const meruImg = safariSunset;
 
 const images: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -13,6 +20,10 @@ const images: Record<string, string> = {
   "diani-beach": dianiBeach,
   tsavo,
   lamu,
+  nairobi: nairobiImg,
+  nakuru: nakuruImg,
+  samburu: samburuImg,
+  meru: meruImg,
 };
 
 const Destinations = () => {
@@ -74,6 +85,29 @@ const Destinations = () => {
                     <span key={h} className="text-xs bg-muted text-muted-foreground px-3 py-1.5 rounded-md">{h}</span>
                   ))}
                 </div>
+
+                {/* Hotels Section */}
+                {dest.hotels && dest.hotels.length > 0 && (
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <h4 className="font-heading text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                      <Building2 size={18} className="text-secondary" />
+                      Recommended Accommodation
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {dest.hotels.map((hotel, idx) => (
+                        <div key={idx} className="flex items-center justify-between bg-muted/50 p-3 rounded-lg">
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{hotel.name}</p>
+                            <p className="text-xs text-muted-foreground">{hotel.type}</p>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-xs text-secondary font-medium">{hotel.priceRange}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
