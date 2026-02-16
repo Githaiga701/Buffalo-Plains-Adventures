@@ -204,29 +204,31 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col md:flex-row gap-4 justify-center items-center md:items-stretch"
           >
             <Link
               to="/packages"
-              className="group inline-flex items-center gap-2 bg-[#F4A261] text-[#0B3D2E] px-8 py-4 rounded-lg font-bold text-base hover:bg-[#e08f4d] transition-all transform hover:scale-105"
+              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#F4A261] text-[#0B3D2E] px-6 md:px-8 py-4 rounded-lg font-bold text-sm md:text-base hover:bg-[#e08f4d] transition-all transform hover:scale-105"
             >
-              <Search size={20} />
-              Explore Safari Packages
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+              <Search size={18} className="md:w-5 md:h-5" />
+              <span className="hidden sm:inline">Explore Safari Packages</span>
+              <span className="sm:hidden">Explore Packages</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform hidden sm:inline" size={18} />
             </Link>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white/20 transition-all"
+              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 md:px-8 py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-white/20 transition-all"
             >
-              <Calendar size={20} />
+              <Calendar size={18} className="md:w-5 md:h-5" />
               Plan My Trip
             </Link>
             <a
               href="tel:+254720445869"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+              className="w-full md:w-auto inline-flex items-center justify-center md:justify-start gap-2 text-white/80 hover:text-white transition-colors text-sm md:text-base"
             >
-              <Phone size={18} />
-              <span className="text-sm">Call: +254 720 445869</span>
+              <Phone size={16} className="flex-shrink-0" />
+              <span className="hidden md:inline">Call: +254 720 445869</span>
+              <span className="md:hidden">+254 720 445869</span>
             </a>
           </motion.div>
 
@@ -235,23 +237,30 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-6 text-white/60 text-sm"
+            className="mt-10 flex flex-wrap items-center justify-center gap-3 md:gap-6 text-white/60 text-xs md:text-sm px-2"
           >
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-green-400" />
-              <span>Free Safari Planning</span>
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <CheckCircle2 size={14} className="text-green-400 flex-shrink-0 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">Free Safari Planning</span>
+              <span className="sm:hidden">Free Planning</span>
             </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-green-400" />
-              <span>Best Price Guarantee</span>
+            <div className="hidden sm:flex items-center gap-2 text-white/40">•</div>
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <CheckCircle2 size={14} className="text-green-400 flex-shrink-0 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">Best Price Guarantee</span>
+              <span className="sm:hidden">Best Prices</span>
             </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-green-400" />
-              <span>24/7 Support</span>
+            <div className="hidden sm:flex items-center gap-2 text-white/40">•</div>
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <CheckCircle2 size={14} className="text-green-400 flex-shrink-0 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">24/7 Support</span>
+              <span className="sm:hidden">24/7 Help</span>
             </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 size={16} className="text-green-400" />
-              <span>Instant Booking</span>
+            <div className="hidden sm:flex items-center gap-2 text-white/40">•</div>
+            <div className="flex items-center gap-2 whitespace-nowrap">
+              <CheckCircle2 size={14} className="text-green-400 flex-shrink-0 md:w-4 md:h-4" />
+              <span className="hidden sm:inline">Instant Booking</span>
+              <span className="sm:hidden">Quick Booking</span>
             </div>
           </motion.div>
         </div>

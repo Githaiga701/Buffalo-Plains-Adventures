@@ -71,23 +71,25 @@ const CTASection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#F4A261] text-[#0B3D2E] px-8 py-4 rounded-lg font-bold hover:bg-[#e08f4d] transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 bg-[#F4A261] text-[#0B3D2E] px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base hover:bg-[#e08f4d] transition-all transform hover:scale-105 w-full sm:w-auto"
               >
-                <Calendar size={20} />
-                Plan My Trip
-                <ArrowRight size={18} />
+                <Calendar size={18} className="md:w-5 md:h-5" />
+                <span className="hidden sm:inline">Plan My Trip</span>
+                <span className="sm:hidden">Plan Trip</span>
+                <ArrowRight size={16} className="hidden md:inline" />
               </Link>
               <a
                 href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-white/20 transition-all w-full sm:w-auto"
               >
-                <MessageCircle size={20} />
-                Chat on WhatsApp
+                <MessageCircle size={18} className="md:w-5 md:h-5" />
+                <span className="hidden sm:inline">Chat on WhatsApp</span>
+                <span className="sm:hidden">WhatsApp</span>
               </a>
             </div>
           </motion.div>
