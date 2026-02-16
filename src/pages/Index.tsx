@@ -8,6 +8,7 @@ import CulturalExperiences from "@/components/CulturalExperiences";
 import BeachDestinations from "@/components/BeachDestinations";
 import RecommendedPlaces from "@/components/RecommendedPlaces";
 import Maasailand from "@/components/Maasailand";
+import ResortsAndRestaurants from "@/components/ResortsAndRestaurants";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <BeachDestinations />
       <Maasailand />
       <RecommendedPlaces />
+      <ResortsAndRestaurants />
       <FeaturedPackages />
       <CulturalExperiences />
       <WhyChooseUs />
