@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Calendar, Camera, Sunrise, Palmtree, Mountain, Waves, Landmark } from "lucide-react";
+import { MapPin, Calendar, Camera, Sunrise, Palmtree, Mountain, Waves, Landmark, Building2, Bird } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
 import amboseli from "@/assets/amboseli.jpg";
 import dianiBeach from "@/assets/diani-beach.jpg";
 import tsavo from "@/assets/tsavo.jpg";
 import lamu from "@/assets/lamu.jpg";
+import safariSunset from "@/assets/safari-sunset.jpg";
+
+// Using placeholder images for new destinations - replace with actual images when available
+const nairobiImg = safariSunset;
+const nakuruImg = safariSunset;
+const samburuImg = safariSunset;
+const meruImg = safariSunset;
 
 const destinationImages: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -14,6 +21,10 @@ const destinationImages: Record<string, string> = {
   "diani-beach": dianiBeach,
   tsavo: tsavo,
   lamu: lamu,
+  nairobi: nairobiImg,
+  nakuru: nakuruImg,
+  samburu: samburuImg,
+  meru: meruImg,
 };
 
 const destinationIcons: Record<string, React.ElementType> = {
@@ -22,6 +33,10 @@ const destinationIcons: Record<string, React.ElementType> = {
   "diani-beach": Waves,
   tsavo: Sunrise,
   lamu: Landmark,
+  nairobi: Building2,
+  nakuru: Bird,
+  samburu: Sunrise,
+  meru: Mountain,
 };
 
 const destinationData = [
@@ -70,6 +85,42 @@ const destinationData = [
     highlights: ["Old Town", "Dhow Sailing", "Swahili Cuisine", "Donkey Sanctuaries"],
     icon: "lamu"
   },
+  { 
+    id: "nairobi", 
+    name: "Nairobi", 
+    tagline: "The Green City in the Sun",
+    description: "Kenya's vibrant capital with elephant sanctuaries, cultural museums, and wildlife experiences right on the city outskirts",
+    bestTime: "Year Round",
+    highlights: ["Giraffe Manor", "Karen Blixen", "Elephant Orphanage", "Shopping"],
+    icon: "nairobi"
+  },
+  { 
+    id: "nakuru", 
+    name: "Lake Nakuru", 
+    tagline: "The Pink Lake",
+    description: "Famous for millions of flamingos creating a pink carpet on the lake, plus excellent rhino and bird watching",
+    bestTime: "Jun - Oct, Jan - Feb",
+    highlights: ["Flamingos", "Rhinos", "Bird Watching", "Lake Views"],
+    icon: "nakuru"
+  },
+  { 
+    id: "samburu", 
+    name: "Samburu", 
+    tagline: "Land of the Nomads",
+    description: "Remote northern Kenya with unique wildlife species like Grevy's zebra and reticulated giraffe",
+    bestTime: "Jun - Oct, Dec - Mar",
+    highlights: ["Grevy's Zebra", "Samburu Culture", "Reticulated Giraffe", "River Walks"],
+    icon: "samburu"
+  },
+  { 
+    id: "meru", 
+    name: "Meru", 
+    tagline: "Untouched Wilderness",
+    description: "One of Kenya's most pristine parks with classic savanna landscapes and the legendary Elsa's Kopje",
+    bestTime: "Jun - Oct, Dec - Mar",
+    highlights: ["Elsa's Kopje", "Rhino Tracking", "Tana River", "Eco-Safaris"],
+    icon: "meru"
+  }
 ];
 
 const DestinationsPreview = () => {
@@ -103,9 +154,9 @@ const DestinationsPreview = () => {
           </p>
         </motion.div>
 
-        {/* Featured Destinations Grid */}
+        {/* Featured Destinations Grid - Shows 6 destinations */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {destinationData.slice(0, 3).map((dest, i) => {
+          {destinationData.slice(0, 6).map((dest, i) => {
             const IconComponent = destinationIcons[dest.icon];
             return (
               <motion.div
@@ -175,9 +226,9 @@ const DestinationsPreview = () => {
           })}
         </div>
 
-        {/* Secondary Destinations Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {destinationData.slice(3).map((dest, i) => {
+        {/* Secondary Destinations Row - Shows remaining destinations */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {destinationData.slice(6).map((dest, i) => {
             const IconComponent = destinationIcons[dest.icon];
             return (
               <motion.div
