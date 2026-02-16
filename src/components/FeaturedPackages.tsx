@@ -62,12 +62,13 @@ const FeaturedPackages = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-[#F4A261]/30"
+              className="group"
             >
               <Link
                 to={`/packages/${pkg.id}`}
-                className="group block bg-card rounded-lg overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-safari)] transition-shadow duration-300"
+                className="flex flex-col h-full bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-[#F4A261]/30"
               >
+                {/* Image Section */}
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={packageImages[pkg.image]}
@@ -76,39 +77,38 @@ const FeaturedPackages = () => {
                     loading="lazy"
                   />
                 </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Title */}
+                  <h3 className="font-heading text-xl font-bold text-foreground leading-tight mb-3">
+                    {pkg.title}
+                  </h3>
+
+                  {/* Duration & Location */}
+                  <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">
+                    <span className="flex items-center gap-1"><Clock size={14} /> {pkg.duration}</span>
+                    <span className="flex items-center gap-1"><MapPin size={14} /> Kenya</span>
+                  </div>
+
+                  {/* Highlights */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {pkg.highlights.slice(0, 3).map((h) => (
+                      <span key={h} className="text-xs bg-muted text-muted-foreground px-3 py-1.5 rounded-md">
+                        {h}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="mt-auto">
+                    <button className="group/btn w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-all inline-flex items-center justify-center">
+                      <span>View Details</span>
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
               </Link>
-
-              {/* Content */}
-              <div className="p-6">
-                {/* Title */}
-                <h3 className="font-heading text-xl font-bold text-foreground leading-tight mb-3">
-                  {pkg.title}
-                </h3>
-
-                {/* Duration & Location */}
-                <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">
-                  <span className="flex items-center gap-1"><Clock size={14} /> {pkg.duration}</span>
-                  <span className="flex items-center gap-1"><MapPin size={14} /> Kenya</span>
-                </div>
-
-                {/* Highlights */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {pkg.highlights.slice(0, 3).map((h) => (
-                    <span key={h} className="text-xs bg-muted text-muted-foreground px-3 py-1.5 rounded-md">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
-                <Link
-                  to={`/packages/${pkg.id}`}
-                  className="group/btn inline-flex items-center justify-center w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
-                >
-                  <span>View Details</span>
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
-              </div>
             </motion.div>
           ))}
         </div>
