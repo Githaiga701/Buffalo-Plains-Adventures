@@ -441,8 +441,140 @@ export const maasailand = [
     hotels: [
       { name: "Sweetwaters Serena Camp", type: "Luxury", priceRange: "$$" },
       { name: "Ol Pejeta Bush Camp", type: "Eco-Lodge", priceRange: "$" },
-      { name: "Eco-Bushtops Camp", type: "Ultra-Luxury", priceRange: "$$" }
+      { name: "Eco-Bushtops Camp", type: "Ultra-Luxury", priceRange: "$" }
     ]
+  }
+];
+
+export const resorts = [
+  {
+    id: "giraffe-manor",
+    name: "Giraffe Manor",
+    location: "Nairobi",
+    type: "Luxury Boutique",
+    description: "The famous boutique hotel where endangered Rothschild giraffes stick their heads through the windows during breakfast.",
+    priceRange: "$$",
+    rating: 4.9,
+    highlights: ["Giraffe Feeding", "Scenic Gardens", "Luxury Suites", "Close to City"],
+    amenities: ["Free WiFi", "Restaurant", "Spa", "Airport Transfer"]
+  },
+  {
+    id: "mara-serena",
+    name: "Mara Serena Safari Lodge",
+    location: "Masai Mara",
+    type: "Luxury Lodge",
+    description: "Stunning lodge perched on a hill overlooking the Mara River, offering breathtaking views of the savanna.",
+    priceRange: "$$",
+    rating: 4.8,
+    highlights: ["River Views", "Game Drives", "Pool", "Bush Dinners"],
+    amenities: ["Restaurant", "Bar", "Pool", "Gift Shop"]
+  },
+  {
+    id: "ol-tukai",
+    name: "Ol Tukai Lodge Amboseli",
+    location: "Amboseli",
+    type: "Luxury Lodge",
+    description: "Award-winning lodge with direct views of Mount Kilimanjaro and access to elephant herds.",
+    priceRange: "$$",
+    rating: 4.7,
+    highlights: ["Kilimanjaro Views", "Elephant Herds", "Bird Watching", "Cultural Visits"],
+    amenities: ["Restaurant", "Bar", "Pool", "Conference Facility"]
+  },
+  {
+    id: "hemingways-watamu",
+    name: "Hemingways Watamu",
+    location: "Watamu",
+    type: "Luxury Resort",
+    description: "Exclusive beach resort offering world-class diving, fishing, and relaxation on the Kenyan coast.",
+    priceRange: "$$",
+    rating: 4.9,
+    highlights: ["Private Beach", "Diving", "Deep Sea Fishing", "Spa"],
+    amenities: ["Beach Access", "Restaurant", "Bar", "Water Sports"]
+  },
+  {
+    id: "southern-palms",
+    name: "Southern Palms Beach Resort",
+    location: "Diani Beach",
+    type: "Resort",
+    description: "Popular all-inclusive resort on the famous Diani Beach with excellent facilities for families.",
+    priceRange: "$",
+    rating: 4.5,
+    highlights: ["Beachfront", "Pool", "Water Sports", "Kids Club"],
+    amenities: ["Restaurant", "Bar", "Pool", "Gym"]
+  },
+  {
+    id: "fairmont-nairobi",
+    name: "Fairmont The Norfolk",
+    location: "Nairobi",
+    type: "Luxury Hotel",
+    description: "Historic luxury hotel in Nairobi's CBD offering fine dining and elegant accommodations since 1904.",
+    priceRange: "$$",
+    rating: 4.7,
+    highlights: ["Historic Charm", "Fine Dining", "City Location", "Luxury Suites"],
+    amenities: ["Restaurant", "Bar", "Gym", "Spa"]
+  }
+];
+
+export const restaurants = [
+  {
+    id: "carnivore",
+    name: "Carnivore Restaurant",
+    location: "Nairobi",
+    type: "Kenyan BBQ",
+    description: "Famous open-air restaurant serving a variety of meat including crocodile, camel, and traditional Kenyan BBQ.",
+    priceRange: "$",
+    rating: 4.5,
+    highlights: ["Cultural Show", "Variety Meats", "Open Air", "Safari Theme"]
+  },
+  {
+    id: "talisman",
+    name: "Talisman Restaurant",
+    location: "Nairobi",
+    type: "Fusion",
+    description: "Award-winning restaurant offering creative fusion cuisine in a beautiful garden setting.",
+    priceRange: "$$",
+    rating: 4.8,
+    highlights: ["Garden Setting", "Fusion Cuisine", "Fine Dining", "Wine List"]
+  },
+  {
+    id: "mombasa-gres",
+    name: "Mombasa Grill",
+    location: "Mombasa",
+    type: "Seafood",
+    description: "Premium seafood restaurant on the coast serving fresh catches and Swahili-inspired dishes.",
+    priceRange: "$$",
+    rating: 4.7,
+    highlights: ["Fresh Seafood", "Ocean Views", "Swahili Cuisine", "Romantic Setting"]
+  },
+  {
+    id: "diani-chand",
+    name: "The Chandila",
+    location: "Diani Beach",
+    type: "Indian",
+    description: "Popular Indian restaurant in Diani offering authentic North and South Indian cuisine.",
+    priceRange: "$",
+    rating: 4.6,
+    highlights: ["Authentic Indian", "Beach Location", "Curry Specialties", "Vegetarian Options"]
+  },
+  {
+    id: "nairobi-italian",
+    name: "Mama Rock",
+    location: "Nairobi",
+    type: "Italian",
+    description: "Trendy Italian restaurant known for its wood-fired pizzas and homemade pasta.",
+    priceRange: "$",
+    rating: 4.5,
+    highlights: ["Wood-Fired Pizza", "Homemade Pasta", "Trendy Vibe", "Outdoor Seating"]
+  },
+  {
+    id: "mara-bush",
+    name: "Mara River Bush Dinner",
+    location: "Masai Mara",
+    type: "Bush Dining",
+    description: "Romantic bush dinner experience in the heart of the Mara with traditional Maasai entertainment.",
+    priceRange: "$$",
+    rating: 4.9,
+    highlights: ["Bush Setting", " Maasai Dance", "Romantic", "Safari Experience"]
   }
 ];
 

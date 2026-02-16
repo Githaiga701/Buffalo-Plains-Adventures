@@ -39,6 +39,30 @@ Add these images to `src/assets/` folder:
 | `mara-east.jpg` | Mara East Conservancy | Mara East |
 | `ol-pejeta.jpg` | Ol Pejeta rhino sanctuary | Ol Pejeta |
 
+## Resorts Images
+Add these images to `src/assets/` folder:
+
+| Filename | Description | Resort |
+|----------|-------------|--------|
+| `giraffe-manor.jpg` | Giraffe Manor hotel | Giraffe Manor |
+| `mara-serena.jpg` | Mara Serena Lodge | Mara Serena |
+| `ol-tukai.jpg` | Ol Tukai Lodge | Amboseli |
+| `hemingways-watamu.jpg` | Hemingways Watamu | Watamu |
+| `southern-palms.jpg` | Southern Palms Resort | Diani |
+| `fairmont-norfolk.jpg` | Fairmont The Norfolk | Nairobi |
+
+## Restaurant Images
+Add these images to `src/assets/` folder:
+
+| Filename | Description | Restaurant |
+|----------|-------------|------------|
+| `carnivore-restaurant.jpg` | Carnivore Restaurant | Nairobi |
+| `talisman-restaurant.jpg` | Talisman Restaurant | Nairobi |
+| `mombasa-grill.jpg` | Mombasa Grill | Mombasa |
+| `diani-chand.jpg` | The Chandila | Diani |
+| `mama-rock.jpg` | Mama Rock | Nairobi |
+| `mara-bush-dinner.jpg` | Mara River Bush Dinner | Masai Mara |
+
 ## Cultural Experience Images
 Add these images to `src/assets/` folder:
 
