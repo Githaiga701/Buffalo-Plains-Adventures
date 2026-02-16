@@ -1,8 +1,3 @@
-/**
- * Logging Utility
- * Provides structured logging for payment operations
- */
-
 export type LogLevel = "info" | "warn" | "error" | "debug";
 
 export interface LogEntry {
@@ -71,9 +66,6 @@ class Logger {
     console.debug(`[${log.timestamp}] DEBUG [${context}]: ${message}`, data);
   }
 
-  /**
-   * Logs transaction initiation
-   */
   logTransactionStart(context: string, orderId: string, amount: number, method: string): void {
     this.info(`Transaction initiated for ${method}`, context, {
       orderId,
@@ -82,9 +74,6 @@ class Logger {
     });
   }
 
-  /**
-   * Logs transaction success
-   */
   logTransactionSuccess(context: string, orderId: string, transactionId: string, amount: number): void {
     this.info(`Transaction completed successfully`, context, {
       orderId,
@@ -93,9 +82,6 @@ class Logger {
     });
   }
 
-  /**
-   * Logs transaction failure
-   */
   logTransactionFailure(context: string, orderId: string, error: Error | string, additionalData?: Record<string, any>): void {
     this.error(
       `Transaction failed for order`,
@@ -108,9 +94,6 @@ class Logger {
     );
   }
 
-  /**
-   * Logs webhook received
-   */
   logWebhookReceived(context: string, webhookId: string, eventType: string): void {
     this.info(`Webhook received`, context, {
       webhookId,
@@ -118,9 +101,6 @@ class Logger {
     });
   }
 
-  /**
-   * Logs webhook processing result
-   */
   logWebhookProcessed(context: string, webhookId: string, success: boolean, details?: Record<string, any>): void {
     const level = success ? "info" : "warn";
     if (level === "info") {

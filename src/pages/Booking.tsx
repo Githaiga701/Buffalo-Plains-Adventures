@@ -2,9 +2,9 @@ import { useState } from "react";
 import { createBooking } from "@/services/bookingService";
 
 const samplePackages = [
-  { id: "pkg-1", title: "Classic Masai Mara Safari", price: 2500 },
-  { id: "pkg-2", title: "Amboseli & Kilimanjaro Views", price: 1800 },
-  { id: "pkg-3", title: "Diani Beach & Coastal Escape", price: 1400 },
+  { id: "pkg-1", title: "Classic Masai Mara Safari" },
+  { id: "pkg-2", title: "Amboseli & Kilimanjaro Views" },
+  { id: "pkg-3", title: "Diani Beach & Coastal Escape" },
 ];
 
 const Booking = () => {
@@ -44,7 +44,6 @@ const Booking = () => {
               <label key={p.id} className="p-4 border rounded flex items-center justify-between">
                 <div>
                   <div className="font-semibold">{p.title}</div>
-                  <div className="text-sm text-muted-foreground">${p.price} per person</div>
                 </div>
                 <input type="radio" name="pkg" checked={selected === p.id} onChange={() => setSelected(p.id)} />
               </label>

@@ -25,45 +25,9 @@ const packageImages: Record<string, string> = {
 };
 
 const pkgs = [
-  { 
-    id: "3-day-masai-mara", 
-    title: "3-Day Masai Mara Safari", 
-    duration: "3 Days / 2 Nights", 
-    price: 850, 
-    image: "masai-mara", 
-    rating: 4.9,
-    reviews: 128,
-    highlights: ["Big Five Sightings", "Game Drives", "Maasai Village", "Sunrise Safari"],
-    included: ["Game Drives", "Park Fees", "Accommodation", "Meals", "Guide"],
-    tag: "Best Seller",
-    tagColor: "bg-[#F4A261]",
-  },
-  { 
-    id: "5-day-luxury-safari", 
-    title: "5-Day Luxury Safari", 
-    duration: "5 Days / 4 Nights", 
-    price: 2200, 
-    image: "luxury", 
-    rating: 5.0,
-    reviews: 86,
-    highlights: ["Hot Air Balloon", "Private Guide", "Bush Dinner", "Luxury Lodge"],
-    included: ["All Meals", "Premium Drinks", "Balloon Safari", "Private Vehicle", "Spa"],
-    tag: "Most Popular",
-    tagColor: "bg-green-600",
-  },
-  { 
-    id: "7-day-buffalo-plains", 
-    title: "7-Day Buffalo Plains Explorer", 
-    duration: "7 Days / 6 Nights", 
-    price: 3500, 
-    image: "explorer", 
-    rating: 4.9,
-    reviews: 64,
-    highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion", "Domestic Flights"],
-    included: ["Beach Resort", "All Transfers", "Snorkeling", "Cultural Tours", "Park Fees"],
-    tag: "Complete Experience",
-    tagColor: "bg-[#0B3D2E]",
-  },
+  { id: "3-day-masai-mara", title: "3-Day Masai Mara Safari", duration: "3 Days / 2 Nights", image: "masai-mara", highlights: ["Big Five Sightings", "Game Drives", "Maasai Village"] },
+  { id: "5-day-luxury-safari", title: "5-Day Luxury Safari", duration: "5 Days / 4 Nights", image: "luxury", highlights: ["Hot Air Balloon", "Private Guide", "Bush Dinner"] },
+  { id: "7-day-buffalo-plains", title: "7-Day Buffalo Plains Explorer", duration: "7 Days / 6 Nights", image: "explorer", highlights: ["Bush & Beach", "Three Parks", "Cultural Immersion"] },
 ];
 
 const FeaturedPackages = () => {
@@ -104,40 +68,17 @@ const FeaturedPackages = () => {
               transition={{ delay: i * 0.15, duration: 0.6 }}
               className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-[#F4A261]/30"
             >
-              {/* Image Container */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={packageImages[pkg.image]}
-                  alt={pkg.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                
-                {/* Tag */}
-                <div className={`absolute top-4 left-4 ${pkg.tagColor} text-white text-xs font-bold px-3 py-1 rounded-full`}>
-                  {pkg.tag}
-                </div>
-
-                {/* Price Badge */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
-                  <p className="text-xs text-muted-foreground">From</p>
-                  <p className="text-xl font-bold text-[#0B3D2E]">${pkg.price}</p>
-                  <p className="text-xs text-muted-foreground">per person</p>
-                </div>
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Duration & Location */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                  <div className="flex items-center gap-2 text-sm">
-                    <Clock size={16} />
-                    <span>{pkg.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <MapPin size={16} />
-                    <span>Kenya</span>
-                  </div>
+              <Link
+                to={`/packages/${pkg.id}`}
+                className="group block bg-card rounded-lg overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-safari)] transition-shadow duration-300"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={packageImages[pkg.image]}
+                    alt={pkg.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 

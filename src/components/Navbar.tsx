@@ -96,14 +96,9 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg}`}>
       <div className="sr-only" aria-live="polite">{announce}</div>
       <div className="safari-container flex items-center justify-between h-16 md:h-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <Link to="/" className="flex items-center gap-2 md:gap-3 font-heading text-lg md:text-2xl font-bold text-primary-foreground tracking-wide">
-          <img 
-            src="/assets/buffalo-plains-logo.jpg" 
-            alt="Buffalo Plains Adventures logo" 
-            className="w-8 h-8 md:w-10 md:h-10 object-contain rounded-lg bg-white shadow-sm flex-shrink-0" 
-          />
-          <span className="hidden sm:inline">Buffalo Plains Adventures</span>
-          <span className="sm:hidden">BPA</span>
+        <Link to="/" className="flex items-center gap-3 font-heading text-xl md:text-2xl font-bold text-primary-foreground tracking-wide">
+          <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-12 object-contain" />
+          <span>Buffalo Plains Adventures</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -119,7 +114,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
+            href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
@@ -161,7 +156,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="https://wa.me/254700000000?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
+                href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold text-center mt-2"

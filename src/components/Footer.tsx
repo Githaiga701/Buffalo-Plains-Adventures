@@ -8,7 +8,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-heading text-2xl font-bold mb-4">Buffalo Plains Adventures</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-14 object-contain" />
+            </div>
+            <h3 className="font-heading text-xl font-bold mb-4">Buffalo Plains Adventures</h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
                 Premium tours & safaris showcasing the best of Kenya's wildlife, beaches, and cultural heritage.
               </p>
@@ -56,13 +59,13 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="mailto:info@buffaloplainsadventures.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={16} />
-                info@buffaloplainsadventures.com
+                buffaloplainadventuresltd@gmail.com
               </a>
-              <a href="tel:+254700000000" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
-                +254 700 000 000
+                +254 720 445869
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} />
