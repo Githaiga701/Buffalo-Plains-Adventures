@@ -41,7 +41,7 @@ const destinationData = [
     id: "masai-mara", 
     name: "Masai Mara", 
     tagline: "The Great Migration",
-    description: "Witness the world's most spectacular wildlife event with over 1.5 million wildebeest crossing the Mara River",
+    description: "Witness the world's most spectacular wildlife event with over 1.5 million wildebeest crossing the Mara River. Beyond the river crossings, the Mara offers dense predator activity, expansive photographic vistas, and expert-led game drives that reveal the rhythms of the savanna. Optional hot-air balloon flights and Maasai cultural visits add unforgettable perspectives to the experience.",
     bestTime: "July - October",
     highlights: ["Big Five", "Great Migration", "Hot Air Balloon", "Maasai Culture"],
     icon: "masai-mara"
@@ -50,7 +50,7 @@ const destinationData = [
     id: "amboseli", 
     name: "Amboseli", 
     tagline: "Land of the Giants",
-    description: "Home to Africa's largest elephants with breathtaking views of Mount Kilimanjaro, Africa's highest peak",
+    description: "Home to Africa's largest elephants with breathtaking views of Mount Kilimanjaro, Africa's highest peak. Amboseli's compact park layout means excellent visibility for elephant herds at close range, bird-rich wetlands, and short guided walks. Photographers prize the dramatic Kilimanjaro backdrop during golden hour, while community visits showcase Maasai pastoral life.",
     bestTime: "June - October",
     highlights: ["Elephant Herds", "Kilimanjaro Views", "Bird Watching", "Cultural Visits"],
     icon: "amboseli"
@@ -59,7 +59,7 @@ const destinationData = [
     id: "diani-beach", 
     name: "Diani Beach", 
     tagline: "Paradise Found",
-    description: "Award-winning pristine white sand beach with crystal clear waters, perfect for relaxation and water sports",
+    description: "Award-winning pristine white sand beach with crystal clear waters, perfect for relaxation and water sports. Diani's protected reefs make it a superb snorkeling and diving destination, while beachfront resorts and laid-back beach bars provide easy luxury and local hospitality. Activities range from dolphin safaris to kite-surfing lessons and serene sunset strolls along the shoreline.",
     bestTime: "Dec - Mar, Jul - Oct",
     highlights: ["Snorkeling", "Dolphin Watching", "Golf", "Spa Retreats"],
     icon: "diani-beach"
@@ -68,7 +68,7 @@ const destinationData = [
     id: "tsavo", 
     name: "Tsavo", 
     tagline: "Theatre of the Wild",
-    description: "Kenya's largest park featuring the famous red elephants, volcanic landscapes, and raw untamed wilderness",
+    description: "Kenya's largest park featuring the famous red elephants, volcanic landscapes, and raw untamed wilderness. Tsavo's vast horizons deliver solitude, dramatic geological features like the Shetani Lava Flow, and remote camps that emphasize authentic wilderness camping and nocturnal wildlife encounters under brilliant star skies.",
     bestTime: "Jun - Oct, Jan - Feb",
     highlights: ["Red Elephants", "Mzima Springs", "Volcanic Landscapes", "Camping"],
     icon: "tsavo"
@@ -77,7 +77,7 @@ const destinationData = [
     id: "lamu", 
     name: "Lamu", 
     tagline: "Pearl of the Indian Ocean",
-    description: "UNESCO World Heritage site offering timeless Swahili culture, ancient architecture, and tranquil island life",
+    description: "UNESCO World Heritage site offering timeless Swahili culture, ancient architecture, and tranquil island life. Lamu's narrow lanes, dhow sails, and serene guesthouses invite slow exploration, hands-on craft markets, and immersive Swahili cuisine experiences that connect you to centuries of coastal trade and tradition.",
     bestTime: "Jul - Oct, Dec - Mar",
     highlights: ["Old Town", "Dhow Sailing", "Swahili Cuisine", "Donkey Sanctuaries"],
     icon: "lamu"
@@ -86,7 +86,7 @@ const destinationData = [
     id: "nairobi", 
     name: "Nairobi", 
     tagline: "The Green City in the Sun",
-    description: "Kenya's vibrant capital with elephant sanctuaries, cultural museums, and wildlife experiences right on the city outskirts",
+    description: "Kenya's vibrant capital with elephant sanctuaries, cultural museums, and wildlife experiences right on the city outskirts. Nairobi balances cosmopolitan dining and arts with conservation attractions like the Sheldrick Elephant Orphanage and Giraffe Centre, offering easy half-day excursions that fit well into wider safari itineraries.",
     bestTime: "Year Round",
     highlights: ["Giraffe Manor", "Karen Blixen", "Elephant Orphanage", "Shopping"],
     icon: "nairobi"
@@ -95,7 +95,7 @@ const destinationData = [
     id: "nakuru", 
     name: "Lake Nakuru", 
     tagline: "The Pink Lake",
-    description: "Famous for millions of flamingos creating a pink carpet on the lake, plus excellent rhino and bird watching",
+    description: "Famous for millions of flamingos creating a pink carpet on the lake, plus excellent rhino and bird watching. Lake Nakuru's scenic viewpoints, diverse habitats and dedicated rhino conservation areas make it a rewarding stop for photographers and birders, with walking trails and lookout points that reveal changing seasonal colours.",
     bestTime: "Jun - Oct, Jan - Feb",
     highlights: ["Flamingos", "Rhinos", "Bird Watching", "Lake Views"],
     icon: "nakuru"
@@ -104,7 +104,7 @@ const destinationData = [
     id: "samburu", 
     name: "Samburu", 
     tagline: "Land of the Nomads",
-    description: "Remote northern Kenya with unique wildlife species like Grevy's zebra and reticulated giraffe",
+    description: "Remote northern Kenya with unique wildlife species like Grevy's zebra and reticulated giraffe. Samburu's distinctive arid landscapes, Ewaso Ng'iro riverine corridors and culturally-rich Samburu community encounters provide a complementary experience to southern reserves, prized for endemic species and intimate camps.",
     bestTime: "Jun - Oct, Dec - Mar",
     highlights: ["Grevy's Zebra", "Samburu Culture", "Reticulated Giraffe", "River Walks"],
     icon: "samburu"
@@ -113,7 +113,7 @@ const destinationData = [
     id: "meru", 
     name: "Meru", 
     tagline: "Untouched Wilderness",
-    description: "One of Kenya's most pristine parks with classic savanna landscapes and the legendary Elsa's Kopje",
+    description: "One of Kenya's most pristine parks with classic savanna landscapes and the legendary Elsa's Kopje. Meru offers secluded game viewing, riverine habitats, and conservation stories linked to famous conservationists—ideal for travelers seeking quiet, off-the-beaten-path safaris and immersive birding or walking excursions.",
     bestTime: "Jun - Oct, Dec - Mar",
     highlights: ["Elsa's Kopje", "Rhino Tracking", "Tana River", "Eco-Safaris"],
     icon: "meru"
