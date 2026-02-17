@@ -608,38 +608,38 @@ export const testimonials = [
 export const faqs = [
   {
     question: "What is the best time to visit Kenya for a safari?",
-    answer: "The best time for safari in Kenya is during the dry seasons: July to October (Great Migration in Masai Mara) and January to February. However, Kenya offers year-round wildlife viewing.",
+    answer: "The best time for safari in Kenya is during the dry seasons: July to October (Great Migration in Masai Mara) and January to February. During these months wildlife congregates around permanent water sources making sightings more reliable. That said, each season offers unique experiences — the short rains can bring lush scenery, newborn wildlife, and excellent birding opportunities, so travel can be rewarding year-round depending on your interests.",
   },
   {
     question: "Do I need a visa to visit Kenya?",
-    answer: "Most visitors need an eVisa which can be obtained online before travel. Citizens of some East African countries are exempt. We recommend applying at least 2 weeks before your trip.",
+    answer: "Most visitors need an eVisa which can be obtained online before travel. Citizens of some East African countries are exempt. Apply at least 2 weeks before travel and ensure your passport has at least six months validity. We can advise on the current visa rules for your nationality during booking and provide supporting documents if required.",
   },
   {
     question: "What vaccinations are required?",
-    answer: "Yellow Fever vaccination is required if traveling from an endemic country. We recommend consulting your doctor about Hepatitis A & B, Typhoid, and anti-malaria medication.",
+    answer: "Yellow Fever vaccination is required if traveling from an endemic country and proof may be requested on arrival. We also recommend consulting your physician about Hepatitis A & B, Typhoid, routine immunizations, and malaria prophylaxis depending on the areas you will visit. Carry a printed copy of vaccination certificates and seek personalized medical advice well before departure.",
   },
   {
     question: "Is Kenya safe for tourists?",
-    answer: "Kenya is generally safe for tourists, especially in wildlife reserves and coastal areas. We provide experienced guides and use well-established routes and accommodations.",
+    answer: "Kenya is generally safe for tourists, particularly within established safari reserves and major coastal destinations. Standard travel precautions — like avoiding isolated areas at night, keeping valuables secure, and following local advice — apply. We provide experienced, vetted guides, reliable transport, and established accommodation partners to ensure safe, well-managed itineraries.",
   },
   {
     question: "What should I pack for a safari?",
-    answer: "Light, neutral-colored clothing, comfortable walking shoes, sunscreen, insect repellent, binoculars, camera with zoom lens, hat, and a warm layer for early morning game drives.",
+    answer: "Pack light, neutral-colored clothing for daytime, a warm layer for crisp early-morning game drives, comfortable closed shoes for walking, wide-brim hat, sunglasses, high-SPF sunscreen, insect repellent, and a good pair of binoculars. Bring chargers and spare batteries for cameras, a small daypack, basic personal medications, and copies of important documents. We will provide a detailed packing list tailored to your itinerary when you book.",
   },
   {
     question: "Can I customize a tour package?",
-    answer: "Absolutely! All our packages can be customized to suit your preferences, budget, and time frame. Contact us to design your perfect Kenya adventure.",
+    answer: "Absolutely — all our packages are fully customizable. We tailor itineraries around your travel dates, preferred accommodation standards, activity interests (photography, walking safaris, cultural visits), and budget. Contact our team with your priorities and we will provide options, example day-by-day plans, and transparent pricing to create your perfect Kenya adventure.",
   },
   {
     question: "What is included in our tour packages?",
-    answer: "Our packages typically include accommodation, meals, transport, park fees, and professional guides. Each package page lists specific inclusions and exclusions.",
+    answer: "Our packages typically include accommodation, most meals, transport in comfortable 4x4 safari vehicles or domestic flights where specified, park entry fees, and the services of professional, experienced guides. Specific inclusions and exclusions vary by package — check each package page for details. We can also arrange add-ons like balloon safaris, private transfers, and special experiences on request.",
   },
   {
     question: "How do I book a tour?",
-    answer: "You can book through our contact form, WhatsApp, or email. We'll confirm availability, discuss any customizations, and send you a detailed itinerary and payment instructions.",
+    answer: "You can book via our contact form, WhatsApp (+254 720 445869), or email (buffaloplainadventuresltd@gmail.com). We'll confirm availability, discuss customizations, and send a detailed itinerary with payment steps and clear booking terms. For group or bespoke requests we provide a proposal and hold provisional dates while you arrange flights.",
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept PayPal for international payments and M-Pesa for payments within Kenya. Both methods are secure and convenient for booking your safari adventure.",
+    answer: "We accept PayPal for international payments and M-Pesa for payments within Kenya. Both are secure and widely used; PayPal is suitable for credit/debit card payments or international transfers, while M-Pesa offers convenient mobile-money settlement locally. Payment instructions and options will be provided with your booking confirmation, including details for deposits and final balances.",
   },
 ];
