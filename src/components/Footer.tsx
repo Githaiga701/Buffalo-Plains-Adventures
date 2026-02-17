@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-14 object-contain" />
+              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="w-14 h-14 object-cover rounded-full" />
             </div>
             <h3 className="font-heading text-xl font-bold mb-4">Buffalo Plains Adventures</h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
