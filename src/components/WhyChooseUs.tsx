@@ -171,10 +171,10 @@ const WhyChooseUs = () => {
             </div>
           </div>
           <div className="flex items-center gap-3 text-muted-foreground">
-            <Plane size={20} />
+            <Globe size={20} />
             <div>
-              <p className="font-semibold text-foreground text-sm">Free Transfers</p>
-              <p className="text-xs">Airport pickup & drop-off</p>
+              <p className="font-semibold text-foreground text-sm">Great Service</p>
+              <p className="text-xs">Personalized support & attention</p>
             </div>
           </div>
           <div className="flex items-center gap-3 text-muted-foreground">
