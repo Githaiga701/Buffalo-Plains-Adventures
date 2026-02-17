@@ -65,7 +65,10 @@ const Footer = () => {
               </a>
               <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
-                +254 720 445869
+                <span>
+                  <p className="font-semibold text-accent">+254 720 445869</p>
+                  <p className="text-xs text-primary-foreground/60">24/7 Emergency Hotline</p>
+                </span>
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} />
