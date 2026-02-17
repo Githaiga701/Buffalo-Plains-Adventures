@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
             What Our Travelers Say
           </h2>
           <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-            Join thousands of satisfied travelers who experienced the magic of Kenya with Buffalo Plains Adventures
+            Discover authentic reviews from global travelers who experienced Kenya's magic through our carefully curated safari packages. These heartfelt testimonials reveal how our expert guides, thoughtfully-planned itineraries, and unwavering commitment to excellence transform safari dreams into life-changing African adventures that resonate long after travelers return home.
           </p>
         </motion.div>
 

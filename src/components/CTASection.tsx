@@ -18,10 +18,12 @@ const CTASection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const benefits = [
-    "Free safari planning & consultation",
-    "Best price guarantee on all packages",
-    "Flexible payment options available",
-    "Instant booking confirmation",
+    "Expert safari planning consultation at no cost",
+    "Competitive pricing with best value guarantee",
+    "Flexible payment plans and multiple currency options",
+    "Instant booking confirmation with detailed itinerary",
+    "Free pre-trip briefing and packing recommendations",
+    "24/7 support throughout your entire journey",
   ];
 
   return (
@@ -56,8 +58,7 @@ const CTASection = () => {
             </h2>
             
             <p className="text-white/80 text-lg mb-8 leading-relaxed">
-              Let our expert team craft your perfect Kenya safari. Whether you're seeking the Great Migration, 
-              luxury beach time, or cultural experiences, we'll create memories that last a lifetime.
+              Transform your African dreams into reality with our expert travel consultants who will craft your perfect Kenya adventure. From conceptualizing your ideal itinerary through seamless execution, we handle every detail—logistics, accommodation selection, activities coordination, and on-ground support. Whether you're envisioning the iconic Great Migration, pristine beach escapes, cultural immersion, mountain adventures, or transformative wildlife encounters, we possess the expertise, connections, and passion to deliver experiences exceeding expectations.
             </p>
 
             {/* Benefits List */}
