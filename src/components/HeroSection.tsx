@@ -26,10 +26,10 @@ const heroImages = [
 ];
 
 const offerings = [
-  { icon: MapPin, title: "5+ Destinations", desc: "Masai Mara, Amboseli, Diani & more" },
-  { icon: Users, title: "Expert Guides", desc: "10+ years local experience" },
-  { icon: Shield, title: "Safe & Secure", desc: "Licensed & insured tours" },
-  { icon: Star, title: "5-Star Reviews", desc: "500+ happy travelers" },
+  { icon: MapPin, title: "9 Diverse Destinations", desc: "From Masai Mara's legendary migration to pristine beaches, mountains, and cultural sites" },
+  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with 10-20 years deep knowledge of African ecosystems and wildlife behavior" },
+  { icon: Shield, title: "Safe & Secure", desc: "Fully licensed, insured, and certified tours with established safety protocols and communication systems" },
+  { icon: Star, title: "Exceptional Reviews", desc: "98% client satisfaction with 5-star ratings from 5000+ happy travelers across the globe" },
 ];
 
 const quickStats = [

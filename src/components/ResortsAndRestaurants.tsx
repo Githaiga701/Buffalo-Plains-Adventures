@@ -35,8 +35,7 @@ const ResortsAndRestaurants = () => {
           </span>
           <h2 className="safari-heading mb-4">Top Resorts & Restaurants</h2>
           <p className="safari-subheading mx-auto">
-            Experience Kenya's finest accommodations and dining. From luxury safari lodges 
-            to beach resorts and world-class restaurants.
+            Indulge in Kenya's exceptional hospitality where world-class accommodations harmonize seamlessly with culinary excellence. From luxurious safari lodges perched overlooking pristine wilderness to opulent beachfront resorts caressing Indian Ocean shores, our handpicked establishments combine authentic African aesthetics with contemporary comfort and personalized service standards. Complement your accommodation experience with fine dining spanning traditional Kenyan cuisine to international fusion preparations, authentic Swahili seafood specialties to innovative culinary artistry, casual beachfront breezes to sophisticated gastronomic performances. Whether seeking romantic bush dinners beneath star-filled African skies, elegant seaside dining overlooking turquoise waters, or casual exploration of local flavor traditions, Kenya's hospitality sector delivers memorable experiences transcending mere accommodation and meals.
           </p>
         </motion.div>
 
@@ -48,7 +47,7 @@ const ResortsAndRestaurants = () => {
             </div>
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground">Luxury Resorts & Lodges</h3>
-              <p className="text-muted-foreground text-sm">Handpicked accommodations for an unforgettable stay</p>
+              <p className="text-muted-foreground text-sm">Expertly curated luxury lodges and resorts selected for excellence, comfort, and authentic African hospitality</p>
             </div>
           </div>
 
@@ -127,7 +126,7 @@ const ResortsAndRestaurants = () => {
             </div>
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground">Top Restaurants</h3>
-              <p className="text-muted-foreground text-sm">Experience Kenya's finest dining</p>
+              <p className="text-muted-foreground text-sm">Exceptional culinary destinations featuring authentic cuisine, sophisticated ambiance, and memorable dining experiences</p>
             </div>
           </div>
 

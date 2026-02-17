@@ -52,9 +52,8 @@ const BeachDestinations = () => {
             Coastal Paradise
           </span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">Kenya's Stunning Beaches</h2>
-          <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
-            From the famous Diani Beach to hidden coastal gems, discover Kenya's pristine Indian Ocean coastline. 
-            Perfect for relaxation, water sports, and unforgettable marine adventures.
+          <p className="text-primary-foreground/70 text-lg max-w-3xl mx-auto">
+            Escape to Kenya's breathtaking Indian Ocean coastline where turquoise waters meet pristine white sand beaches stretching along 480 kilometers of pure coastal paradise. From the world-renowned Diani Beach offering cosmopolitan beach resort culture to hidden coastal gems untouched by mass tourism, discover an extraordinary array of seaside experiences. Whether you seek thrilling water sports including world-class kite surfing and scuba diving, peaceful relaxation under swaying palms, exploration of vibrant coral reefs teeming with tropical marine life, or immersion in authentic Swahili culture, Kenya's beaches deliver unforgettable experiences. Each destination along the coast presents unique character—some famous for water sports excellence, others renowned for intimate luxury, still others celebrated for pristine seclusion and authentic cultural encounters.
           </p>
         </motion.div>
 

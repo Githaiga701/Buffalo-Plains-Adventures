@@ -146,8 +146,7 @@ const DestinationsPreview = () => {
           </span>
           <h2 className="safari-heading mb-4">Discover Our Safari Destinations</h2>
           <p className="safari-subheading mx-auto">
-            From the vast savannas teeming with wildlife to pristine beaches and ancient cultural sites, 
-            Kenya offers unforgettable experiences for every traveler
+            Journey through Africa's most diverse and captivating landscapes where vast golden savannas teeming with iconic wildlife blend seamlessly with pristine Indian Ocean beaches, misty highlands harboring endemic species, and vibrant destinations preserving centuries of Swahili and Maasai heritage. Kenya encompasses every African experience imaginable—from thrilling safari encounters with the legendary Big Five to intimate cultural immersion with indigenous communities, from world-class beach resorts to remote wilderness sanctuaries. Each destination reveals distinct character: some famous for wildlife abundance, others celebrated for cultural richness, still others renowned for scenery grandeur and adventure opportunities. Kenya offers unforgettable experiences for every traveler, whether seeking raw wilderness adventure, luxury comfort, cultural understanding, or serene beach relaxation
           </p>
         </motion.div>
 

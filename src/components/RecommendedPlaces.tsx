@@ -50,8 +50,7 @@ const RecommendedPlaces = () => {
           </span>
           <h2 className="safari-heading mb-4">Other Recommended Places</h2>
           <p className="safari-subheading mx-auto">
-            Beyond the famous parks, Kenya offers incredible experiences from mountain climbing 
-            to cloud forests and unique wildlife sanctuaries.
+            Venture beyond the famous safari circuit to discover extraordinary experiences showcasing Kenya's remarkable ecological and geographical diversity. Scale the majestic heights of Mount Kenya, Africa's second-highest peak, where climbers challenge themselves amidst alpine splendor and panoramic continental vistas. Immerse yourself in the ethereal mystery of Aberdare's cloud forests where rare wildlife including endangered black rhinos roam perpetually mist-shrouded terrain. Explore the freshwater wonderland of Lake Naivasha brimming with hippos and offering authentic walking safaris on nearby Crescent Island. Venture into Kenya's last tropical rainforest at Kakamega where extraordinary biodiversity, exotic butterflies, and primate populations reveal the continent's ecological richness. These lesser-known destinations complement safari experiences while offering specialized adventures for discerning travelers seeking unique African encounters.
           </p>
         </motion.div>
 
