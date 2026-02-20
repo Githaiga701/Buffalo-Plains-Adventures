@@ -1,111 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <!-- Homepage -->
   <url>
     <loc>https://buffaloplainsadventures.com/</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Pages -->
+  <!-- Core Pages -->
   <url>
     <loc>https://buffaloplainsadventures.com/packages</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/destinations</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/gallery</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://buffaloplainsadventures.com/about</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://buffaloplainsadventures.com/faq</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://buffaloplainsadventures.com/contact</loc>
-    <lastmod>2026-02-16</lastmod>
+    <loc>https://buffaloplainsadventures.com/about</loc>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://buffaloplainsadventures.com/faq</loc>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://buffaloplainsadventures.com/contact</loc>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <!-- Safari Packages -->
   <url>
     <loc>https://buffaloplainsadventures.com/packages/3-day-masai-mara</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/packages/5-day-luxury-safari</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/packages/7-day-buffalo-plains</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Destinations -->
   <url>
     <loc>https://buffaloplainsadventures.com/destinations/masai-mara</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/destinations/amboseli</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/destinations/diani-beach</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/destinations/tsavo</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://buffaloplainsadventures.com/destinations/lamu</loc>
-    <lastmod>2026-02-16</lastmod>
+    <lastmod>2026-02-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
+
 </urlset>
