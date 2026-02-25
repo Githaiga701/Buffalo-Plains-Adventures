@@ -131,7 +131,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Email Us</p>
-                    <p className="text-white font-semibold">buffaloplainsadventuresltd@gmail.com/p>
+                    <p className="text-white font-semibold">buffaloplainsadventuresltd@gmail.com</p>
                   </div>
                 </a>
 
