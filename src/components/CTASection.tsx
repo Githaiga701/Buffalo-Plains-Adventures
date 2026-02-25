@@ -123,7 +123,7 @@ const CTASection = () => {
                 </a>
 
                 <a 
-                  href="mailto:info@buffaloplains.com"
+                  href="mailto:buffaloplainsadventuresltd@gmail.com"
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -131,7 +131,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Email Us</p>
-                    <p className="text-white font-semibold">info@buffaloplains.com</p>
+                    <p className="text-white font-semibold">buffaloplainsadventuresltd@gmail.com/p>
                   </div>
                 </a>
 
@@ -173,7 +173,7 @@ const CTASection = () => {
             <div className="bg-[#F4A261]/20 border border-[#F4A261]/30 rounded-2xl p-4">
               <p className="text-white text-sm">
                 <span className="text-[#F4A261] font-semibold">Emergency:</span> For urgent safari inquiries outside office hours, 
-                call our 24/7 hotline at <span className="font-semibold">+254 700 000 000</span>
+                call our 24/7 hotline at <span className="font-semibold">+254 720 445869</span>
               </p>
             </div>
           </motion.div>
