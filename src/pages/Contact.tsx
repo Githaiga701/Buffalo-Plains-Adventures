@@ -113,9 +113,9 @@ const Contact = () => {
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us Directly</h3>
               <div className="space-y-5">
-                <a href="mailto:buffaloplainsadventuresltd@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Mail size={20} /></div>
-                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">buffaloplainsadventuresltd@gmail.com</p></div>
+                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">buffaloplainadventuresltd@gmail.com</p></div>
                 </a>
                 <a href="tel:+254720445869" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Phone size={20} /></div>
