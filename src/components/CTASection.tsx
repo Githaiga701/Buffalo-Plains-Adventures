@@ -123,7 +123,7 @@ const CTASection = () => {
                 </a>
 
                 <a 
-                  href="mailto:buffaloplainsadventuresltd@gmail.com"
+                  href="mailto:buffaloplainadventuresltd@gmail.com"
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -131,7 +131,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Email Us</p>
-                    <p className="text-white font-semibold">buffaloplainsadventuresltd@gmail.com</p>
+                    <p className="text-white font-semibold">buffaloplainadventuresltd@gmail.com</p>
                   </div>
                 </a>
 
