@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
               <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={16} />
-                buffaloplainsadventuresltd@gmail.com
+                buffaloplainadventuresltd@gmail.com
               </a>
               <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
