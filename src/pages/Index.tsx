@@ -12,6 +12,8 @@ const WhyChooseUs           = lazy(() => import("@/components/WhyChooseUs"));
 const TestimonialsSection   = lazy(() => import("@/components/TestimonialsSection"));
 const CTASection            = lazy(() => import("@/components/CTASection"));
 
+//new changes
+
 const Fallback = () => <div className="min-h-[300px] bg-background animate-pulse" />;
 
 const Index = () => (
