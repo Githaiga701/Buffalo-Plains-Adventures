@@ -1,12 +1,18 @@
 {
-  "build": {
-    "command": "npm run build",
-    "output": "dist"
-  },
-  "rewrites": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "builds": [
     {
-      "source": "/((?!.*\\..*).*)",
-      "destination": "/index.html"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/((?!.*\\..*).*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
