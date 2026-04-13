@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { WHATSAPP_DEFAULT_MSG, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -113,13 +114,13 @@ const Contact = () => {
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us Directly</h3>
               <div className="space-y-5">
-                <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Mail size={20} /></div>
-                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">buffaloplainadventuresltd@gmail.com</p></div>
+                  <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">{CONTACT_EMAIL}</p></div>
                 </a>
-                <a href="tel:+254720445869" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href={`tel:${CONTACT_PHONE_RAW}`} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Phone size={20} /></div>
-                  <div><p className="text-sm font-medium text-foreground">Phone</p><p className="text-sm">+254 720 445869</p></div>
+                  <div><p className="text-sm font-medium text-foreground">Phone</p><p className="text-sm">{CONTACT_PHONE}</p></div>
                 </a>
                 <div className="flex items-center gap-4 text-muted-foreground">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><MapPin size={20} /></div>
@@ -129,7 +130,7 @@ const Contact = () => {
             </div>
 
             <a
-                href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20with%20Buffalo%20Plains%20Adventures"
+                href={WHATSAPP_DEFAULT_MSG}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground py-3.5 rounded-md font-semibold hover:opacity-90 transition-opacity"

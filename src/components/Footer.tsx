@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, CreditCard } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
 
 const Footer = () => {
   return (
@@ -60,14 +61,14 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
-              <a href="mailto:buffaloplainadventuresltd@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Mail size={16} />
-                buffaloplainadventuresltd@gmail.com
+                {CONTACT_EMAIL}
               </a>
-              <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href={`tel:${CONTACT_PHONE_RAW}`} className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
                 <span>
-                  <p className="font-semibold text-accent">+254 720 445869</p>
+                  <p className="font-semibold text-accent">{CONTACT_PHONE}</p>
                   <p className="text-xs text-primary-foreground/60">24/7 Emergency Hotline</p>
                 </span>
               </a>
