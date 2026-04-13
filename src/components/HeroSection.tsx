@@ -18,18 +18,21 @@ import {
 import heroImage1 from "@/assets/hero-masai-mara.jpg";
 import heroImage2 from "@/assets/luxury-safari.jpg";
 import heroImage3 from "@/assets/safari-sunset.jpg";
+import heroImage1Webp from "@/assets/hero-masai-mara.webp";
+import heroImage2Webp from "@/assets/luxury-safari.webp";
+import heroImage3Webp from "@/assets/safari-sunset.webp";
 
 const heroImages = [
-  { src: heroImage1, alt: "Masai Mara Wildebeest Migration" },
-  { src: heroImage2, alt: "Luxury Safari Lodge" },
-  { src: heroImage3, alt: "African Safari Sunset" },
+  { src: heroImage1, webp: heroImage1Webp, alt: "Masai Mara Wildebeest Migration" },
+  { src: heroImage2, webp: heroImage2Webp, alt: "Luxury Safari Lodge" },
+  { src: heroImage3, webp: heroImage3Webp, alt: "African Safari Sunset" },
 ];
 
 const offerings = [
-  { icon: MapPin, title: "5+ Destinations", desc: "Masai Mara, Amboseli, Diani & more" },
-  { icon: Users, title: "Expert Guides", desc: "10+ years local experience" },
-  { icon: Shield, title: "Safe & Secure", desc: "Licensed & insured tours" },
-  { icon: Star, title: "5-Star Reviews", desc: "500+ happy travelers" },
+  { icon: MapPin, title: "9 Diverse Destinations", desc: "From Masai Mara's legendary migration to pristine beaches, mountains, and cultural sites" },
+  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with 10-20 years deep knowledge of African ecosystems and wildlife behavior" },
+  { icon: Shield, title: "Safe & Secure", desc: "Fully licensed, insured, and certified tours with established safety protocols and communication systems" },
+  { icon: Star, title: "Exceptional Reviews", desc: "98% client satisfaction with 5-star ratings from 5000+ happy travelers across the globe" },
 ];
 
 const quickStats = [
@@ -73,11 +76,20 @@ const HeroSection = () => {
             transition={{ duration: 1.2 }}
             className="absolute inset-0"
           >
-            <img
-              src={heroImages[currentSlide].src}
-              alt={heroImages[currentSlide].alt}
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={heroImages[currentSlide].webp}
+              />
+              <img
+                src={heroImages[currentSlide].src}
+                alt={heroImages[currentSlide].alt}
+                className="w-full h-full object-cover"
+                fetchPriority={currentSlide === 0 ? "high" : "low"}
+                loading={currentSlide === 0 ? "eager" : "lazy"}
+                decoding={currentSlide === 0 ? "sync" : "async"}
+              />
+            </picture>
           </motion.div>
         </AnimatePresence>
         

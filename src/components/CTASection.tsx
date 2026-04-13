@@ -12,27 +12,34 @@ import {
   CheckCircle2
 } from "lucide-react";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const CTASection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   const benefits = [
-    "Free safari planning & consultation",
-    "Best price guarantee on all packages",
-    "Flexible payment options available",
-    "Instant booking confirmation",
+    "Expert safari planning consultation at no cost",
+    "Competitive pricing with best value guarantee",
+    "Flexible payment plans and multiple currency options",
+    "Instant booking confirmation with detailed itinerary",
+    "Free pre-trip briefing and packing recommendations",
+    "24/7 support throughout your entire journey",
   ];
 
   return (
     <section className="relative py-20 overflow-hidden" ref={ref}>
       {/* Background Image */}
-      <img
-        src={safariSunset}
-        alt="Safari sunset in Kenya"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-      />
+      <picture>
+        <source type="image/webp" srcSet={safariSunsetWebp} />
+        <img
+          src={safariSunset}
+          alt="Safari sunset in Kenya"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       
       {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B3D2E]/90 via-[#0B3D2E]/80 to-[#0B3D2E]/70" />
@@ -56,8 +63,7 @@ const CTASection = () => {
             </h2>
             
             <p className="text-white/80 text-lg mb-8 leading-relaxed">
-              Let our expert team craft your perfect Kenya safari. Whether you're seeking the Great Migration, 
-              luxury beach time, or cultural experiences, we'll create memories that last a lifetime.
+              Transform your African dreams into reality with our expert travel consultants who will craft your perfect Kenya adventure. From conceptualizing your ideal itinerary through seamless execution, we handle every detail—logistics, accommodation selection, activities coordination, and on-ground support. Whether you're envisioning the iconic Great Migration, pristine beach escapes, cultural immersion, mountain adventures, or transformative wildlife encounters, we possess the expertise, connections, and passion to deliver experiences exceeding expectations.
             </p>
 
             {/* Benefits List */}
@@ -122,7 +128,7 @@ const CTASection = () => {
                 </a>
 
                 <a 
-                  href="mailto:info@buffaloplains.com"
+                  href="mailto:buffaloplainadventuresltd@gmail.com"
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -130,7 +136,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Email Us</p>
-                    <p className="text-white font-semibold">info@buffaloplains.com</p>
+                    <p className="text-white font-semibold">buffaloplainadventuresltd@gmail.com</p>
                   </div>
                 </a>
 
@@ -172,7 +178,7 @@ const CTASection = () => {
             <div className="bg-[#F4A261]/20 border border-[#F4A261]/30 rounded-2xl p-4">
               <p className="text-white text-sm">
                 <span className="text-[#F4A261] font-semibold">Emergency:</span> For urgent safari inquiries outside office hours, 
-                call our 24/7 hotline at <span className="font-semibold">+254 700 000 000</span>
+                call our 24/7 hotline at <span className="font-semibold">+254 720 445869</span>
               </p>
             </div>
           </motion.div>

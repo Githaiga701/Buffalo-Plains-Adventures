@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="h-14 object-contain" />
+              <img src="/assets/logo.jpeg" alt="Buffalo Plains Adventures logo" className="w-14 h-14 object-cover rounded-full" />
             </div>
             <h3 className="font-heading text-xl font-bold mb-4">Buffalo Plains Adventures</h3>
               <p className="text-primary-foreground/70 text-sm leading-relaxed">
@@ -27,6 +27,7 @@ const Footer = () => {
                 { name: "Gallery", path: "/gallery" },
                 { name: "About Us", path: "/about" },
                 { name: "FAQ", path: "/faq" },
+                { name: "Terms & Conditions", path: "/terms" },
               ].map((link) => (
                 <Link
                   key={link.path}
@@ -65,7 +66,10 @@ const Footer = () => {
               </a>
               <a href="tel:+254720445869" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Phone size={16} />
-                +254 720 445869
+                <span>
+                  <p className="font-semibold text-accent">+254 720 445869</p>
+                  <p className="text-xs text-primary-foreground/60">24/7 Emergency Hotline</p>
+                </span>
               </a>
               <span className="flex items-center gap-2">
                 <MapPin size={16} />

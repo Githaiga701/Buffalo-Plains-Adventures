@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Shield, Users, Star, Award } from "lucide-react";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const About = () => {
   return (
@@ -37,7 +38,10 @@ const About = () => {
             viewport={{ once: true }}
             className="relative h-96 rounded-lg overflow-hidden"
           >
-            <img src={safariSunset} alt="Safari sunset" className="w-full h-full object-cover" loading="lazy" />
+            <picture>
+              <source type="image/webp" srcSet={safariSunsetWebp} />
+              <img src={safariSunset} alt="Safari sunset" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            </picture>
           </motion.div>
         </div>
       </section>

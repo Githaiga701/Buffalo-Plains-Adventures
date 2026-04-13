@@ -15,9 +15,35 @@ import {
 } from "lucide-react";
 import { culturalExperiences } from "@/lib/data";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
+import maasaiVillage from "@/assets/maasai-village.jpg";
+import maasaiVillageWebp from "@/assets/maasai-village.webp";
+import maasaiBeading from "@/assets/maasai-beading.jpg";
+import maasaiBeadingWebp from "@/assets/maasai-beading.webp";
+import swahiliCooking from "@/assets/swahili-cooking.jpg";
+import swahiliCookingWebp from "@/assets/swahili-cooking.webp";
+import karenBlixen from "@/assets/karen-blixen.jpg";
+import karenBlixenWebp from "@/assets/karen-blixen.webp";
+import giraffeManoar from "@/assets/giraffe-manor.jpg";
+import giraffeManoarWebp from "@/assets/giraffe-manor.webp";
 
-// Using placeholder image - replace with actual cultural images when available
-const culturalBg = safariSunset;
+const imageMap: Record<string, string> = {
+  "maasai-village": maasaiVillage,
+  "maasai-beading": maasaiBeading,
+  "swahili-cooking": swahiliCooking,
+  "karen-blixen": karenBlixen,
+  "giraffe-centre": giraffeManoar,
+  "samburu-culture": safariSunset,
+};
+
+const imageMapWebp: Record<string, string> = {
+  "maasai-village": maasaiVillageWebp,
+  "maasai-beading": maasaiBeadingWebp,
+  "swahili-cooking": swahiliCookingWebp,
+  "karen-blixen": karenBlixenWebp,
+  "giraffe-centre": giraffeManoarWebp,
+  "samburu-culture": safariSunsetWebp,
+};
 
 const iconMap: Record<string, React.ElementType> = {
   "maasai-village": Users,
@@ -71,9 +97,19 @@ const CulturalExperiences = () => {
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 className="group bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-[#F4A261]/30"
               >
-                {/* Image Placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-[#0B3D2E] to-[#1a5c45] flex items-center justify-center">
-                  <IconComponent size={48} className="text-[#F4A261] opacity-50" />
+                {/* Image */}
+                <div className="relative h-48 bg-gradient-to-br from-[#0B3D2E] to-[#1a5c45] flex items-center justify-center overflow-hidden">
+                  <picture>
+                    <source type="image/webp" srcSet={imageMapWebp[exp.id] || safariSunsetWebp} />
+                    <img 
+                      src={imageMap[exp.id] || safariSunset} 
+                      alt={exp.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                   
                   {/* Duration Badge */}
                   <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2">

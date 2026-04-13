@@ -19,39 +19,39 @@ const features = [
   { 
     icon: Shield, 
     title: "Expert Local Guides", 
-    description: "Our professional guides have 10+ years of experience and intimate knowledge of Kenya's wildlife, ensuring you see the Big Five and more.",
-    stats: "10+ Years Avg. Experience"
+    description: "Our professional guides average 10-20 years of field experience with deep knowledge of Kenya's ecosystems, wildlife behavior patterns, and conservation challenges. They possess genuine passion for Africa's natural heritage and share this enthusiasm through engaging interpretations of wildlife encounters, animal sign reading, and ecosystem understanding.",
+    stats: "10-20 Years Avg. Experience"
   },
   { 
     icon: Star, 
     title: "Luxury Accommodation", 
-    description: "Stay in handpicked lodges and tented camps that blend comfort with authentic African charm, from eco-luxury to 5-star resorts.",
-    stats: "50+ Partner Properties"
+    description: "We partner exclusively with handpicked luxury lodges, boutique eco-lodges, and premium tented camps that harmonize contemporary comfort with authentic African aesthetics. Each accommodation reflects our strict standards for hospitality excellence, environmental responsibility, and cultural sensitivity—from intimate family-run establishments to internationally-acclaimed 5-star resorts.",
+    stats: "50+ Vetted Partner Properties"
   },
   { 
     icon: Users, 
     title: "Small Group Tours", 
-    description: "Maximum 6 guests per vehicle ensures personalized attention, better wildlife viewing, and a more intimate safari experience.",
-    stats: "Max 6 Guests/vehicle"
+    description: "Our commitment to quality over quantity ensures maximum 6 guests per safari vehicle, enabling personalized attention, flexible schedules, and intimate wildlife viewing experiences. This group size facilitates better photography opportunities, reduces environmental impact, and creates ideal conditions for meaningful interactions with guides and fellow travelers.",
+    stats: "Max 6 Guests per Vehicle"
   },
   { 
     icon: Compass, 
     title: "Tailored Itineraries", 
-    description: "Every trip is customizable to your preferences. Tell us your dream safari and we'll create a perfect personalized itinerary.",
-    stats: "100% Customizable"
+    description: "Your perfect African adventure originates with us understanding your unique preferences, interests, and travel style. We craft completely customizable itineraries—from multi-destination epics to focused single-destination immersions, incorporating activities ranging from wildlife game drives to cultural visits, adventure activities to leisure relaxation.",
+    stats: "100% Customizable Itineraries"
   },
   { 
     icon: Award, 
-    title: "Award-Winning Service", 
-    recognition: "TripAdvisor Excellence", 
-    description: "Recognized by leading travel platforms for our exceptional service and unforgettable safari experiences.",
-    stats: "5000+ Happy Travelers"
+    title: "Award-Winning Excellence", 
+    recognition: "TripAdvisor & Industry Awards", 
+    description: "Consistently recognized by leading international travel authorities for exceptional service quality, guest satisfaction, and experience innovation. Our accolades reflect our genuine commitment to surpassing traveler expectations—validated by thousands of verified reviews and repeat clientele from across the globe.",
+    stats: "5000+ Glowing Reviews"
   },
   { 
     icon: Clock, 
-    title: "24/7 Support", 
-    description: "Round-the-clock assistance from our dedicated team. From planning to your final day, we're always here to help.",
-    stats: "24/7 Assistance"
+    title: "24/7 Dedicated Support", 
+    description: "Our dedicated team provides round-the-clock assistance throughout your journey—from initial dream conceptualization through detailed pre-trip planning to on-ground support during your safari. We're available via WhatsApp, email, and phone whenever you need guidance, reassurance, or immediate assistance.",
+    stats: "Always Available for You"
   },
 ];
 
@@ -88,8 +88,7 @@ const WhyChooseUs = () => {
           </span>
           <h2 className="safari-heading mb-4">Your Trusted Safari Partner</h2>
           <p className="safari-subheading mx-auto">
-            With over 15 years of experience crafting unforgettable African adventures, we combine local expertise 
-            with world-class service to create memories that last a lifetime
+            With over 15 years of deep-rooted experience crafting unforgettable African adventures, we combine unparalleled local expertise with internationally-recognized hospitality standards. Our team of expert naturalists, cultural historians, and professional guides are passionately committed to creating transformative safari experiences. We understand that every traveler brings unique dreams and expectations, which is why we specialize in bespoke itineraries tailored to your preferences, interests, and travel style. From intimate small-group safaris to exclusive private adventures, from budget-conscious packages to ultra-luxury experiences, we deliver world-class service consistently recognized by leading travel authorities and verified by thousands of delighted travelers.
           </p>
         </motion.div>
 
@@ -172,10 +171,10 @@ const WhyChooseUs = () => {
             </div>
           </div>
           <div className="flex items-center gap-3 text-muted-foreground">
-            <Plane size={20} />
+            <Globe size={20} />
             <div>
-              <p className="font-semibold text-foreground text-sm">Free Transfers</p>
-              <p className="text-xs">Airport pickup & drop-off</p>
+              <p className="font-semibold text-foreground text-sm">Great Service</p>
+              <p className="text-xs">Personalized support & attention</p>
             </div>
           </div>
           <div className="flex items-center gap-3 text-muted-foreground">

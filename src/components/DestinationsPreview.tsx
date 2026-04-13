@@ -3,17 +3,23 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Calendar, Camera, Sunrise, Palmtree, Mountain, Waves, Landmark, Building2, Bird } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import amboseli from "@/assets/amboseli.jpg";
+import amboseliWebp from "@/assets/amboseli.webp";
 import dianiBeach from "@/assets/diani-beach.jpg";
+import dianiBeachWebp from "@/assets/diani-beach.webp";
 import tsavo from "@/assets/tsavo.jpg";
+import tsavoWebp from "@/assets/tsavo.webp";
 import lamu from "@/assets/lamu.jpg";
-import safariSunset from "@/assets/safari-sunset.jpg";
-
-// Using placeholder images for new destinations - replace with actual images when available
-const nairobiImg = safariSunset;
-const nakuruImg = safariSunset;
-const samburuImg = safariSunset;
-const meruImg = safariSunset;
+import lamuWebp from "@/assets/lamu.webp";
+import nairobi from "@/assets/nairobi.jpg";
+import nairobiWebp from "@/assets/nairobi.webp";
+import nakuru from "@/assets/lake-nakuru.jpeg";
+import nakuruWebp from "@/assets/lake-nakuru.webp";
+import samburu from "@/assets/samburu.jpg";
+import samburuWebp from "@/assets/samburu.webp";
+import meru from "@/assets/meru.jpg";
+import meruWebp from "@/assets/meru.webp";
 
 const destinationImages: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -21,10 +27,22 @@ const destinationImages: Record<string, string> = {
   "diani-beach": dianiBeach,
   tsavo: tsavo,
   lamu: lamu,
-  nairobi: nairobiImg,
-  nakuru: nakuruImg,
-  samburu: samburuImg,
-  meru: meruImg,
+  nairobi,
+  nakuru,
+  samburu,
+  meru,
+};
+
+const destinationImagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  amboseli: amboseliWebp,
+  "diani-beach": dianiBeachWebp,
+  tsavo: tsavoWebp,
+  lamu: lamuWebp,
+  nairobi: nairobiWebp,
+  nakuru: nakuruWebp,
+  samburu: samburuWebp,
+  meru: meruWebp,
 };
 
 const destinationIcons: Record<string, React.ElementType> = {
@@ -44,7 +62,7 @@ const destinationData = [
     id: "masai-mara", 
     name: "Masai Mara", 
     tagline: "The Great Migration",
-    description: "Witness the world's most spectacular wildlife event with over 1.5 million wildebeest crossing the Mara River",
+    description: "Witness the world's most spectacular wildlife event with over 1.5 million wildebeest crossing the Mara River. Beyond the river crossings, the Mara offers dense predator activity, expansive photographic vistas, and expert-led game drives that reveal the rhythms of the savanna. Optional hot-air balloon flights and Maasai cultural visits add unforgettable perspectives to the experience.",
     bestTime: "July - October",
     highlights: ["Big Five", "Great Migration", "Hot Air Balloon", "Maasai Culture"],
     icon: "masai-mara"
@@ -53,7 +71,7 @@ const destinationData = [
     id: "amboseli", 
     name: "Amboseli", 
     tagline: "Land of the Giants",
-    description: "Home to Africa's largest elephants with breathtaking views of Mount Kilimanjaro, Africa's highest peak",
+    description: "Home to Africa's largest elephants with breathtaking views of Mount Kilimanjaro, Africa's highest peak. Amboseli's compact park layout means excellent visibility for elephant herds at close range, bird-rich wetlands, and short guided walks. Photographers prize the dramatic Kilimanjaro backdrop during golden hour, while community visits showcase Maasai pastoral life.",
     bestTime: "June - October",
     highlights: ["Elephant Herds", "Kilimanjaro Views", "Bird Watching", "Cultural Visits"],
     icon: "amboseli"
@@ -62,7 +80,7 @@ const destinationData = [
     id: "diani-beach", 
     name: "Diani Beach", 
     tagline: "Paradise Found",
-    description: "Award-winning pristine white sand beach with crystal clear waters, perfect for relaxation and water sports",
+    description: "Award-winning pristine white sand beach with crystal clear waters, perfect for relaxation and water sports. Diani's protected reefs make it a superb snorkeling and diving destination, while beachfront resorts and laid-back beach bars provide easy luxury and local hospitality. Activities range from dolphin safaris to kite-surfing lessons and serene sunset strolls along the shoreline.",
     bestTime: "Dec - Mar, Jul - Oct",
     highlights: ["Snorkeling", "Dolphin Watching", "Golf", "Spa Retreats"],
     icon: "diani-beach"
@@ -71,7 +89,7 @@ const destinationData = [
     id: "tsavo", 
     name: "Tsavo", 
     tagline: "Theatre of the Wild",
-    description: "Kenya's largest park featuring the famous red elephants, volcanic landscapes, and raw untamed wilderness",
+    description: "Kenya's largest park featuring the famous red elephants, volcanic landscapes, and raw untamed wilderness. Tsavo's vast horizons deliver solitude, dramatic geological features like the Shetani Lava Flow, and remote camps that emphasize authentic wilderness camping and nocturnal wildlife encounters under brilliant star skies.",
     bestTime: "Jun - Oct, Jan - Feb",
     highlights: ["Red Elephants", "Mzima Springs", "Volcanic Landscapes", "Camping"],
     icon: "tsavo"
@@ -80,7 +98,7 @@ const destinationData = [
     id: "lamu", 
     name: "Lamu", 
     tagline: "Pearl of the Indian Ocean",
-    description: "UNESCO World Heritage site offering timeless Swahili culture, ancient architecture, and tranquil island life",
+    description: "UNESCO World Heritage site offering timeless Swahili culture, ancient architecture, and tranquil island life. Lamu's narrow lanes, dhow sails, and serene guesthouses invite slow exploration, hands-on craft markets, and immersive Swahili cuisine experiences that connect you to centuries of coastal trade and tradition.",
     bestTime: "Jul - Oct, Dec - Mar",
     highlights: ["Old Town", "Dhow Sailing", "Swahili Cuisine", "Donkey Sanctuaries"],
     icon: "lamu"
@@ -89,7 +107,7 @@ const destinationData = [
     id: "nairobi", 
     name: "Nairobi", 
     tagline: "The Green City in the Sun",
-    description: "Kenya's vibrant capital with elephant sanctuaries, cultural museums, and wildlife experiences right on the city outskirts",
+    description: "Kenya's vibrant capital with elephant sanctuaries, cultural museums, and wildlife experiences right on the city outskirts. Nairobi balances cosmopolitan dining and arts with conservation attractions like the Sheldrick Elephant Orphanage and Giraffe Centre, offering easy half-day excursions that fit well into wider safari itineraries.",
     bestTime: "Year Round",
     highlights: ["Giraffe Manor", "Karen Blixen", "Elephant Orphanage", "Shopping"],
     icon: "nairobi"
@@ -98,7 +116,7 @@ const destinationData = [
     id: "nakuru", 
     name: "Lake Nakuru", 
     tagline: "The Pink Lake",
-    description: "Famous for millions of flamingos creating a pink carpet on the lake, plus excellent rhino and bird watching",
+    description: "Famous for millions of flamingos creating a pink carpet on the lake, plus excellent rhino and bird watching. Lake Nakuru's scenic viewpoints, diverse habitats and dedicated rhino conservation areas make it a rewarding stop for photographers and birders, with walking trails and lookout points that reveal changing seasonal colours.",
     bestTime: "Jun - Oct, Jan - Feb",
     highlights: ["Flamingos", "Rhinos", "Bird Watching", "Lake Views"],
     icon: "nakuru"
@@ -107,7 +125,7 @@ const destinationData = [
     id: "samburu", 
     name: "Samburu", 
     tagline: "Land of the Nomads",
-    description: "Remote northern Kenya with unique wildlife species like Grevy's zebra and reticulated giraffe",
+    description: "Remote northern Kenya with unique wildlife species like Grevy's zebra and reticulated giraffe. Samburu's distinctive arid landscapes, Ewaso Ng'iro riverine corridors and culturally-rich Samburu community encounters provide a complementary experience to southern reserves, prized for endemic species and intimate camps.",
     bestTime: "Jun - Oct, Dec - Mar",
     highlights: ["Grevy's Zebra", "Samburu Culture", "Reticulated Giraffe", "River Walks"],
     icon: "samburu"
@@ -116,7 +134,7 @@ const destinationData = [
     id: "meru", 
     name: "Meru", 
     tagline: "Untouched Wilderness",
-    description: "One of Kenya's most pristine parks with classic savanna landscapes and the legendary Elsa's Kopje",
+    description: "One of Kenya's most pristine parks with classic savanna landscapes and the legendary Elsa's Kopje. Meru offers secluded game viewing, riverine habitats, and conservation stories linked to famous conservationists—ideal for travelers seeking quiet, off-the-beaten-path safaris and immersive birding or walking excursions.",
     bestTime: "Jun - Oct, Dec - Mar",
     highlights: ["Elsa's Kopje", "Rhino Tracking", "Tana River", "Eco-Safaris"],
     icon: "meru"
@@ -149,8 +167,7 @@ const DestinationsPreview = () => {
           </span>
           <h2 className="safari-heading mb-4">Discover Our Safari Destinations</h2>
           <p className="safari-subheading mx-auto">
-            From the vast savannas teeming with wildlife to pristine beaches and ancient cultural sites, 
-            Kenya offers unforgettable experiences for every traveler
+            Journey through Africa's most diverse and captivating landscapes where vast golden savannas teeming with iconic wildlife blend seamlessly with pristine Indian Ocean beaches, misty highlands harboring endemic species, and vibrant destinations preserving centuries of Swahili and Maasai heritage. Kenya encompasses every African experience imaginable—from thrilling safari encounters with the legendary Big Five to intimate cultural immersion with indigenous communities, from world-class beach resorts to remote wilderness sanctuaries. Each destination reveals distinct character: some famous for wildlife abundance, others celebrated for cultural richness, still others renowned for scenery grandeur and adventure opportunities. Kenya offers unforgettable experiences for every traveler, whether seeking raw wilderness adventure, luxury comfort, cultural understanding, or serene beach relaxation
           </p>
         </motion.div>
 
@@ -171,12 +188,16 @@ const DestinationsPreview = () => {
                   className="block relative h-[420px] rounded-2xl overflow-hidden"
                 >
                   {/* Image */}
-                  <img
-                    src={destinationImages[dest.id]}
-                    alt={dest.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={destinationImagesWebp[dest.id]} />
+                    <img
+                      src={destinationImages[dest.id]}
+                      alt={dest.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -242,12 +263,16 @@ const DestinationsPreview = () => {
                   to="/destinations"
                   className="block relative h-[320px] rounded-2xl overflow-hidden"
                 >
-                  <img
-                    src={destinationImages[dest.id]}
-                    alt={dest.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={destinationImagesWebp[dest.id]} />
+                    <img
+                      src={destinationImages[dest.id]}
+                      alt={dest.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   
                   {/* Best Time Badge */}
