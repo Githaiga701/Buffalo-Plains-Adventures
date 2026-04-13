@@ -4,12 +4,16 @@ import { useRef } from "react";
 import { MapPin, Calendar, Waves, Anchor, Sunset, Palmtree, Fish, Umbrella, ArrowRight, Star } from "lucide-react";
 import { beaches } from "@/lib/data";
 import dianiBeach from "@/assets/diani-beach.jpg";
+import dianiBeachWebp from "@/assets/diani-beach.webp";
 
-// Using placeholder images for new beaches - replace with actual images when available
 const watamuImg = dianiBeach;
+const watamuImgWebp = dianiBeachWebp;
 const malindiImg = dianiBeach;
+const malindiImgWebp = dianiBeachWebp;
 const kilifiImg = dianiBeach;
+const kilifiImgWebp = dianiBeachWebp;
 const mombasaImg = dianiBeach;
+const mombasaImgWebp = dianiBeachWebp;
 
 const beachImages: Record<string, string> = {
   "diani-beach": dianiBeach,
@@ -17,6 +21,14 @@ const beachImages: Record<string, string> = {
   malindi: malindiImg,
   kilifi: kilifiImg,
   mombasa: mombasaImg,
+};
+
+const beachImagesWebp: Record<string, string> = {
+  "diani-beach": dianiBeachWebp,
+  watamu: watamuImgWebp,
+  malindi: malindiImgWebp,
+  kilifi: kilifiImgWebp,
+  mombasa: mombasaImgWebp,
 };
 
 const beachIcons: Record<string, React.ElementType> = {
@@ -71,12 +83,16 @@ const BeachDestinations = () => {
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={beachImages[beach.id]}
-                    alt={beach.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={beachImagesWebp[beach.id]} />
+                    <img
+                      src={beachImages[beach.id]}
+                      alt={beach.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   
                   {/* Best Time Badge */}

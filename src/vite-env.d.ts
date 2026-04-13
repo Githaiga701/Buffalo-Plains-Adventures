@@ -10,3 +10,9 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+declare module "react" {
+  interface ImgHTMLAttributes<T> extends HTMLAttributes<T> {
+    fetchPriority?: "high" | "low" | "auto";
+  }
+}

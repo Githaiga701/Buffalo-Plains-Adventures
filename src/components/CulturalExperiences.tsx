@@ -15,11 +15,17 @@ import {
 } from "lucide-react";
 import { culturalExperiences } from "@/lib/data";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 import maasaiVillage from "@/assets/maasai-village.jpg";
+import maasaiVillageWebp from "@/assets/maasai-village.webp";
 import maasaiBeading from "@/assets/maasai-beading.jpg";
+import maasaiBeadingWebp from "@/assets/maasai-beading.webp";
 import swahiliCooking from "@/assets/swahili-cooking.jpg";
+import swahiliCookingWebp from "@/assets/swahili-cooking.webp";
 import karenBlixen from "@/assets/karen-blixen.jpg";
+import karenBlixenWebp from "@/assets/karen-blixen.webp";
 import giraffeManoar from "@/assets/giraffe-manor.jpg";
+import giraffeManoarWebp from "@/assets/giraffe-manor.webp";
 
 const imageMap: Record<string, string> = {
   "maasai-village": maasaiVillage,
@@ -28,6 +34,15 @@ const imageMap: Record<string, string> = {
   "karen-blixen": karenBlixen,
   "giraffe-centre": giraffeManoar,
   "samburu-culture": safariSunset,
+};
+
+const imageMapWebp: Record<string, string> = {
+  "maasai-village": maasaiVillageWebp,
+  "maasai-beading": maasaiBeadingWebp,
+  "swahili-cooking": swahiliCookingWebp,
+  "karen-blixen": karenBlixenWebp,
+  "giraffe-centre": giraffeManoarWebp,
+  "samburu-culture": safariSunsetWebp,
 };
 
 const iconMap: Record<string, React.ElementType> = {
@@ -84,11 +99,16 @@ const CulturalExperiences = () => {
               >
                 {/* Image */}
                 <div className="relative h-48 bg-gradient-to-br from-[#0B3D2E] to-[#1a5c45] flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={imageMap[exp.id] || safariSunset} 
-                    alt={exp.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={imageMapWebp[exp.id] || safariSunsetWebp} />
+                    <img 
+                      src={imageMap[exp.id] || safariSunset} 
+                      alt={exp.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                   
                   {/* Duration Badge */}

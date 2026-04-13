@@ -12,6 +12,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const CTASection = () => {
   const ref = useRef(null);
@@ -29,12 +30,16 @@ const CTASection = () => {
   return (
     <section className="relative py-20 overflow-hidden" ref={ref}>
       {/* Background Image */}
-      <img
-        src={safariSunset}
-        alt="Safari sunset in Kenya"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-      />
+      <picture>
+        <source type="image/webp" srcSet={safariSunsetWebp} />
+        <img
+          src={safariSunset}
+          alt="Safari sunset in Kenya"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       
       {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B3D2E]/90 via-[#0B3D2E]/80 to-[#0B3D2E]/70" />

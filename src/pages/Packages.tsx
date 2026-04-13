@@ -3,13 +3,22 @@ import { motion } from "framer-motion";
 import { Clock, MapPin } from "lucide-react";
 import { packages } from "@/lib/data";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import luxurySafari from "@/assets/luxury-safari.jpg";
+import luxurySafariWebp from "@/assets/luxury-safari.webp";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const packageImages: Record<string, string> = {
   "masai-mara": masaiMara,
   luxury: luxurySafari,
   explorer: safariSunset,
+};
+
+const packageImagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  luxury: luxurySafariWebp,
+  explorer: safariSunsetWebp,
 };
 
 const Packages = () => {
@@ -40,12 +49,16 @@ const Packages = () => {
                 className="group block bg-card rounded-lg overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-safari)] transition-shadow duration-300 h-full"
               >
                 <div className="relative h-60 overflow-hidden">
-                  <img
-                    src={packageImages[pkg.image]}
-                    alt={pkg.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={packageImagesWebp[pkg.image]} />
+                    <img
+                      src={packageImages[pkg.image]}
+                      alt={pkg.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-muted-foreground text-xs mb-3">

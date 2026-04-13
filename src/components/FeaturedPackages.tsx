@@ -11,13 +11,22 @@ import {
   Palmtree
 } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import luxurySafari from "@/assets/luxury-safari.jpg";
+import luxurySafariWebp from "@/assets/luxury-safari.webp";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const packageImages: Record<string, string> = {
   "masai-mara": masaiMara,
   luxury: luxurySafari,
   explorer: safariSunset,
+};
+
+const packageImagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  luxury: luxurySafariWebp,
+  explorer: safariSunsetWebp,
 };
 
 const pkgs = [
@@ -70,12 +79,16 @@ const FeaturedPackages = () => {
               >
                 {/* Image Section */}
                 <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={packageImages[pkg.image]}
-                    alt={pkg.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={packageImagesWebp[pkg.image]} />
+                    <img
+                      src={packageImages[pkg.image]}
+                      alt={pkg.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </div>
 
                 {/* Content */}

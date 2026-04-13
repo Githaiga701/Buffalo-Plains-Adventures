@@ -3,14 +3,23 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, Calendar, Camera, Sunrise, Palmtree, Mountain, Waves, Landmark, Building2, Bird } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import amboseli from "@/assets/amboseli.jpg";
+import amboseliWebp from "@/assets/amboseli.webp";
 import dianiBeach from "@/assets/diani-beach.jpg";
+import dianiBeachWebp from "@/assets/diani-beach.webp";
 import tsavo from "@/assets/tsavo.jpg";
+import tsavoWebp from "@/assets/tsavo.webp";
 import lamu from "@/assets/lamu.jpg";
+import lamuWebp from "@/assets/lamu.webp";
 import nairobi from "@/assets/nairobi.jpg";
+import nairobiWebp from "@/assets/nairobi.webp";
 import nakuru from "@/assets/lake-nakuru.jpeg";
+import nakuruWebp from "@/assets/lake-nakuru.webp";
 import samburu from "@/assets/samburu.jpg";
+import samburuWebp from "@/assets/samburu.webp";
 import meru from "@/assets/meru.jpg";
+import meruWebp from "@/assets/meru.webp";
 
 const destinationImages: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -22,6 +31,18 @@ const destinationImages: Record<string, string> = {
   nakuru,
   samburu,
   meru,
+};
+
+const destinationImagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  amboseli: amboseliWebp,
+  "diani-beach": dianiBeachWebp,
+  tsavo: tsavoWebp,
+  lamu: lamuWebp,
+  nairobi: nairobiWebp,
+  nakuru: nakuruWebp,
+  samburu: samburuWebp,
+  meru: meruWebp,
 };
 
 const destinationIcons: Record<string, React.ElementType> = {
@@ -167,12 +188,16 @@ const DestinationsPreview = () => {
                   className="block relative h-[420px] rounded-2xl overflow-hidden"
                 >
                   {/* Image */}
-                  <img
-                    src={destinationImages[dest.id]}
-                    alt={dest.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={destinationImagesWebp[dest.id]} />
+                    <img
+                      src={destinationImages[dest.id]}
+                      alt={dest.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -238,12 +263,16 @@ const DestinationsPreview = () => {
                   to="/destinations"
                   className="block relative h-[320px] rounded-2xl overflow-hidden"
                 >
-                  <img
-                    src={destinationImages[dest.id]}
-                    alt={dest.name}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={destinationImagesWebp[dest.id]} />
+                    <img
+                      src={destinationImages[dest.id]}
+                      alt={dest.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   
                   {/* Best Time Badge */}

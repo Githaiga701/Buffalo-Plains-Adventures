@@ -18,11 +18,14 @@ import {
 import heroImage1 from "@/assets/hero-masai-mara.jpg";
 import heroImage2 from "@/assets/luxury-safari.jpg";
 import heroImage3 from "@/assets/safari-sunset.jpg";
+import heroImage1Webp from "@/assets/hero-masai-mara.webp";
+import heroImage2Webp from "@/assets/luxury-safari.webp";
+import heroImage3Webp from "@/assets/safari-sunset.webp";
 
 const heroImages = [
-  { src: heroImage1, alt: "Masai Mara Wildebeest Migration" },
-  { src: heroImage2, alt: "Luxury Safari Lodge" },
-  { src: heroImage3, alt: "African Safari Sunset" },
+  { src: heroImage1, webp: heroImage1Webp, alt: "Masai Mara Wildebeest Migration" },
+  { src: heroImage2, webp: heroImage2Webp, alt: "Luxury Safari Lodge" },
+  { src: heroImage3, webp: heroImage3Webp, alt: "African Safari Sunset" },
 ];
 
 const offerings = [
@@ -73,11 +76,20 @@ const HeroSection = () => {
             transition={{ duration: 1.2 }}
             className="absolute inset-0"
           >
-            <img
-              src={heroImages[currentSlide].src}
-              alt={heroImages[currentSlide].alt}
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={heroImages[currentSlide].webp}
+              />
+              <img
+                src={heroImages[currentSlide].src}
+                alt={heroImages[currentSlide].alt}
+                className="w-full h-full object-cover"
+                fetchPriority={currentSlide === 0 ? "high" : "low"}
+                loading={currentSlide === 0 ? "eager" : "lazy"}
+                decoding={currentSlide === 0 ? "sync" : "async"}
+              />
+            </picture>
           </motion.div>
         </AnimatePresence>
         

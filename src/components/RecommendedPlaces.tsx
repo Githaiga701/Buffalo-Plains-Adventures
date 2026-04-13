@@ -4,18 +4,29 @@ import { useRef } from "react";
 import { MapPin, Calendar, Mountain, TreePine, Anchor, ArrowRight, Star, Eye } from "lucide-react";
 import { recommendedPlaces } from "@/lib/data";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
-// Using placeholder images - replace with actual images when available
 const mountKenyaImg = safariSunset;
+const mountKenyaImgWebp = safariSunsetWebp;
 const aberdareImg = safariSunset;
+const aberdareImgWebp = safariSunsetWebp;
 const naivashaImg = safariSunset;
+const naivashaImgWebp = safariSunsetWebp;
 const kakamegaImg = safariSunset;
+const kakamegaImgWebp = safariSunsetWebp;
 
 const placeImages: Record<string, string> = {
   "mount-kenya": mountKenyaImg,
   aberdare: aberdareImg,
   naivasha: naivashaImg,
   kakamega: kakamegaImg,
+};
+
+const placeImagesWebp: Record<string, string> = {
+  "mount-kenya": mountKenyaImgWebp,
+  aberdare: aberdareImgWebp,
+  naivasha: naivashaImgWebp,
+  kakamega: kakamegaImgWebp,
 };
 
 const categoryIcons: Record<string, React.ElementType> = {
@@ -68,12 +79,16 @@ const RecommendedPlaces = () => {
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={placeImages[place.id]}
-                    alt={place.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={placeImagesWebp[place.id]} />
+                    <img
+                      src={placeImages[place.id]}
+                      alt={place.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   
                   {/* Category Badge */}

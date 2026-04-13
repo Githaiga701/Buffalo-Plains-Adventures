@@ -2,14 +2,23 @@ import { motion } from "framer-motion";
 import { destinations } from "@/lib/data";
 import { MapPin, Calendar, Activity, Building2, Star } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import amboseli from "@/assets/amboseli.jpg";
+import amboseliWebp from "@/assets/amboseli.webp";
 import dianiBeach from "@/assets/diani-beach.jpg";
+import dianiBeachWebp from "@/assets/diani-beach.webp";
 import tsavo from "@/assets/tsavo.jpg";
+import tsavoWebp from "@/assets/tsavo.webp";
 import lamu from "@/assets/lamu.jpg";
+import lamuWebp from "@/assets/lamu.webp";
 import nairobi from "@/assets/nairobi.jpg";
+import nairobiWebp from "@/assets/nairobi.webp";
 import nakuru from "@/assets/lake-nakuru.jpeg";
+import nakuruWebp from "@/assets/lake-nakuru.webp";
 import samburu from "@/assets/samburu.jpg";
+import samburuWebp from "@/assets/samburu.webp";
 import meru from "@/assets/meru.jpg";
+import meruWebp from "@/assets/meru.webp";
 
 const images: Record<string, string> = {
   "masai-mara": masaiMara,
@@ -21,6 +30,18 @@ const images: Record<string, string> = {
   nakuru,
   samburu,
   meru,
+};
+
+const imagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  amboseli: amboseliWebp,
+  "diani-beach": dianiBeachWebp,
+  tsavo: tsavoWebp,
+  lamu: lamuWebp,
+  nairobi: nairobiWebp,
+  nakuru: nakuruWebp,
+  samburu: samburuWebp,
+  meru: meruWebp,
 };
 
 const Destinations = () => {
@@ -51,12 +72,16 @@ const Destinations = () => {
             >
               <div className={`${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div className="relative h-80 lg:h-96 rounded-lg overflow-hidden">
-                  <img
-                    src={images[dest.id]}
-                    alt={dest.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source type="image/webp" srcSet={imagesWebp[dest.id]} />
+                    <img
+                      src={images[dest.id]}
+                      alt={dest.name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </div>
               </div>
               <div className={`${i % 2 === 1 ? "lg:order-1" : ""}`}>

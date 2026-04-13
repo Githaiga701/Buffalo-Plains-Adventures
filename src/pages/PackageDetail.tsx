@@ -3,13 +3,22 @@ import { packages } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Clock, Check, X, MessageCircle } from "lucide-react";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 import luxurySafari from "@/assets/luxury-safari.jpg";
+import luxurySafariWebp from "@/assets/luxury-safari.webp";
 import safariSunset from "@/assets/safari-sunset.jpg";
+import safariSunsetWebp from "@/assets/safari-sunset.webp";
 
 const packageImages: Record<string, string> = {
   "masai-mara": masaiMara,
   luxury: luxurySafari,
   explorer: safariSunset,
+};
+
+const packageImagesWebp: Record<string, string> = {
+  "masai-mara": masaiMaraWebp,
+  luxury: luxurySafariWebp,
+  explorer: safariSunsetWebp,
 };
 
 const PackageDetail = () => {
@@ -29,7 +38,10 @@ const PackageDetail = () => {
     <main className="pt-20">
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px]">
-        <img src={packageImages[pkg.image]} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <picture>
+          <source type="image/webp" srcSet={packageImagesWebp[pkg.image]} />
+          <img src={packageImages[pkg.image]} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+        </picture>
         <div className="absolute inset-0 safari-hero-overlay" />
         <div className="relative z-10 h-full flex items-end">
           <div className="safari-container pb-12">

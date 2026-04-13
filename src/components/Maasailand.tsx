@@ -4,18 +4,29 @@ import { useRef } from "react";
 import { MapPin, Calendar, Users, Camera, Sunrise, ArrowRight, Star, Heart } from "lucide-react";
 import { maasailand } from "@/lib/data";
 import masaiMara from "@/assets/masai-mara-dest.jpg";
+import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
 
-// Using placeholder images - replace with actual images when available
 const maraMainImg = masaiMara;
+const maraMainImgWebp = masaiMaraWebp;
 const maraNorthImg = masaiMara;
+const maraNorthImgWebp = masaiMaraWebp;
 const maraEastImg = masaiMara;
+const maraEastImgWebp = masaiMaraWebp;
 const olPejetaImg = masaiMara;
+const olPejetaImgWebp = masaiMaraWebp;
 
 const maasaiImages: Record<string, string> = {
   "masai-mara-main": maraMainImg,
   "mara-north": maraNorthImg,
   "mara-east": maraEastImg,
   "ollenkuit": olPejetaImg,
+};
+
+const maasaiImagesWebp: Record<string, string> = {
+  "masai-mara-main": maraMainImgWebp,
+  "mara-north": maraNorthImgWebp,
+  "mara-east": maraEastImgWebp,
+  "ollenkuit": olPejetaImgWebp,
 };
 
 const Maasailand = () => {
@@ -63,12 +74,16 @@ const Maasailand = () => {
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <img
-                  src={maasaiImages[place.id]}
-                  alt={place.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcSet={maasaiImagesWebp[place.id]} />
+                  <img
+                    src={maasaiImages[place.id]}
+                    alt={place.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 
                 {/* Best Time Badge */}

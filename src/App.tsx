@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,16 +8,17 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import Index from "./pages/Index";
-import Destinations from "./pages/Destinations";
-import Packages from "./pages/Packages";
-import PackageDetail from "./pages/PackageDetail";
-import Gallery from "./pages/Gallery";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import FAQ from "./pages/FAQ";
-import NotFound from "./pages/NotFound";
-import Booking from "./pages/Booking";
+
+const Index        = lazy(() => import("./pages/Index"));
+const Destinations = lazy(() => import("./pages/Destinations"));
+const Packages     = lazy(() => import("./pages/Packages"));
+const PackageDetail= lazy(() => import("./pages/PackageDetail"));
+const Gallery      = lazy(() => import("./pages/Gallery"));
+const About        = lazy(() => import("./pages/About"));
+const Contact      = lazy(() => import("./pages/Contact"));
+const FAQ          = lazy(() => import("./pages/FAQ"));
+const NotFound     = lazy(() => import("./pages/NotFound"));
+const Booking      = lazy(() => import("./pages/Booking"));
 
 const queryClient = new QueryClient();
 
@@ -29,18 +31,20 @@ const App = () => (
         <a href="#main-content" className="skip-link">Skip to content</a>
         <Navbar />
         <main id="main-content">
-          <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/destinations" element={<Destinations />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/packages/:id" element={<PackageDetail />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
+            <Routes>
+              <Route path="/"            element={<Index />} />
+              <Route path="/destinations" element={<Destinations />} />
+              <Route path="/packages"    element={<Packages />} />
+              <Route path="/packages/:id" element={<PackageDetail />} />
+              <Route path="/booking"     element={<Booking />} />
+              <Route path="/gallery"     element={<Gallery />} />
+              <Route path="/about"       element={<About />} />
+              <Route path="/contact"     element={<Contact />} />
+              <Route path="/faq"         element={<FAQ />} />
+              <Route path="*"            element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
         <WhatsAppButton />
