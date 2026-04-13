@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><path d="M200 0 L400 400 H0 Z" fill="#ffcc00"/><circle cx="200" cy="200" r="100" fill="#ff0000"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Green background -->
+  <rect width="64" height="64" rx="10" fill="#0B3D2E"/>
+  <!-- Logo scaled and centred, rendered white over green -->
+  <g transform="translate(4, 4) scale(0.03646) translate(-768, -512)" fill="#F4A261">
+    <image href="/assets/brand-logo.svg" x="0" y="0" width="1536" height="1024"/>
+  </g>
+</svg>
