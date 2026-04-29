@@ -116,7 +116,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ## 📬 Contact
 
-Maintainer – contact@example.com
+Maintainer – gitongagideon701@gmail.com
 
 Project: Buffalo Plains Adventures
 
