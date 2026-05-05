@@ -281,29 +281,6 @@ const Contact = () => {
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
 
-            {/* Email Setup Instructions */}
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-              <details>
-                <summary className="cursor-pointer font-medium text-sm text-foreground hover:text-secondary transition-colors">
-                  Email Setup Instructions
-                </summary>
-                <div className="mt-3 text-sm text-muted-foreground space-y-2">
-                  <p>To enable email notifications from the contact form:</p>
-                  <ol className="list-decimal list-inside space-y-1 ml-2">
-                    <li>Sign up for a free account at <a href="https://emailjs.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">EmailJS</a></li>
-                    <li>Create an Email Service (connects to email providers like Gmail, Mailgun, etc.)</li>
-                    <li>Create an Email Template with variables: <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_name&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_email&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;message&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;country&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;travel_dates&#125;&#125;</code></li>
-                    <li>Get your Service ID, Template ID, and Public Key from EmailJS dashboard</li>
-                    <li>Create a .env file in the project root with:</li>
-                  </ol>
-                  <pre className="bg-background p-3 rounded text-xs overflow-x-auto">
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_template_id_here</pre>
-                </div>
-              </details>
-            </div>
-
             {/* Map placeholder */}
             <div className="rounded-lg overflow-hidden h-64 bg-muted flex items-center justify-center">
               <iframe
