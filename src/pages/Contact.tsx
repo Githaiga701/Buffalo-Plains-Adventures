@@ -1,15 +1,128 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle } from "lucide-react";
 import { WHATSAPP_DEFAULT_MSG, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
+import emailjs from '@emailjs/browser';
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  country: string;
+  travelDates: string;
+  message: string;
+}
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
+  const [showEmailSetup, setShowEmailSetup] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
+    defaultValues: {
+      name: '',
+      email: '',
+      country: '',
+      travelDates: '',
+      message: '',
+    },
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSending(true);
+    setSendError(null);
+
+    try {
+      // Initialize EmailJS with public key (user needs to add their own)
+      // Get public key from: https://dashboard.emailjs.com/
+      const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.VITE_EMAILJS_PUBLIC_KEY || '';
+      const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.VITE_EMAILJS_SERVICE_ID || '';
+      const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.VITE_EMAILJS_TEMPLATE_ID || '';
+
+      if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+        setShowEmailSetup(true);
+        throw new Error('Email service not configured. Please set up EmailJS credentials.');
+      }
+
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        country: data.country,
+        travel_dates: data.travelDates,
+        message: data.message,
+        to_email: CONTACT_EMAIL,
+        to_name: 'Buffalo Plains Adventures Team',
+        reply_to: data.email,
+        subject: `New Inquiry from ${data.name}`,
+      };
+
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      console.log('Email sent successfully:', response);
+      setSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSendError('Failed to send your message. Please try again later.');
+    } finally {
+      setIsSending(false);
+    }
   };
+
+  if (submitted) {
+    return (
+      <main className="pt-20">
+        <section className="safari-section bg-primary text-center">
+          <div className="safari-container">
+            <p className="text-accent text-sm tracking-[0.2em] uppercase mb-2">Thank You</p>
+            <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">Inquiry Received</h1>
+            <p className="text-primary-foreground/70 text-lg mt-4 max-w-2xl mx-auto">
+              We've received your inquiry and will respond within 24 hours.
+            </p>
+          </div>
+        </section>
+
+        <section className="safari-section bg-background">
+          <div className="safari-container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-2xl mx-auto text-center py-12"
+            >
+              <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle className="text-secondary" size={32} />
+              </div>
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-3">Thank You, {submitted ? 'Traveler' : 'Guest'}!</h3>
+              <p className="text-muted-foreground mb-6">
+                Your message has been sent to the Buffalo Plains Adventures team. We'll review your inquiry and contact you soon to discuss your Kenya adventure plans.
+              </p>
+              <p className="text-muted-foreground mb-8">
+                In the meantime, feel free to explore our{' '}
+                <a href="/" className="text-secondary hover:underline">destinations</a> or{' '}
+                <a href="#contact" className="text-secondary hover:underline">other contact methods</a> if your matter is urgent.
+              </p>
+              <button
+                onClick={() => {
+                  setSubmitted(false);
+                  setShowEmailSetup(false);
+                }}
+                className="bg-secondary text-secondary-foreground px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"
+              >
+                Send Another Message
+              </button>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="pt-20">
@@ -31,76 +144,106 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            {submitted ? (
-              <div className="bg-muted rounded-lg p-12 text-center">
-                <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Send className="text-secondary" size={28} />
-                </div>
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-2">Thank You!</h3>
-                <p className="text-muted-foreground">We've received your inquiry and will get back to you within 24 hours.</p>
+            {sendError && (
+              <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300 text-sm">
+                {sendError}
+                {showEmailSetup && (
+                  <div className="mt-3 p-3 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded text-amber-800 dark:text-amber-200">
+                    <strong className="font-semibold">Setup Required:</strong> Please configure email service credentials in the .env file to enable email sending.
+                  </div>
+                )}
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">Name *</label>
-                    <input
-                      type="text"
-                      required
-                      maxLength={100}
-                      className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
-                    <input
-                      type="email"
-                      required
-                      maxLength={255}
-                      className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">Country</label>
-                    <input
-                      type="text"
-                      maxLength={100}
-                      className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
-                      placeholder="Your country"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1.5">Travel Dates</label>
-                    <input
-                      type="text"
-                      maxLength={100}
-                      className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
-                      placeholder="e.g., July 2025"
-                    />
-                  </div>
+            )}
+
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">Name *</label>
+                  <input
+                    type="text"
+                    {...register("name", { 
+                      required: "Name is required",
+                      maxLength: { value: 100, message: "Name must be less than 100 characters" }
+                    })}
+                    className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                    placeholder="Your full name"
+                  />
+                  {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Message *</label>
-                  <textarea
-                    required
-                    maxLength={2000}
-                    rows={5}
-                    className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
-                    placeholder="Tell us about your dream Kenya trip..."
+                  <label className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
+                  <input
+                    type="email"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Please enter a valid email address"
+                      }
+                    })}
+                    className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                    placeholder="you@example.com"
                   />
+                  {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-secondary text-secondary-foreground py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"
-                >
-                  Send Inquiry
-                </button>
-              </form>
-            )}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">Country</label>
+                  <input
+                    type="text"
+                    {...register("country", { maxLength: { value: 100, message: "Country must be less than 100 characters" } })}
+                    className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                    placeholder="Your country"
+                  />
+                  {errors.country && <span className="text-red-500 text-sm">{errors.country.message}</span>}
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1.5">Travel Dates</label>
+                  <input
+                    type="text"
+                    {...register("travelDates", { maxLength: { value: 100, message: "Travel dates must be less than 100 characters" } })}
+                    className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                    placeholder="e.g., July 2025"
+                  />
+                  {errors.travelDates && <span className="text-red-500 text-sm">{errors.travelDates.message}</span>}
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1.5">Message *</label>
+                <textarea
+                  {...register("message", { 
+                    required: "Message is required",
+                    maxLength: { value: 2000, message: "Message must be less than 2000 characters" },
+                    minLength: { value: 10, message: "Message must be at least 10 characters" }
+                  })}
+                  rows={5}
+                  className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
+                  placeholder="Tell us about your dream Kenya trip..."
+                />
+                {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
+              </div>
+              <button
+                type="submit"
+                disabled={isSending}
+                className="w-full bg-secondary text-secondary-foreground py-3 rounded-md font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isSending ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Inquiry
+                  </>
+                )}
+              </button>
+            </form>
           </motion.div>
 
           {/* Contact info */}
@@ -130,13 +273,36 @@ const Contact = () => {
             </div>
 
             <a
-                href={WHATSAPP_DEFAULT_MSG}
+              href={WHATSAPP_DEFAULT_MSG}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground py-3.5 rounded-md font-semibold hover:opacity-90 transition-opacity"
             >
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
+
+            {/* Email Setup Instructions */}
+            <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+              <details>
+                <summary className="cursor-pointer font-medium text-sm text-foreground hover:text-secondary transition-colors">
+                  Email Setup Instructions
+                </summary>
+                <div className="mt-3 text-sm text-muted-foreground space-y-2">
+                  <p>To enable email notifications from the contact form:</p>
+                  <ol className="list-decimal list-inside space-y-1 ml-2">
+                    <li>Sign up for a free account at <a href="https://emailjs.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">EmailJS</a></li>
+                    <li>Create an Email Service (connects to email providers like Gmail, Mailgun, etc.)</li>
+                    <li>Create an Email Template with variables: <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_name&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_email&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;message&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;country&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;travel_dates&#125;&#125;</code></li>
+                    <li>Get your Service ID, Template ID, and Public Key from EmailJS dashboard</li>
+                    <li>Create a .env file in the project root with:</li>
+                  </ol>
+                  <pre className="bg-background p-3 rounded text-xs overflow-x-auto">
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here</pre>
+                </div>
+              </details>
+            </div>
 
             {/* Map placeholder */}
             <div className="rounded-lg overflow-hidden h-64 bg-muted flex items-center justify-center">
