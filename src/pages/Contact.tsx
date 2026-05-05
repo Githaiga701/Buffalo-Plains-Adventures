@@ -17,7 +17,6 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
-  const [showEmailSetup, setShowEmailSetup] = useState(false);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
     defaultValues: {
@@ -34,15 +33,12 @@ const Contact = () => {
     setSendError(null);
 
     try {
-      // Initialize EmailJS with public key (user needs to add their own)
-      // Get public key from: https://dashboard.emailjs.com/
-      const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || process.env.VITE_EMAILJS_PUBLIC_KEY || '';
-      const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.VITE_EMAILJS_SERVICE_ID || '';
-      const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || process.env.VITE_EMAILJS_TEMPLATE_ID || '';
+      const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
       if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
-        setShowEmailSetup(true);
-        throw new Error('Email service not configured. Please set up EmailJS credentials.');
+        throw new Error('Email credentials not configured');
       }
 
       emailjs.init(EMAILJS_PUBLIC_KEY);
@@ -50,27 +46,22 @@ const Contact = () => {
       const templateParams = {
         from_name: data.name,
         from_email: data.email,
-        country: data.country,
-        travel_dates: data.travelDates,
+        country: data.country || 'Not specified',
+        travel_dates: data.travelDates || 'Not specified',
         message: data.message,
         to_email: CONTACT_EMAIL,
-        to_name: 'Buffalo Plains Adventures Team',
+        to_name: 'Buffalo Plains Team',
         reply_to: data.email,
-        subject: `New Inquiry from ${data.name}`,
+        subject: 'New Inquiry from ' + data.name,
       };
 
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
-
-      console.log('Email sent successfully:', response);
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      console.log('Email sent successfully');
       setSubmitted(true);
       reset();
-    } catch (error) {
-      console.error('Failed to send email:', error);
-      setSendError('Failed to send your message. Please try again later.');
+    } catch (error: any) {
+      console.error('Email send error:', error);
+      setSendError('Failed to send: ' + (error.text || error.message || 'Unknown error'));
     } finally {
       setIsSending(false);
     }
@@ -84,35 +75,23 @@ const Contact = () => {
             <p className="text-accent text-sm tracking-[0.2em] uppercase mb-2">Thank You</p>
             <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">Inquiry Received</h1>
             <p className="text-primary-foreground/70 text-lg mt-4 max-w-2xl mx-auto">
-              We've received your inquiry and will respond within 24 hours.
+              We have received your inquiry and will respond within 24 hours.
             </p>
           </div>
         </section>
 
         <section className="safari-section bg-background">
           <div className="safari-container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="max-w-2xl mx-auto text-center py-12"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mx-auto text-center py-12">
               <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CheckCircle className="text-secondary" size={32} />
               </div>
-              <h3 className="font-heading text-2xl font-bold text-foreground mb-3">Thank You, {submitted ? 'Traveler' : 'Guest'}!</h3>
+              <h3 className="font-heading text-2xl font-bold text-foreground mb-3">Thank You!</h3>
               <p className="text-muted-foreground mb-6">
-                Your message has been sent to the Buffalo Plains Adventures team. We'll review your inquiry and contact you soon to discuss your Kenya adventure plans.
-              </p>
-              <p className="text-muted-foreground mb-8">
-                In the meantime, feel free to explore our{' '}
-                <a href="/" className="text-secondary hover:underline">destinations</a> or{' '}
-                <a href="#contact" className="text-secondary hover:underline">other contact methods</a> if your matter is urgent.
+                Your message has been sent. We will contact you soon to discuss your Kenya plans.
               </p>
               <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setShowEmailSetup(false);
-                }}
+                onClick={() => setSubmitted(false)}
                 className="bg-secondary text-secondary-foreground px-8 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"
               >
                 Send Another Message
@@ -131,27 +110,19 @@ const Contact = () => {
           <p className="text-accent text-sm tracking-[0.2em] uppercase mb-2">Get In Touch</p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-primary-foreground">Contact Us</h1>
           <p className="text-primary-foreground/70 text-lg mt-4 max-w-2xl mx-auto">
-            Ready to start planning your Kenya adventure with Buffalo Plains Adventures? We'd love to hear from you.
+            Ready to plan your Kenya adventure? We would love to hear from you.
           </p>
         </div>
       </section>
 
       <section className="safari-section bg-background">
         <div className="safari-container grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             {sendError && (
               <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg text-red-700 dark:text-red-300 text-sm">
-                {sendError}
-                {showEmailSetup && (
-                  <div className="mt-3 p-3 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded text-amber-800 dark:text-amber-200">
-                    <strong className="font-semibold">Setup Required:</strong> Please configure email service credentials in the .env file to enable email sending.
-                  </div>
-                )}
+                <p className="font-semibold mb-2">Message Not Sent</p>
+                <p>{sendError}</p>
+                <p className="mt-2 text-xs">Check console for details or contact us directly.</p>
               </div>
             )}
 
@@ -161,10 +132,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-1.5">Name *</label>
                   <input
                     type="text"
-                    {...register("name", { 
-                      required: "Name is required",
-                      maxLength: { value: 100, message: "Name must be less than 100 characters" }
-                    })}
+                    {...register("name", { required: "Name is required", maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="Your full name"
                   />
@@ -174,13 +142,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
                   <input
                     type="email"
-                    {...register("email", { 
-                      required: "Email is required",
-                      pattern: {
-                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: "Please enter a valid email address"
-                      }
-                    })}
+                    {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="you@example.com"
                   />
@@ -192,7 +154,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-1.5">Country</label>
                   <input
                     type="text"
-                    {...register("country", { maxLength: { value: 100, message: "Country must be less than 100 characters" } })}
+                    {...register("country", { maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="Your country"
                   />
@@ -202,7 +164,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-1.5">Travel Dates</label>
                   <input
                     type="text"
-                    {...register("travelDates", { maxLength: { value: 100, message: "Travel dates must be less than 100 characters" } })}
+                    {...register("travelDates", { maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="e.g., July 2025"
                   />
@@ -212,11 +174,7 @@ const Contact = () => {
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1.5">Message *</label>
                 <textarea
-                  {...register("message", { 
-                    required: "Message is required",
-                    maxLength: { value: 2000, message: "Message must be less than 2000 characters" },
-                    minLength: { value: 10, message: "Message must be at least 10 characters" }
-                  })}
+                  {...register("message", { required: "Message is required", minLength: { value: 10, message: "Min 10 chars" }, maxLength: { value: 2000, message: "Max 2000 chars" } })}
                   rows={5}
                   className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
                   placeholder="Tell us about your dream Kenya trip..."
@@ -246,22 +204,15 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="space-y-8"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="space-y-8">
             <div>
               <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Reach Us Directly</h3>
               <div className="space-y-5">
-                <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href={'mailto:' + CONTACT_EMAIL} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Mail size={20} /></div>
                   <div><p className="text-sm font-medium text-foreground">Email</p><p className="text-sm">{CONTACT_EMAIL}</p></div>
                 </a>
-                <a href={`tel:${CONTACT_PHONE_RAW}`} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
+                <a href={'tel:' + CONTACT_PHONE_RAW} className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors">
                   <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center"><Phone size={20} /></div>
                   <div><p className="text-sm font-medium text-foreground">Phone</p><p className="text-sm">{CONTACT_PHONE}</p></div>
                 </a>
@@ -280,29 +231,6 @@ const Contact = () => {
             >
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
-
-            {/* Email Setup Instructions */}
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-              <details>
-                <summary className="cursor-pointer font-medium text-sm text-foreground hover:text-secondary transition-colors">
-                  Email Setup Instructions
-                </summary>
-                <div className="mt-3 text-sm text-muted-foreground space-y-2">
-                  <p>To enable email notifications from the contact form:</p>
-                  <ol className="list-decimal list-inside space-y-1 ml-2">
-                    <li>Sign up for a free account at <a href="https://emailjs.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">EmailJS</a></li>
-                    <li>Create an Email Service (connects to email providers like Gmail, Mailgun, etc.)</li>
-                    <li>Create an Email Template with variables: <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_name&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;from_email&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;message&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;country&#125;&#125;</code>, <code className="bg-muted-foreground/20 px-1 rounded">&#123;&#123;travel_dates&#125;&#125;</code></li>
-                    <li>Get your Service ID, Template ID, and Public Key from EmailJS dashboard</li>
-                    <li>Create a .env file in the project root with:</li>
-                  </ol>
-                  <pre className="bg-background p-3 rounded text-xs overflow-x-auto">
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
-VITE_EMAILJS_SERVICE_ID=your_service_id_here
-VITE_EMAILJS_TEMPLATE_ID=your_template_id_here</pre>
-                </div>
-              </details>
-            </div>
 
             {/* Map placeholder */}
             <div className="rounded-lg overflow-hidden h-64 bg-muted flex items-center justify-center">
