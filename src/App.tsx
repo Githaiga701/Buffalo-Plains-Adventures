@@ -30,6 +30,8 @@ const queryClient = new QueryClient({
   },
 });
 
+
+//fix
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
