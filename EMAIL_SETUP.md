@@ -3,7 +3,6 @@
 This guide will help you set up email functionality for the Buffalo Plains Adventures contact form. The form now sends inquiries directly to `buffaloplainadventuresltd@gmail.com`.
 
 ## Prerequisites
-##another test
 You'll need an [EmailJS](https://www.emailjs.com) account (free tier available).
 
 ## Setup Steps
