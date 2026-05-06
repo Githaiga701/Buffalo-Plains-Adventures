@@ -49,7 +49,7 @@ const Contact = () => {
         country: data.country || 'Not specified',
         travel_dates: data.travelDates || 'Not specified',
         message: data.message,
-        to_email: CONTACT_EMAIL,
+        to_email: 'buffaloplainadventuresltd@gmail.com',
         to_name: 'Buffalo Plains Team',
         reply_to: data.email,
         subject: 'New Inquiry from ' + data.name,
