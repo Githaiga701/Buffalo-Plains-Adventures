@@ -58,7 +58,7 @@ export default defineConfig(() => ({
       include: [/node_modules/],
     },
   },
-  // Optimize dependencies
+  // Optimize dependencies everytime
   optimizeDeps: {
     include: [
       'react',
