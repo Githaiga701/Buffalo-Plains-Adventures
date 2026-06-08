@@ -33,7 +33,7 @@ export default defineConfig(() => ({
           'query-vendor': ['@tanstack/react-query'],
           'email-vendor': ['@emailjs/browser'],
         },
-        // Optimize chunk file names
+        // Optimize chunk file names new 
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
