@@ -29,6 +29,7 @@ const Footer = () => {
                 { name: "About Us", path: "/about" },
                 { name: "FAQ", path: "/faq" },
                 { name: "Terms & Conditions", path: "/terms" },
+                { name: "Privacy Policy", path: "/privacy-policy" },
               ].map((link) => (
                 <Link
                   key={link.path}

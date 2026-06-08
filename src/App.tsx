@@ -16,10 +16,11 @@ const Gallery       = lazy(() => import("./pages/Gallery"));
 const About         = lazy(() => import("./pages/About"));
 const Contact       = lazy(() => import("./pages/Contact"));
 const FAQ           = lazy(() => import("./pages/FAQ"));
-const Terms         = lazy(() => import("./pages/Terms"));
-const NotFound      = lazy(() => import("./pages/NotFound"));
-const Booking       = lazy(() => import("./pages/Booking"));
-const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then((mod) => ({ default: mod.SpeedInsights })));
+const Terms          = lazy(() => import("./pages/Terms"));
+const PrivacyPolicy  = lazy(() => import("./pages/PrivacyPolicy"));
+const NotFound       = lazy(() => import("./pages/NotFound"));
+const Booking        = lazy(() => import("./pages/Booking"));
+const SpeedInsights  = lazy(() => import("@vercel/speed-insights/react").then((mod) => ({ default: mod.SpeedInsights })));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -62,6 +63,7 @@ const App = () => (
               <Route path="/contact"      element={<Contact />} />
               <Route path="/faq"          element={<FAQ />} />
               <Route path="/terms"        element={<Terms />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="*"             element={<NotFound />} />
             </Routes>
           </Suspense>
