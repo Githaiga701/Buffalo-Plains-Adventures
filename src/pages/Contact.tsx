@@ -129,57 +129,67 @@ const Contact = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Name *</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1.5">Name *</label>
                   <input
+                    id="name"
                     type="text"
                     {...register("name", { required: "Name is required", maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="Your full name"
+                    aria-describedby={errors.name ? "name-error" : undefined}
                   />
-                  {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
+                  {errors.name && <span id="name-error" className="text-red-500 text-sm" role="alert">{errors.name.message}</span>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
                   <input
+                    id="email"
                     type="email"
                     {...register("email", { required: "Email is required", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="you@example.com"
+                    aria-describedby={errors.email ? "email-error" : undefined}
                   />
-                  {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+                  {errors.email && <span id="email-error" className="text-red-500 text-sm" role="alert">{errors.email.message}</span>}
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Country</label>
+                  <label htmlFor="country" className="block text-sm font-medium text-foreground mb-1.5">Country</label>
                   <input
+                    id="country"
                     type="text"
                     {...register("country", { maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="Your country"
+                    aria-describedby={errors.country ? "country-error" : undefined}
                   />
-                  {errors.country && <span className="text-red-500 text-sm">{errors.country.message}</span>}
+                  {errors.country && <span id="country-error" className="text-red-500 text-sm" role="alert">{errors.country.message}</span>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Travel Dates</label>
+                  <label htmlFor="travelDates" className="block text-sm font-medium text-foreground mb-1.5">Travel Dates</label>
                   <input
+                    id="travelDates"
                     type="text"
                     {...register("travelDates", { maxLength: { value: 100, message: "Max 100 chars" } })}
                     className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50"
                     placeholder="e.g., July 2025"
+                    aria-describedby={errors.travelDates ? "travelDates-error" : undefined}
                   />
-                  {errors.travelDates && <span className="text-red-500 text-sm">{errors.travelDates.message}</span>}
+                  {errors.travelDates && <span id="travelDates-error" className="text-red-500 text-sm" role="alert">{errors.travelDates.message}</span>}
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">Message *</label>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1.5">Message *</label>
                 <textarea
+                  id="message"
                   {...register("message", { required: "Message is required", minLength: { value: 10, message: "Min 10 chars" }, maxLength: { value: 2000, message: "Max 2000 chars" } })}
                   rows={5}
                   className="w-full bg-card border border-border rounded-md px-4 py-2.5 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 resize-none"
                   placeholder="Tell us about your dream Kenya trip..."
+                  aria-describedby={errors.message ? "message-error" : undefined}
                 />
-                {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
+                {errors.message && <span id="message-error" className="text-red-500 text-sm" role="alert">{errors.message.message}</span>}
               </div>
               <button
                 type="submit"

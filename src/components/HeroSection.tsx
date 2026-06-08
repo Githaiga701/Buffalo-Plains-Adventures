@@ -21,11 +21,53 @@ import heroImage3 from "@/assets/safari-sunset.jpg";
 import heroImage1Webp from "@/assets/hero-masai-mara.webp";
 import heroImage2Webp from "@/assets/luxury-safari.webp";
 import heroImage3Webp from "@/assets/safari-sunset.webp";
+import heroImage1Avif from "@/assets/hero-masai-mara.avif";
+import heroImage2Avif from "@/assets/luxury-safari.avif";
+import heroImage3Avif from "@/assets/safari-sunset.avif";
+import heroImage1Webp640 from "@/assets/hero-masai-mara-640.webp";
+import heroImage1Webp1280 from "@/assets/hero-masai-mara-1280.webp";
+import heroImage2Webp640 from "@/assets/luxury-safari-640.webp";
+import heroImage2Webp1280 from "@/assets/luxury-safari-1280.webp";
+import heroImage3Webp640 from "@/assets/safari-sunset-640.webp";
+import heroImage3Webp1280 from "@/assets/safari-sunset-1280.webp";
+import heroImage1Avif640 from "@/assets/hero-masai-mara-640.avif";
+import heroImage1Avif1280 from "@/assets/hero-masai-mara-1280.avif";
+import heroImage2Avif640 from "@/assets/luxury-safari-640.avif";
+import heroImage2Avif1280 from "@/assets/luxury-safari-1280.avif";
+import heroImage3Avif640 from "@/assets/safari-sunset-640.avif";
+import heroImage3Avif1280 from "@/assets/safari-sunset-1280.avif";
 
 const heroImages = [
-  { src: heroImage1, webp: heroImage1Webp, alt: "Masai Mara Wildebeest Migration" },
-  { src: heroImage2, webp: heroImage2Webp, alt: "Luxury Safari Lodge" },
-  { src: heroImage3, webp: heroImage3Webp, alt: "African Safari Sunset" },
+  {
+    src: heroImage1,
+    webp: heroImage1Webp,
+    avif: heroImage1Avif,
+    webp640: heroImage1Webp640,
+    webp1280: heroImage1Webp1280,
+    avif640: heroImage1Avif640,
+    avif1280: heroImage1Avif1280,
+    alt: "Masai Mara Wildebeest Migration",
+  },
+  {
+    src: heroImage2,
+    webp: heroImage2Webp,
+    avif: heroImage2Avif,
+    webp640: heroImage2Webp640,
+    webp1280: heroImage2Webp1280,
+    avif640: heroImage2Avif640,
+    avif1280: heroImage2Avif1280,
+    alt: "Luxury Safari Lodge",
+  },
+  {
+    src: heroImage3,
+    webp: heroImage3Webp,
+    avif: heroImage3Avif,
+    webp640: heroImage3Webp640,
+    webp1280: heroImage3Webp1280,
+    avif640: heroImage3Avif640,
+    avif1280: heroImage3Avif1280,
+    alt: "African Safari Sunset",
+  },
 ];
 
 const offerings = [
@@ -78,13 +120,22 @@ const HeroSection = () => {
           >
             <picture>
               <source
+                type="image/avif"
+                srcSet={`${heroImages[currentSlide].avif640} 640w, ${heroImages[currentSlide].avif1280} 1280w, ${heroImages[currentSlide].avif} 1920w`}
+                sizes="100vw"
+              />
+              <source
                 type="image/webp"
-                srcSet={heroImages[currentSlide].webp}
+                srcSet={`${heroImages[currentSlide].webp640} 640w, ${heroImages[currentSlide].webp1280} 1280w, ${heroImages[currentSlide].webp} 1920w`}
+                sizes="100vw"
               />
               <img
                 src={heroImages[currentSlide].src}
+                srcSet={`${heroImages[currentSlide].src} 1920w`}
                 alt={heroImages[currentSlide].alt}
                 className="w-full h-full object-cover"
+                width={1920}
+                height={1080}
                 fetchPriority={currentSlide === 0 ? "high" : "low"}
                 loading={currentSlide === 0 ? "eager" : "lazy"}
                 decoding={currentSlide === 0 ? "sync" : "async"}

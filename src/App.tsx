@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -20,6 +19,7 @@ const FAQ           = lazy(() => import("./pages/FAQ"));
 const Terms         = lazy(() => import("./pages/Terms"));
 const NotFound      = lazy(() => import("./pages/NotFound"));
 const Booking       = lazy(() => import("./pages/Booking"));
+const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then((mod) => ({ default: mod.SpeedInsights })));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +32,15 @@ const queryClient = new QueryClient({
 
 
 //fix
+const Fallback = () => (
+  <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+      <p className="text-muted-foreground">Loading...</p>
+    </div>
+  </div>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -59,7 +68,9 @@ const App = () => (
         </main>
         <Footer />
         <WhatsAppButton />
-        <SpeedInsights />
+        <Suspense fallback={null}>
+          <SpeedInsights />
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
