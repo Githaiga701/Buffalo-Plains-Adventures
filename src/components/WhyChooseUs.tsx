@@ -26,7 +26,7 @@ const features = [
     icon: Star, 
     title: "Luxury Accommodation", 
     description: "We partner exclusively with handpicked luxury lodges, boutique eco-lodges, and premium tented camps that harmonize contemporary comfort with authentic African aesthetics. Each accommodation reflects our strict standards for hospitality excellence, environmental responsibility, and cultural sensitivity—from intimate family-run establishments to internationally-acclaimed 5-star resorts.",
-    stats: "50+ Vetted Partner Properties"
+    stats: "Premium vetted accommodations"
   },
   { 
     icon: Users, 
@@ -44,8 +44,8 @@ const features = [
     icon: Award, 
     title: "Award-Winning Excellence", 
     recognition: "TripAdvisor & Industry Awards", 
-    description: "Consistently recognized by leading international travel authorities for exceptional service quality, guest satisfaction, and experience innovation. Our accolades reflect our genuine commitment to surpassing traveler expectations—validated by thousands of verified reviews and repeat clientele from across the globe.",
-    stats: "5000+ Glowing Reviews"
+    description: "Consistently recognized by leading international travel authorities for exceptional service quality, guest satisfaction, and experience innovation. Our accolades reflect our genuine commitment to surpassing traveler expectations—validated by glowing guest testimonials and repeat clientele from across the globe.",
+    stats: "Glowing guest testimonials"
   },
   { 
     icon: Clock, 
@@ -57,11 +57,10 @@ const features = [
 
 const achievements = [
   { number: "Trusted", label: "Safari Partner", icon: Clock },
-  { number: "98%", label: "Return Guests", icon: Heart },
-  { number: "4.9", label: "Average Rating", icon: Star },
-  { number: "50+", label: "Safari Packages", icon: MapPinned },
+  { number: "Repeat", label: "Guests", icon: Heart },
+  { number: "Top-rated", label: "Safari Experiences", icon: Star },
+  { number: "Tailored", label: "Safari Packages", icon: MapPinned },
 ];
-
 const WhyChooseUs = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });

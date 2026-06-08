@@ -75,14 +75,14 @@ const offerings = [
   { icon: MapPin, title: "9 Diverse Destinations", desc: "From Masai Mara's legendary migration to pristine beaches, mountains, and cultural sites" },
   { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with deep knowledge of African ecosystems and wildlife behavior" },
   { icon: Shield, title: "Safe & Secure", desc: "Fully licensed, insured, and certified tours with established safety protocols and communication systems" },
-  { icon: Star, title: "Exceptional Reviews", desc: "98% client satisfaction with 5-star ratings from 5000+ happy travelers across the globe" },
+  { icon: Star, title: "Exceptional Reviews", desc: "Consistently praised by delighted guests for memorable safari experiences and seamless service" },
 ];
 
 const quickStats = [
   { number: "Trusted", label: "Safari Expertise" },
-  { number: "5000+", label: "Happy Travelers" },
-  { number: "50+", label: "Safari Packages" },
-  { number: "98%", label: "Return Guests" },
+  { number: "Loved", label: "By Adventurers" },
+  { number: "Curated", label: "Safari Packages" },
+  { number: "Repeat", label: "Guests" },
 ];
 
 const HeroSection = () => {
@@ -198,7 +198,7 @@ const HeroSection = () => {
             </span>
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
               <Shield className="text-green-400" size={16} />
-              <span className="text-white/90 text-sm font-medium">Trusted by 5000+ Travelers</span>
+              <span className="text-white/90 text-sm font-medium">Trusted by safari travelers worldwide</span>
             </span>
           </motion.div>
 

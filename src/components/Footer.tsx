@@ -101,6 +101,13 @@ const Footer = () => {
                 </div>
                 <p className="text-xs text-primary-foreground/60">Mobile Money</p>
               </div>
+              <div className="text-primary-foreground/30">|</div>
+              <div className="flex flex-col items-center">
+                <div className="bg-primary-foreground/10 px-4 py-2 rounded-lg mb-1">
+                  <p className="text-sm font-bold text-[#0A8A0A]">Pesapal</p>
+                </div>
+                <p className="text-xs text-primary-foreground/60">Local Payment Gateway</p>
+              </div>
             </div>
           </div>
         </div>
