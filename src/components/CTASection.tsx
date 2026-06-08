@@ -180,7 +180,7 @@ const CTASection = () => {
             <div className="bg-[#F4A261]/20 border border-[#F4A261]/30 rounded-2xl p-4">
               <p className="text-white text-sm">
                 <span className="text-[#F4A261] font-semibold">Emergency:</span> For urgent safari inquiries outside office hours, 
-                call our 24/7 hotline at <span className="font-semibold">+254 720 445869</span>
+                call our 24/7 hotline at <span className="font-semibold">{CONTACT_PHONE}</span>
               </p>
             </div>
           </motion.div>

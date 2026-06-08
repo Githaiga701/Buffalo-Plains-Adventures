@@ -36,6 +36,7 @@ import heroImage2Avif640 from "@/assets/luxury-safari-640.avif";
 import heroImage2Avif1280 from "@/assets/luxury-safari-1280.avif";
 import heroImage3Avif640 from "@/assets/safari-sunset-640.avif";
 import heroImage3Avif1280 from "@/assets/safari-sunset-1280.avif";
+import { CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
 
 const heroImages = [
   {
@@ -72,13 +73,13 @@ const heroImages = [
 
 const offerings = [
   { icon: MapPin, title: "9 Diverse Destinations", desc: "From Masai Mara's legendary migration to pristine beaches, mountains, and cultural sites" },
-  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with 10-20 years deep knowledge of African ecosystems and wildlife behavior" },
+  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with deep knowledge of African ecosystems and wildlife behavior" },
   { icon: Shield, title: "Safe & Secure", desc: "Fully licensed, insured, and certified tours with established safety protocols and communication systems" },
   { icon: Star, title: "Exceptional Reviews", desc: "98% client satisfaction with 5-star ratings from 5000+ happy travelers across the globe" },
 ];
 
 const quickStats = [
-  { number: "15+", label: "Years Experience" },
+  { number: "Trusted", label: "Safari Expertise" },
   { number: "5000+", label: "Happy Travelers" },
   { number: "50+", label: "Safari Packages" },
   { number: "98%", label: "Return Guests" },
@@ -286,12 +287,12 @@ const HeroSection = () => {
               Plan My Trip
             </Link>
             <a
-              href="tel:+254720445869"
+              href={`tel:${CONTACT_PHONE_RAW}`}
               className="w-full md:w-auto inline-flex items-center justify-center md:justify-start gap-2 text-white/80 hover:text-white transition-colors text-sm md:text-base"
             >
               <Phone size={16} className="flex-shrink-0" />
-              <span className="hidden md:inline">Call: +254 720 445869</span>
-              <span className="md:hidden">+254 720 445869</span>
+              <span className="hidden md:inline">Call: {CONTACT_PHONE}</span>
+              <span className="md:hidden">{CONTACT_PHONE}</span>
             </a>
           </motion.div>
 

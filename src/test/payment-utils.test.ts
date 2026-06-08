@@ -191,9 +191,11 @@ describe('retryWithBackoff', () => {
     const fn = vi.fn().mockRejectedValue(new Error('persistent failure'));
 
     const promise = retryWithBackoff(fn, 3, 100);
-    await vi.runAllTimersAsync();
+    const rejection = expect(promise).rejects.toThrow('persistent failure');
 
-    await expect(promise).rejects.toThrow('persistent failure');
+    await vi.runAllTimersAsync();
+    await rejection;
+
     expect(fn).toHaveBeenCalledTimes(3);
   });
 
@@ -201,9 +203,10 @@ describe('retryWithBackoff', () => {
     const fn = vi.fn().mockRejectedValue('string error');
 
     const promise = retryWithBackoff(fn, 2, 100);
-    await vi.runAllTimersAsync();
+    const rejection = expect(promise).rejects.toThrow('string error');
 
-    await expect(promise).rejects.toThrow('string error');
+    await vi.runAllTimersAsync();
+    await rejection;
   });
 });
 

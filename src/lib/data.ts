@@ -636,7 +636,7 @@ export const faqs = [
   },
   {
     question: "How do I book a tour?",
-    answer: "You can book via our contact form, WhatsApp (+254 720 445869), or email (buffaloplainadventuresltd@gmail.com). We'll confirm availability, discuss customizations, and send a detailed itinerary with payment steps and clear booking terms. For group or bespoke requests we provide a proposal and hold provisional dates while you arrange flights.",
+    answer: "You can book via our contact form, WhatsApp (0720 445 869), phone (0712 100 777), or email (buffaloplainadventuresltd@gmail.com). We'll confirm availability, discuss customizations, and send a detailed itinerary with payment steps and clear booking terms. For group or bespoke requests we provide a proposal and hold provisional dates while you arrange flights.",
   },
   {
     question: "What payment methods do you accept?",
