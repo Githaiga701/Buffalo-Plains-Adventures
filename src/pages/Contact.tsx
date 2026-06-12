@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle } from "lucide-react";
 import { WHATSAPP_DEFAULT_MSG, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
-import emailjs from '@emailjs/browser';
+import { init as emailjsInit, send as emailjsSend } from '@emailjs/browser';
 
 export interface ContactFormData {
   name: string;
@@ -17,6 +17,11 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const isEmailConfigReady = Boolean(EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
     defaultValues: {
@@ -41,7 +46,7 @@ const Contact = () => {
         throw new Error('Email credentials not configured');
       }
 
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+      emailjsInit({ publicKey: EMAILJS_PUBLIC_KEY });
 
       const templateParams = {
         from_name: data.name,
@@ -55,13 +60,16 @@ const Contact = () => {
         subject: 'New Inquiry from ' + data.name,
       };
 
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      await emailjsSend(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      });
       console.log('Email sent successfully');
       setSubmitted(true);
       reset();
     } catch (error: any) {
       console.error('Email send error:', error);
-      setSendError('Failed to send: ' + (error.text || error.message || 'Unknown error'));
+      const errorMessage = error?.text || error?.message || (typeof error === 'string' ? error : 'Unknown error');
+      setSendError('Failed to send: ' + errorMessage);
     } finally {
       setIsSending(false);
     }
@@ -123,6 +131,13 @@ const Contact = () => {
                 <p className="font-semibold mb-2">Message Not Sent</p>
                 <p>{sendError}</p>
                 <p className="mt-2 text-xs">Check console for details or contact us directly.</p>
+              </div>
+            )}
+
+            {!isEmailConfigReady && (
+              <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg text-yellow-800 dark:text-yellow-200 text-sm">
+                <p className="font-semibold mb-2">Contact form is not configured</p>
+                <p>Please configure EmailJS credentials in your environment variables to enable form submission.</p>
               </div>
             )}
 
@@ -193,7 +208,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                disabled={isSending}
+                disabled={isSending || !isEmailConfigReady}
                 className="w-full bg-secondary text-secondary-foreground py-3 rounded-md font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSending ? (
