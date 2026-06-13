@@ -72,6 +72,22 @@
 
       gtag('config', 'AW-18141558565');
     </script>
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18141558565/cLIxCOab5KccEKXuyMpD',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
