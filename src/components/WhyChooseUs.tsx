@@ -19,14 +19,14 @@ const features = [
   { 
     icon: Shield, 
     title: "Expert Local Guides", 
-    description: "Our professional guides average 10-20 years of field experience with deep knowledge of Kenya's ecosystems, wildlife behavior patterns, and conservation challenges. They possess genuine passion for Africa's natural heritage and share this enthusiasm through engaging interpretations of wildlife encounters, animal sign reading, and ecosystem understanding.",
-    stats: "10-20 Years Avg. Experience"
+    description: "Our professional guides bring deep field experience, strong knowledge of Kenya's ecosystems, wildlife behavior patterns, and conservation challenges. They possess genuine passion for Africa's natural heritage and share this enthusiasm through engaging interpretations of wildlife encounters, animal sign reading, and ecosystem understanding.",
+    stats: "Expert Field Knowledge"
   },
   { 
     icon: Star, 
     title: "Luxury Accommodation", 
     description: "We partner exclusively with handpicked luxury lodges, boutique eco-lodges, and premium tented camps that harmonize contemporary comfort with authentic African aesthetics. Each accommodation reflects our strict standards for hospitality excellence, environmental responsibility, and cultural sensitivity—from intimate family-run establishments to internationally-acclaimed 5-star resorts.",
-    stats: "50+ Vetted Partner Properties"
+    stats: "Premium vetted accommodations"
   },
   { 
     icon: Users, 
@@ -44,8 +44,8 @@ const features = [
     icon: Award, 
     title: "Award-Winning Excellence", 
     recognition: "TripAdvisor & Industry Awards", 
-    description: "Consistently recognized by leading international travel authorities for exceptional service quality, guest satisfaction, and experience innovation. Our accolades reflect our genuine commitment to surpassing traveler expectations—validated by thousands of verified reviews and repeat clientele from across the globe.",
-    stats: "5000+ Glowing Reviews"
+    description: "Consistently recognized by leading international travel authorities for exceptional service quality, guest satisfaction, and experience innovation. Our accolades reflect our genuine commitment to surpassing traveler expectations—validated by glowing guest testimonials and repeat clientele from across the globe.",
+    stats: "Glowing guest testimonials"
   },
   { 
     icon: Clock, 
@@ -56,12 +56,11 @@ const features = [
 ];
 
 const achievements = [
-  { number: "15+", label: "Years in Business", icon: Clock },
-  { number: "98%", label: "Return Guests", icon: Heart },
-  { number: "4.9", label: "Average Rating", icon: Star },
-  { number: "50+", label: "Safari Packages", icon: MapPinned },
+  { number: "Trusted", label: "Safari Partner", icon: Clock },
+  { number: "Repeat", label: "Guests", icon: Heart },
+  { number: "Top-rated", label: "Safari Experiences", icon: Star },
+  { number: "Tailored", label: "Safari Packages", icon: MapPinned },
 ];
-
 const WhyChooseUs = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -88,7 +87,7 @@ const WhyChooseUs = () => {
           </span>
           <h2 className="safari-heading mb-4">Your Trusted Safari Partner</h2>
           <p className="safari-subheading mx-auto">
-            With over 15 years of deep-rooted experience crafting unforgettable African adventures, we combine unparalleled local expertise with internationally-recognized hospitality standards. Our team of expert naturalists, cultural historians, and professional guides are passionately committed to creating transformative safari experiences. We understand that every traveler brings unique dreams and expectations, which is why we specialize in bespoke itineraries tailored to your preferences, interests, and travel style. From intimate small-group safaris to exclusive private adventures, from budget-conscious packages to ultra-luxury experiences, we deliver world-class service consistently recognized by leading travel authorities and verified by thousands of delighted travelers.
+            With deep-rooted experience crafting unforgettable African adventures, we combine unparalleled local expertise with internationally-recognized hospitality standards. Our team of expert naturalists, cultural historians, and professional guides are passionately committed to creating transformative safari experiences. We understand that every traveler brings unique dreams and expectations, which is why we specialize in bespoke itineraries tailored to your preferences, interests, and travel style. From intimate small-group safaris to exclusive private adventures, from budget-conscious packages to ultra-luxury experiences, we deliver world-class service consistently recognized by leading travel authorities and verified by thousands of delighted travelers.
           </p>
         </motion.div>
 

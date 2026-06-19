@@ -26,7 +26,7 @@ const About = () => {
               Founded by passionate Kenyan locals with deep roots in the safari industry, Buffalo Plains Adventures was born from a desire to share the authentic beauty of East Africa with the world.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              With over 15 years of experience, we've guided thousands of travelers through Kenya's most spectacular landscapes — from the thundering herds of the Great Migration to the serene beaches of the Indian Ocean coast.
+              With deep local expertise, we've guided thousands of travelers through Kenya's most spectacular landscapes — from the thundering herds of the Great Migration to the serene beaches of the Indian Ocean coast.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Every journey we design is a testament to our commitment to sustainable tourism, community empowerment, and creating memories that last a lifetime.
@@ -52,7 +52,7 @@ const About = () => {
           {[
             { icon: Users, stat: "5,000+", label: "Happy Travelers" },
             { icon: Star, stat: "4.9/5", label: "Average Rating" },
-            { icon: Award, stat: "15+", label: "Years Experience" },
+            { icon: Award, stat: "Trusted", label: "Safari Expertise" },
             { icon: Shield, stat: "100%", label: "Safety Record" },
           ].map((item, i) => (
             <motion.div

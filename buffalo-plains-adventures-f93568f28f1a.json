@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "buffalo-plains-adventures",
+  "private_key_id": "f93568f28f1a2dab2fa0b9dfbd60f14ee90d4990",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCo2qRYhxhHOyAK\n8k9EIAITOs4jsySuQtsmxanmchPJj/OUU8I0YvtXYMJJCklk1eKXiGZWAVLK+aoi\nDIZ1XwYDbHhWS65oOBgY6CHMF4hEeW88cDP+eaUXlfyfO+/vt0X2qPvRFR89Unqc\nhGF99aQRSncl/a2d+UX2WOEr+uB1SOM6yQ5U9FAvckWmiVMM/nFRih+pYgjW7typ\nyrZ55ptLtdSjCARJXtM7EPFJ3tNWm1znQ84SHrQd+p5uEPxzwVcfDXDjHL/opbrM\ng20vgtwGVkmtr3srI2PClx++bfoaJsAyhX+jUsfv9V3b/vIdvZHoEm4ot3Phbjc7\n/dWC7KYFAgMBAAECggEAASxHelXIWOonOzjB3dvZf34tebep84Y1i0LBNqZ41EhG\nG2B/qcfY2oUwNFJL13EtGN+ZvP+lGBGyGVc8JqnhweYoQs1gvjdKwdKUYjhC7vwO\nXIBLNejcPsbfedC+YirrG0jkcmhKaoaBrH9dtMrynG6/QTqcd9avEYRfwqv5QsJu\n4ZI1WwRT9iGyTNDU2NfsUd7lUYz4D8cpMLwbDz4NJsTo/BB7iayBkWArn4uGsc0j\nJnkmBeYfwS50w1iMhYYENf30P4ZOWj8DmT42prVX97Z2U56I59O6pWgzs6eDKn7p\noMpRj/Y/PtimG6Dl9dijQVv27oVBDA6YdkOoTw8OYQKBgQDbwG+18C5hObRRoznv\nD8VD/H99TCjWL5rLp996HSopC14kM6eXber9E2WEHjGW13GH7DRwcqBfyPUonkub\n8f3s087pQ0vIFD+QltdD1uNo97nCMn3/bEmHWWn9or8sazjbtwEWZ20PscmoNG6L\nJ5MzJhm6uhxY58laCE2DSPAfaQKBgQDEtO0UbCOVUV8kywEyyTp6lUTJ3chwgP2D\nHkillp3cHclkDETNVzwhFSmhTt8yUCuSEG5cw90KxBgxyPhUKyhdmbRVjbTGVC5D\n4fgC4j8JI5dMr4rEeMqh5wZSOu4HyvOwxRaV9rFuFkgFsIh99u3s4N96RIX7BGgc\ndKFOLlCaPQKBgEY+dDcPKHQxst8psvok62S5ELOnpaIZo3yYE8qAChsGpDgkPt0b\n6LKvAZNC540VHxhYu8Z6DaOwpBUwzHBz4TxT1F8iANZbCpqYbQUlapoCHeHiq/36\nymI2hbfqzvtO5uTs0a8srmMG7LQU1oUqyFXgRvc2SJtutCFQaB6gMQmJAoGAcCP9\nLLFhr9SN+znIWx2hOxUx/Ct2A71lyYRQQiaVpFFO6Lyd1LqwyuN3skB2ugY+cKzx\nXe1DbMnSST+bYtCf2Iyx5Dw/HPoMziJa87nr2dfyf4NsBwod6yL71ZFG9iZbuyEA\n+UmEaZBGSwgTKEzH401n2hqKj0o52E8dTqbUyLkCgYBF6v4vwwRaAf4IB8FGQKTF\nOIkXROPQ3CTAGEAYft72gDJbH8T3/4ZPxCTOckaY7U1RUkfTad7zTVXad+8QIRa9\nW6sDktB/q0565mUyBLidKsCNzmDTUPwwW36IvWmizA5CK7uSQnW/Ofdw6FqOeHCV\njlcFYYVxA5SiF+HlFnDrQg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "buffaloplainsadventures@buffalo-plains-adventures.iam.gserviceaccount.com",
+  "client_id": "105494864063100475124",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/buffaloplainsadventures%40buffalo-plains-adventures.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

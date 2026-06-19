@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, AlertCircle, CreditCard, RefreshCw, Phone, Globe, FileText, Camera, Lock } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -50,8 +51,8 @@ const Terms = () => {
 
           <motion.p {...fadeUp} className="text-muted-foreground text-sm mb-10 pb-6 border-b border-border">
             <strong className="text-foreground">Buffalo Plains Adventures</strong> is registered in Nairobi, Kenya.
-            Contact: <a href="mailto:info@buffaloplainsadventures.com" className="text-secondary underline underline-offset-2">info@buffaloplainsadventures.com</a> &nbsp;|&nbsp;
-            <a href="tel:+254720445869" className="text-secondary underline underline-offset-2">+254 720 445869</a>
+            Contact: <a href={`mailto:${CONTACT_EMAIL}`} className="text-secondary underline underline-offset-2">{CONTACT_EMAIL}</a> &nbsp;|&nbsp;
+            <a href={`tel:${CONTACT_PHONE_RAW}`} className="text-secondary underline underline-offset-2">{CONTACT_PHONE}</a>
           </motion.p>
 
           {/* Section 1 — Acceptance */}
@@ -238,8 +239,8 @@ const Terms = () => {
           <TermsSection icon={Phone} title="13. Complaints">
             <p>Raise any issue with your guide or our local representative immediately. If unresolved, submit
             a formal complaint in writing to{" "}
-            <a href="mailto:info@buffaloplainsadventures.com" className="text-secondary underline underline-offset-2">
-              info@buffaloplainsadventures.com
+            <a href={`mailto:${CONTACT_EMAIL}`} className="text-secondary underline underline-offset-2">
+              {CONTACT_EMAIL}
             </a>{" "}
             within <strong>30 days of your return date</strong>. We will acknowledge within 5 working days
             and provide a full response within 28 days.</p>

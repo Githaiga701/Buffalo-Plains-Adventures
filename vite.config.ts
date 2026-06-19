@@ -23,29 +23,50 @@ export default defineConfig(() => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          "react-core": ["react", "react-dom", "react-router-dom"],
-          "framer": ["framer-motion"],
-          "radix-ui": [
-            "@radix-ui/react-accordion", "@radix-ui/react-alert-dialog",
-            "@radix-ui/react-avatar", "@radix-ui/react-checkbox",
-            "@radix-ui/react-collapsible", "@radix-ui/react-context-menu",
-            "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-hover-card", "@radix-ui/react-label",
-            "@radix-ui/react-menubar", "@radix-ui/react-navigation-menu",
-            "@radix-ui/react-popover", "@radix-ui/react-progress",
-            "@radix-ui/react-radio-group", "@radix-ui/react-scroll-area",
-            "@radix-ui/react-select", "@radix-ui/react-separator",
-            "@radix-ui/react-slider", "@radix-ui/react-slot",
-            "@radix-ui/react-switch", "@radix-ui/react-tabs",
-            "@radix-ui/react-toast", "@radix-ui/react-toggle",
-            "@radix-ui/react-toggle-group", "@radix-ui/react-tooltip",
-          ],
-          "recharts": ["recharts"],
-          "forms": ["react-hook-form", "@hookform/resolvers", "zod"],
-          "query": ["@tanstack/react-query"],
-          "carousel": ["embla-carousel-react"],
+          // Vendor chunks fix
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-tooltip'],
+          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          'animation-vendor': ['framer-motion'],
+          'icons-vendor': ['lucide-react'],
+          'utils-vendor': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          'query-vendor': ['@tanstack/react-query'],
+          'email-vendor': ['@emailjs/browser'],
+        },
+        // Optimize chunk file names new 
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const extType = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
+            return `assets/images/[name]-[hash].${extType}`;
+          }
+          if (/\.(css)$/i.test(assetInfo.name)) {
+            return `assets/css/[name]-[hash].${extType}`;
+          }
+          return `assets/[name]-[hash].${extType}`;
         },
       },
     },
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+    // Enable source maps for production debugging
+    sourcemap: false,
+    // Optimize dependencies
+    commonjsOptions: {
+      include: [/node_modules/],
+    },
+  },
+  // Optimize dependencies everytime
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@tanstack/react-query',
+      'framer-motion',
+      'lucide-react',
+    ],
   },
 }));

@@ -11,8 +11,10 @@ import {
   MessageCircle,
   CheckCircle2
 } from "lucide-react";
-import safariSunset from "@/assets/safari-sunset.jpg";
-import safariSunsetWebp from "@/assets/safari-sunset.webp";
+import { images } from "@/lib/imageAssets";
+import { WHATSAPP_BASE, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
+
+const { safariSunset } = images;
 
 const CTASection = () => {
   const ref = useRef(null);
@@ -31,9 +33,9 @@ const CTASection = () => {
     <section className="relative py-20 overflow-hidden" ref={ref}>
       {/* Background Image */}
       <picture>
-        <source type="image/webp" srcSet={safariSunsetWebp} />
+        <source type="image/webp" srcSet={safariSunset.webp} />
         <img
-          src={safariSunset}
+          src={safariSunset.jpg}
           alt="Safari sunset in Kenya"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
@@ -88,7 +90,7 @@ const CTASection = () => {
                 <ArrowRight size={16} className="hidden md:inline" />
               </Link>
               <a
-                href="https://wa.me/254720445869?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya"
+                href={`${WHATSAPP_BASE}?text=Hello%2C%20I%27d%20like%20to%20plan%20a%20trip%20to%20Kenya`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-white/20 transition-all w-full sm:w-auto"
@@ -115,7 +117,7 @@ const CTASection = () => {
               
               <div className="space-y-4">
                 <a 
-                  href="tel:+254720445869"
+                  href={`tel:${CONTACT_PHONE_RAW}`}
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -123,12 +125,12 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Call Us</p>
-                    <p className="text-white font-semibold">+254 720 445869</p>
+                    <p className="text-white font-semibold">{CONTACT_PHONE}</p>
                   </div>
                 </a>
 
                 <a 
-                  href="mailto:buffaloplainadventuresltd@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   <div className="w-12 h-12 bg-[#F4A261] rounded-full flex items-center justify-center flex-shrink-0">
@@ -136,7 +138,7 @@ const CTASection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-xs">Email Us</p>
-                    <p className="text-white font-semibold">buffaloplainadventuresltd@gmail.com</p>
+                    <p className="text-white font-semibold">{CONTACT_EMAIL}</p>
                   </div>
                 </a>
 
@@ -178,7 +180,7 @@ const CTASection = () => {
             <div className="bg-[#F4A261]/20 border border-[#F4A261]/30 rounded-2xl p-4">
               <p className="text-white text-sm">
                 <span className="text-[#F4A261] font-semibold">Emergency:</span> For urgent safari inquiries outside office hours, 
-                call our 24/7 hotline at <span className="font-semibold">+254 720 445869</span>
+                call our 24/7 hotline at <span className="font-semibold">{CONTACT_PHONE}</span>
               </p>
             </div>
           </motion.div>

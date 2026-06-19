@@ -2,24 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { packages } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Clock, Check, X, MessageCircle } from "lucide-react";
-import masaiMara from "@/assets/masai-mara-dest.jpg";
-import masaiMaraWebp from "@/assets/masai-mara-dest.webp";
-import luxurySafari from "@/assets/luxury-safari.jpg";
-import luxurySafariWebp from "@/assets/luxury-safari.webp";
-import safariSunset from "@/assets/safari-sunset.jpg";
-import safariSunsetWebp from "@/assets/safari-sunset.webp";
-
-const packageImages: Record<string, string> = {
-  "masai-mara": masaiMara,
-  luxury: luxurySafari,
-  explorer: safariSunset,
-};
-
-const packageImagesWebp: Record<string, string> = {
-  "masai-mara": masaiMaraWebp,
-  luxury: luxurySafariWebp,
-  explorer: safariSunsetWebp,
-};
+import { packageImages } from "@/lib/imageAssets";
+import { WHATSAPP_BASE } from "@/lib/constants";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -39,8 +23,8 @@ const PackageDetail = () => {
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[400px]">
         <picture>
-          <source type="image/webp" srcSet={packageImagesWebp[pkg.image]} />
-          <img src={packageImages[pkg.image]} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
+          <source type="image/webp" srcSet={packageImages[pkg.image]?.webp} />
+          <img src={packageImages[pkg.image]?.jpg} alt={pkg.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
         </picture>
         <div className="absolute inset-0 safari-hero-overlay" />
         <div className="relative z-10 h-full flex items-end">
@@ -122,7 +106,7 @@ const PackageDetail = () => {
                 <p className="text-sm text-muted-foreground">{pkg.accommodation}</p>
               </div>
               <a
-                href={`https://wa.me/254720445869?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`}
+                href={`${WHATSAPP_BASE}?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(pkg.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full bg-secondary text-secondary-foreground py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"

@@ -146,7 +146,7 @@ const FeaturedPackages = () => {
           <div className="text-center">
             <Camera className="mx-auto mb-2 text-[#F4A261]" size={28} />
             <p className="text-white font-semibold">Expert Guides</p>
-            <p className="text-white/60 text-xs">10+ years experience</p>
+            <p className="text-white/60 text-xs">Deep local knowledge</p>
           </div>
           <div className="text-center">
             <Palmtree className="mx-auto mb-2 text-[#F4A261]" size={28} />

@@ -21,25 +21,68 @@ import heroImage3 from "@/assets/safari-sunset.jpg";
 import heroImage1Webp from "@/assets/hero-masai-mara.webp";
 import heroImage2Webp from "@/assets/luxury-safari.webp";
 import heroImage3Webp from "@/assets/safari-sunset.webp";
+import heroImage1Avif from "@/assets/hero-masai-mara.avif";
+import heroImage2Avif from "@/assets/luxury-safari.avif";
+import heroImage3Avif from "@/assets/safari-sunset.avif";
+import heroImage1Webp640 from "@/assets/hero-masai-mara-640.webp";
+import heroImage1Webp1280 from "@/assets/hero-masai-mara-1280.webp";
+import heroImage2Webp640 from "@/assets/luxury-safari-640.webp";
+import heroImage2Webp1280 from "@/assets/luxury-safari-1280.webp";
+import heroImage3Webp640 from "@/assets/safari-sunset-640.webp";
+import heroImage3Webp1280 from "@/assets/safari-sunset-1280.webp";
+import heroImage1Avif640 from "@/assets/hero-masai-mara-640.avif";
+import heroImage1Avif1280 from "@/assets/hero-masai-mara-1280.avif";
+import heroImage2Avif640 from "@/assets/luxury-safari-640.avif";
+import heroImage2Avif1280 from "@/assets/luxury-safari-1280.avif";
+import heroImage3Avif640 from "@/assets/safari-sunset-640.avif";
+import heroImage3Avif1280 from "@/assets/safari-sunset-1280.avif";
+import { CONTACT_PHONE, CONTACT_PHONE_RAW } from "@/lib/constants";
 
 const heroImages = [
-  { src: heroImage1, webp: heroImage1Webp, alt: "Masai Mara Wildebeest Migration" },
-  { src: heroImage2, webp: heroImage2Webp, alt: "Luxury Safari Lodge" },
-  { src: heroImage3, webp: heroImage3Webp, alt: "African Safari Sunset" },
+  {
+    src: heroImage1,
+    webp: heroImage1Webp,
+    avif: heroImage1Avif,
+    webp640: heroImage1Webp640,
+    webp1280: heroImage1Webp1280,
+    avif640: heroImage1Avif640,
+    avif1280: heroImage1Avif1280,
+    alt: "Masai Mara Wildebeest Migration",
+  },
+  {
+    src: heroImage2,
+    webp: heroImage2Webp,
+    avif: heroImage2Avif,
+    webp640: heroImage2Webp640,
+    webp1280: heroImage2Webp1280,
+    avif640: heroImage2Avif640,
+    avif1280: heroImage2Avif1280,
+    alt: "Luxury Safari Lodge",
+  },
+  {
+    src: heroImage3,
+    webp: heroImage3Webp,
+    avif: heroImage3Avif,
+    webp640: heroImage3Webp640,
+    webp1280: heroImage3Webp1280,
+    avif640: heroImage3Avif640,
+    avif1280: heroImage3Avif1280,
+    alt: "African Safari Sunset",
+  },
 ];
 
 const offerings = [
   { icon: MapPin, title: "9 Diverse Destinations", desc: "From Masai Mara's legendary migration to pristine beaches, mountains, and cultural sites" },
-  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with 10-20 years deep knowledge of African ecosystems and wildlife behavior" },
+  { icon: Users, title: "Expert Guides", desc: "Experienced naturalists with deep knowledge of African ecosystems and wildlife behavior" },
   { icon: Shield, title: "Safe & Secure", desc: "Fully licensed, insured, and certified tours with established safety protocols and communication systems" },
-  { icon: Star, title: "Exceptional Reviews", desc: "98% client satisfaction with 5-star ratings from 5000+ happy travelers across the globe" },
+  { icon: Star, title: "Exceptional Reviews", desc: "Consistently praised by delighted guests for memorable safari experiences and seamless service" },
 ];
 
 const quickStats = [
-  { number: "15+", label: "Years Experience" },
-  { number: "5000+", label: "Happy Travelers" },
-  { number: "50+", label: "Safari Packages" },
-  { number: "98%", label: "Return Guests" },
+  { number: "Trusted", label: "Safari Expertise" },
+  { number: "Loved", label: "By Adventurers" },
+  { number: "Curated", label: "Safari Packages" },
+  { number: "Repeat", label: "Guests" },
 ];
 
 const HeroSection = () => {
@@ -78,13 +121,22 @@ const HeroSection = () => {
           >
             <picture>
               <source
+                type="image/avif"
+                srcSet={`${heroImages[currentSlide].avif640} 640w, ${heroImages[currentSlide].avif1280} 1280w, ${heroImages[currentSlide].avif} 1920w`}
+                sizes="100vw"
+              />
+              <source
                 type="image/webp"
-                srcSet={heroImages[currentSlide].webp}
+                srcSet={`${heroImages[currentSlide].webp640} 640w, ${heroImages[currentSlide].webp1280} 1280w, ${heroImages[currentSlide].webp} 1920w`}
+                sizes="100vw"
               />
               <img
                 src={heroImages[currentSlide].src}
+                srcSet={`${heroImages[currentSlide].src} 1920w`}
                 alt={heroImages[currentSlide].alt}
                 className="w-full h-full object-cover"
+                width={1920}
+                height={1080}
                 fetchPriority={currentSlide === 0 ? "high" : "low"}
                 loading={currentSlide === 0 ? "eager" : "lazy"}
                 decoding={currentSlide === 0 ? "sync" : "async"}
@@ -146,7 +198,7 @@ const HeroSection = () => {
             </span>
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full">
               <Shield className="text-green-400" size={16} />
-              <span className="text-white/90 text-sm font-medium">Trusted by 5000+ Travelers</span>
+              <span className="text-white/90 text-sm font-medium">Trusted by safari travelers worldwide</span>
             </span>
           </motion.div>
 
@@ -235,12 +287,12 @@ const HeroSection = () => {
               Plan My Trip
             </Link>
             <a
-              href="tel:+254720445869"
+              href={`tel:${CONTACT_PHONE_RAW}`}
               className="w-full md:w-auto inline-flex items-center justify-center md:justify-start gap-2 text-white/80 hover:text-white transition-colors text-sm md:text-base"
             >
               <Phone size={16} className="flex-shrink-0" />
-              <span className="hidden md:inline">Call: +254 720 445869</span>
-              <span className="md:hidden">+254 720 445869</span>
+              <span className="hidden md:inline">Call: {CONTACT_PHONE}</span>
+              <span className="md:hidden">{CONTACT_PHONE}</span>
             </a>
           </motion.div>
 

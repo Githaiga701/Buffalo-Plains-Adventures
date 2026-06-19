@@ -84,7 +84,7 @@ export async function getMpesaAccessToken(): Promise<string> {
  */
 export function formatPhoneNumber(phoneNumber: string): string {
   // Remove all non-digits
-  let cleaned = phoneNumber.replace(/\D/g, "");
+  const cleaned = phoneNumber.replace(/\D/g, "");
 
   // Handle various formats
   if (cleaned.startsWith("254")) {
