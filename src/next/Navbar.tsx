@@ -66,8 +66,30 @@ export default function Navbar() {
   }, [open]);
 
   const handleBookNowConversion = (url: string) => {
-    if (typeof window !== "undefined" && typeof (window as any).gtag_report_conversion === "function") {
-      (window as any).gtag_report_conversion(url);
+    if (typeof window === "undefined") return;
+
+    const gtagReport = (window as any).gtag_report_conversion;
+    if (typeof gtagReport === "function") {
+      let navigated = false;
+      const fallback = () => {
+        if (!navigated) {
+          navigated = true;
+          window.location.href = url;
+        }
+      };
+      const t = setTimeout(fallback, 800);
+
+      try {
+        gtagReport(url);
+      } catch (e) {
+        // If calling the report fails, navigate immediately as a fallback
+        clearTimeout(t);
+        fallback();
+      }
+      // note: the gtag_report_conversion snippet is expected to navigate via its callback.
+    } else {
+      // No gtag helper available — navigate immediately
+      window.location.href = url;
     }
   };
 
@@ -125,7 +147,6 @@ export default function Navbar() {
               onClick={(event) => {
                 event.preventDefault();
                 handleBookNowConversion('/contact');
-                window.location.href = '/contact';
               }}
               className="ml-4 inline-flex items-center px-4 md:px-6 h-11 rounded-md bg-secondary text-secondary-foreground font-semibold text-sm md:text-base"
             >
@@ -229,7 +250,6 @@ export default function Navbar() {
                     event.preventDefault();
                     setOpen(false);
                     handleBookNowConversion('/contact');
-                    window.location.href = '/contact';
                   }}
                   className="block w-full text-center h-11 rounded-md bg-secondary text-secondary-foreground font-semibold"
                 >
