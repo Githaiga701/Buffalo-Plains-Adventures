@@ -65,6 +65,12 @@ export default function Navbar() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const handleBookNowConversion = (url: string) => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag_report_conversion === "function") {
+      (window as any).gtag_report_conversion(url);
+    }
+  };
+
   const [announce, setAnnounce] = useState("");
 
   useEffect(() => {
@@ -116,6 +122,11 @@ export default function Navbar() {
             ))}
             <Link
               href="/contact"
+              onClick={(event) => {
+                event.preventDefault();
+                handleBookNowConversion('/contact');
+                window.location.href = '/contact';
+              }}
               className="ml-4 inline-flex items-center px-4 md:px-6 h-11 rounded-md bg-secondary text-secondary-foreground font-semibold text-sm md:text-base"
             >
               Book Now
@@ -214,7 +225,12 @@ export default function Navbar() {
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  onClick={() => setOpen(false)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    setOpen(false);
+                    handleBookNowConversion('/contact');
+                    window.location.href = '/contact';
+                  }}
                   className="block w-full text-center h-11 rounded-md bg-secondary text-secondary-foreground font-semibold"
                 >
                   Book Now

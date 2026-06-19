@@ -33,6 +33,16 @@ const Contact = () => {
     },
   });
 
+  const reportContactConversion = () => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-18141558565/cLIxCOab5KccEKXuyMpD',
+        value: 1.0,
+        currency: 'USD',
+      });
+    }
+  };
+
   const onSubmit = async (data: ContactFormData) => {
     setIsSending(true);
     setSendError(null);
@@ -64,6 +74,7 @@ const Contact = () => {
         publicKey: EMAILJS_PUBLIC_KEY,
       });
       console.log('Email sent successfully');
+      reportContactConversion();
       setSubmitted(true);
       reset();
     } catch (error: any) {
